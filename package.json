@@ -7,8 +7,10 @@
     "validate": "node scripts/validate.js",
     "build": "node scripts/validate.js && node scripts/build.js",
     "dev": "node scripts/serve.js --watch",
+    "import": "node scripts/import.js",
     "test": "playwright test",
-    "check": "npm run build && npm test"
+    "test:import": "node --test tests/import.test.js",
+    "check": "npm run build && npm run test:import && npm test"
   },
   "devDependencies": {
     "@playwright/test": "^1.49.0"

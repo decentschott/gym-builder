@@ -25,6 +25,8 @@ jobs:
       - run: npm ci
       - name: Validate drills + build
         run: npm run build
+      - name: Importer tests (recorded responses, no API key)
+        run: npm run test:import
       - name: Install browser
         run: npx playwright install --with-deps chromium
       - name: End-to-end tests (phone + tablet)

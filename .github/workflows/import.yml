@@ -1,0 +1,110 @@
+name: Import drills
+
+# Turns an "Import:" issue (or a manual run) into a pull request with new drills + templates.
+# Setup (once):
+#   1. Settings → Secrets and variables → Actions → New secret: ANTHROPIC_API_KEY
+#   2. Settings → Actions → General → Workflow permissions: "Read and write" and
+#      tick "Allow GitHub Actions to create and approve pull requests"
+on:
+  issues:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Link to a drill page
+        required: false
+      text:
+        description: Or paste the drill / plan text
+        required: false
+      playbook:
+        description: Playbook name if these are your own drills (e.g. St. Luke playbook)
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: import-${{ github.event.issue.number || github.run_id }}
+
+jobs:
+  import:
+    # Only people with write access can trigger an import (protects your API credits if the repo goes public).
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      ((startsWith(github.event.issue.title, 'Import') || contains(github.event.issue.labels.*.name, 'import')) &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association) &&
+       (github.event.action == 'opened' || github.event.label.name == 'import'))
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Acknowledge
+        if: env.ISSUE != ''
+        run: gh issue comment "$ISSUE" --body "🏀 On it — reading your submission and drawing the diagrams. A pull request will show up here in a few minutes."
+
+      - name: Run importer
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          IN_URL: ${{ inputs.url }}
+          IN_TEXT: ${{ inputs.text }}
+          IN_SRC: ${{ inputs.playbook }}
+        run: |
+          set -o pipefail
+          if [ -n "$ISSUE" ]; then
+            printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/body.md"
+            node scripts/import.js --issue-body "$RUNNER_TEMP/body.md" --out "$RUNNER_TEMP/summary.md" 2>&1 | tee "$RUNNER_TEMP/log.txt"
+          else
+            args=()
+            [ -n "$IN_URL" ] && args+=(--url "$IN_URL")
+            [ -n "$IN_TEXT" ] && args+=(--text "$IN_TEXT")
+            [ -n "$IN_SRC" ] && args+=(--src "$IN_SRC")
+            node scripts/import.js "${args[@]}" --out "$RUNNER_TEMP/summary.md" 2>&1 | tee "$RUNNER_TEMP/log.txt"
+          fi
+
+      - name: Validate, build, and test the app with the new drills
+        run: |
+          npm run build
+          npx playwright install --with-deps chromium
+          npm test
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gym-builder-dist
+          path: dist
+
+      - name: Open pull request
+        env:
+          TITLE: ${{ github.event.issue.title || 'Import drills' }}
+        run: |
+          branch="import/${ISSUE:-run}-${GITHUB_RUN_ID}"
+          git config user.name "gym-builder-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data
+          git commit -m "$TITLE" -m "Imported by the drill importer (run $GITHUB_RUN_ID)."
+          git push origin "$branch"
+          body="$RUNNER_TEMP/summary.md"
+          printf '\n\nPreview build: %s/%s/actions/runs/%s (download **gym-builder-dist**, open index.html)\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> "$body"
+          [ -n "$ISSUE" ] && printf '\nCloses #%s\n' "$ISSUE" >> "$body"
+          url=$(gh pr create --title "$TITLE" --body-file "$body" --head "$branch" --base main)
+          echo "PR: $url"
+          [ -n "$ISSUE" ] && gh issue comment "$ISSUE" --body "✅ Ready for review: $url"
+
+      - name: Report failure
+        if: failure() && env.ISSUE != ''
+        run: |
+          tail -n 30 "$RUNNER_TEMP/log.txt" 2>/dev/null > "$RUNNER_TEMP/tail.txt" || true
+          { echo "⚠️ The import didn't finish. Details: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; echo; echo '```'; cat "$RUNNER_TEMP/tail.txt"; echo '```'; echo; echo "Edit the issue and add the label **import** to try again."; } > "$RUNNER_TEMP/fail.md"
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/fail.md"

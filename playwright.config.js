@@ -3,6 +3,7 @@ const { defineConfig, devices } = require("@playwright/test");
 
 module.exports = defineConfig({
   testDir: "tests",
+  testMatch: "**/*.spec.js",
   timeout: 120000,
   reporter: process.env.CI ? "github" : "list",
   use: {

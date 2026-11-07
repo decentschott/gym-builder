@@ -101,6 +101,7 @@ function openDrill(id, fromPlan){
     '<h3>How it works</h3><ol class="how">'+d.how.map(function(s){return '<li>'+esc(s)+'</li>';}).join("")+'</ol>'+
     '<h3>Coaching cues</h3><div class="cues">'+d.cue.map(function(s){return '<span>'+esc(s)+'</span>';}).join("")+'</div>'+
     '<div class="vary"><div><b>Make it easier</b>'+esc(d.e)+'</div><div><b>Make it harder</b>'+esc(d.h)+'</div></div>'+
+    (d.ref&&/^https?:\/\//.test(d.ref)?'<p class="hint">Adapted from <a href="'+esc(d.ref)+'" target="_blank" rel="noopener">'+esc(d.ref.replace(/^https?:\/\/(www\.)?/,"").split("/")[0])+'</a></p>':'')+
     '<div class="legend">'+legend()+'</div>'+
     '<div class="row gap"><button class="btn primary" id="dadd">'+(fromPlan?"In your plan ✓":"+ Add to plan")+'</button><button class="btn" id="dprint">Print drill card</button></div>',
   function(root){

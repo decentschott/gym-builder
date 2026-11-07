@@ -18,6 +18,7 @@ npm install        # only installs the test runner; the app itself has zero depe
 npm run dev        # http://localhost:5173 — rebuilds on save
 npm run build      # validates every drill, then writes dist/index.html
 npm test           # end-to-end tests on phone + tablet sizes (opens all 138 drills)
+npm run test:import  # importer tests with recorded responses (no API key needed)
 ```
 `dist/index.html` is one self-contained file. Host it anywhere, open it from a USB stick, or drop it in an artifact.
 
@@ -39,24 +40,46 @@ src/
   draw.js             SVG court, static + animated diagrams
   app.js              UI: catalog, drill detail, planner, print view
   styles.css, index.html
-scripts/              build / validate / dev server (no dependencies)
+scripts/              build / validate / import / dev server (no dependencies)
 public/               PWA manifest, service worker, icons
 tests/                Playwright end-to-end tests
 docs/DRILL_FORMAT.md  how to write a drill + diagram
 ```
 
-## Add a drill
+## Import drills (the easy way)
+Open a new issue → **Import drills or a practice plan**. Then give it any of these:
+- a link to a drill page,
+- pasted text (coach-speak is fine),
+- a PDF or photo of a practice plan dragged into the box.
+
+A few minutes later, a **pull request** appears. It has the new drills written in simple coach language, each with an animated diagram, plus a ready-to-run template if you gave it a practice plan. Review it, tweak it, merge it, and the site updates.
+
+How it works: `scripts/import.js` sends your material to Claude with the drill format and the existing catalog. Every drill Claude returns goes through the same validator the build uses, plus checks for copied text and duplicate drills. Any problems go back to Claude to fix, up to 3 rounds. The finished app then has to pass the full test suite before the PR opens.
+
+- **Your own drills:** fill in "Playbook name". They keep your wording and get a ★ badge.
+- **Drills from other sources:** these are rewritten in original words and linked as "Adapted from…".
+
+**One-time setup**
+1. Settings → Secrets and variables → Actions → add `ANTHROPIC_API_KEY`.
+2. Settings → Actions → General → Workflow permissions → **Read and write**, and tick **Allow GitHub Actions to create and approve pull requests**.
+
+From the command line it works the same way. Without `--dry-run` it writes straight into `data/`:
+```bash
+ANTHROPIC_API_KEY=... npm run import -- --file plan.pdf --src "St. Luke playbook"
+ANTHROPIC_API_KEY=... npm run import -- --url https://example.com/some-drill --dry-run
+```
+
+## Add a drill by hand
 1. Add an object to `data/drills/<category>.json`. See **[docs/DRILL_FORMAT.md](docs/DRILL_FORMAT.md)**.
 2. Run `npm run dev` and watch the animation on a phone-size window.
 3. Run `npm run build` (the validator explains any mistakes), then open a PR.
 
-Coaches who don't code can use the **Suggest a drill** issue form instead.
+Coaches who don't code can use the **Import** issue form instead.
 
 **Content rule:** every drill is written in our own words. Never paste text or diagrams from other sites.
 
 ## Roadmap
-1. Drill and plan importer: paste a link, text, or a PDF practice plan → Claude converts it to the drill format → coach reviews.
-2. Coach style profiles learned from uploaded plans (block length, scrimmage share, vocabulary).
-3. Accounts and shared plans for coaching staffs.
-4. Drag-and-drop drill editor.
-5. Season planner and drill-usage tracking.
+1. Coach style profiles learned from uploaded plans (block length, scrimmage share, vocabulary).
+2. Accounts and shared plans for coaching staffs.
+3. Drag-and-drop drill editor.
+4. Season planner and drill-usage tracking.

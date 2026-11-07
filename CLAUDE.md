@@ -7,7 +7,9 @@ The goal: a basketball practice app that coaches actually use on the sideline. O
 - `npm test`: Playwright e2e (phone + tablet). Locally, set `CHROME_PATH=/usr/bin/google-chrome` if browsers aren't installed.
 - `npm run dev`: local server with rebuild-on-save at :5173.
 
-Always run `npm run build && npm test` before committing.
+- `npm run test:import`: importer tests that replay `tests/fixtures/*.json` (no API key needed).
+
+Always run `npm run check` (build + importer tests + e2e) before committing.
 
 ## Architecture
 - The app is **zero-dependency vanilla JS** (ES5-style, no framework, no bundler). Keep it that way unless there's a strong reason. The single-file build has to keep working, because it's also published as a claude.ai artifact.
@@ -15,6 +17,12 @@ Always run `npm run build && npm test` before committing.
 - `scripts/build.js` injects `GB_CATS`, `DR`, `TEMPLATES` as globals ahead of the source files.
 - Gym fit is computed in `fit()` in app.js. Full-court and hoop needs are derived from the diagram; the `hoop` and `one` flags override that.
 - localStorage keys: `gb_gym`, `gb_cur` (current plan), `gb_plans` (saved plans). Wrap every access in try/catch; the artifact sandbox can throw.
+
+## Importer
+- `scripts/import.js` turns links, text, or PDFs/images into drills + templates using the Claude API (tool-forced JSON).
+- Each round's output goes through `scripts/check.js` (the same rules as the validator), an 8-word copy detector, and duplicate-name checks. Failures go back to the model, up to 3 rounds; drills that still fail are dropped and listed in the PR.
+- `.github/workflows/import.yml` runs it from "Import:" issues. Only owner, member, or collaborator issues trigger it.
+- If you change the drill format, update `docs/DRILL_FORMAT.md` (it's part of the prompt), the tool schema in import.js, and `ALLOWED` in check.js.
 
 ## Content rules
 - Drills must be **original wording**. Never copy text from drill websites. Drill names and concepts are fine.

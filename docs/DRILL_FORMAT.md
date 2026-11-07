@@ -40,6 +40,7 @@ Each drill is one object in `data/drills/<category>.json`. The file name must ma
 | `t` | Default minutes. |
 | `eq`, `why`, `say`, `how`, `cue`, `e`, `h` | The coach-facing text. Keep it simple enough to read on a phone in the gym. |
 | `src` *(optional)* | Marks a drill from a coach's own playbook (shows a ★ badge), e.g. `"St. Luke playbook"`. |
+| `ref` *(optional)* | Link to where the drill idea came from (shown as "Adapted from …"). The text must still be written in our own words. |
 | `also` *(optional)* | Extra categories it should show under, e.g. `["mot"]`. |
 | `hoop` *(optional)* | `1` = needs a hoop even if the diagram has no shot. |
 | `one` *(optional)* | `1` = always one whole-team group (scrimmages, 5-player sets). |

@@ -1,0 +1,35 @@
+name: Import drills or a practice plan
+description: Paste a link, paste text, or attach a PDF/photo — Claude turns it into drills (with diagrams) and opens a pull request.
+title: "Import: "
+labels: ["import"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Give it **any one** of these (or several). In a couple of minutes a pull request shows up here with the new drills, animated diagrams, and — for practice plans — a ready-to-run template.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this?
+      options:
+        - One drill
+        - Several drills
+        - A practice plan
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Link(s)
+      description: Web pages with drills. One per line.
+      placeholder: https://...
+  - type: textarea
+    id: paste
+    attributes:
+      label: Paste the drill or practice plan
+      description: Coach-speak is fine. You can also drag a PDF or photo of a practice plan into this box.
+  - type: input
+    id: playbook
+    attributes:
+      label: Playbook name (if these are your own drills)
+      description: e.g. "St. Luke playbook". Your own drills keep your wording and get a ★ badge. Leave blank for drills from other sources — those get rewritten in original words.

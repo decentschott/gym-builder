@@ -1,0 +1,37 @@
+[
+  {
+    "drills": [
+      {
+        "id": "new1", "cat": "mot", "n": "Pass, Cut & Replace", "lv": "12", "p": [3, 12], "t": 6, "eq": "1 ball per group",
+        "why": "Spacing and cutting without the ball.",
+        "say": "Pass to the wing, cut hard to the rim, and the opposite wing replaces the top.",
+        "how": ["Three players: top and both wings.", "The player with the ball passes to a wing and immediately basket cuts hard to the rim.", "Opposite wing replaces the top; cutter fills the open wing.", "Go for one minute and count passes."],
+        "cue": ["Cut hard", "Replace behind", "Catch ready"],
+        "e": "Walk the pattern.", "h": "Add a defender on the cutter.",
+        "d": { "s": "1 25,30;2 8,20;3 42,20;b:1", "st": [["1 p 2;1 c 22,16 24,7", "Pass and basket cut"], ["3 p 1;3 c 25,30", "Wrong: 3 has no ball"], ["1 c 42,20", "Cutter fills the wing"]] }
+      },
+      {
+        "id": "new2", "cat": "off", "n": "Give & Go", "lv": "12", "p": [2, 12], "t": 5, "eq": "Balls",
+        "why": "Duplicate of an existing drill.", "say": "Pass and cut.", "how": ["Pass", "Cut"], "cue": ["Cut"], "e": "x", "h": "x",
+        "d": { "s": "1 25,30;2 8,20;b:1", "st": [["1 p 2", "Pass"]] }
+      }
+    ],
+    "templates": [{ "name": "Test Team — Motion day", "blocks": [{ "did": "w1", "min": 8, "seg": "Warm-up" }, { "did": "new1", "min": 10, "seg": "Motion" }, { "water": true, "min": 2, "seg": "Water" }, { "did": "new2", "min": 5, "seg": "Offense" }] }],
+    "notes": ""
+  },
+  {
+    "drills": [
+      {
+        "id": "new1", "cat": "mot", "n": "Pass, Cut & Replace", "lv": "12", "p": [3, 12], "t": 6, "eq": "1 ball per group",
+        "why": "Spacing and cutting without the ball.",
+        "say": "Pass to the wing, cut hard to the rim, and the opposite wing replaces the top.",
+        "how": ["Three players: top and both wings.", "Pass to a wing, then sprint straight to the rim for a return pass.", "Opposite wing replaces the top; cutter fills the open wing.", "Go for one minute and count passes."],
+        "cue": ["Cut hard", "Replace behind", "Catch ready"],
+        "e": "Walk the pattern.", "h": "Add a defender on the cutter.",
+        "d": { "s": "1 25,30;2 8,20;3 42,20;b:1", "st": [["1 p 2;1 c 22,16 24,7", "Pass and basket cut"], ["3 c 25,30;1 c 30,12 42,20", "Opposite wing replaces the top, cutter fills the wing"], ["2 p 3", "Keep it moving"]] }
+      }
+    ],
+    "templates": [{ "name": "Test Team — Motion day", "blocks": [{ "did": "w1", "min": 8, "seg": "Warm-up" }, { "did": "new1", "min": 10, "seg": "Motion" }, { "water": true, "min": 2, "seg": "Water" }, { "did": "o1", "min": 5, "seg": "Offense" }] }],
+    "notes": "Assumed the cutter fills the wing the ball came from."
+  }
+]
