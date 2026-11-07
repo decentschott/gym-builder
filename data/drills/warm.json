@@ -1,0 +1,240 @@
+[
+  {
+    "id": "w1",
+    "cat": "warm",
+    "n": "Dynamic Lines",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "None",
+    "why": "Gets legs warm and loose before any ball work.",
+    "say": "Go to the half-court line and back, a new movement each trip.",
+    "how": [
+      "Players form 3–4 lines on the baseline.",
+      "First player in each line goes to half court, jogs back on the sideline.",
+      "Movements: jog, high knees, butt kickers, shuffles, scoops, Frankensteins, sprint."
+    ],
+    "cue": [
+      "Tall posture",
+      "Arms swing",
+      "Next group goes at the free-throw line"
+    ],
+    "e": "Jog only, half the distance.",
+    "h": "Add a sprint finish on the last trip.",
+    "d": {
+      "c": "f",
+      "s": "1 10,2 q2;2 20,2 q2;3 30,2 q2;4 40,2 q2",
+      "st": [
+        [
+          "1 c 10,46;2 c 20,46;3 c 30,46;4 c 40,46",
+          "Go to half court with the called movement"
+        ],
+        [
+          "1 c 2,40 2,4;2 c 2,40 4,4;3 c 48,40 46,4;4 c 48,40 48,4",
+          "Jog back down the sideline"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "w2",
+    "cat": "warm",
+    "n": "Partner Passing Warm-Up",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 5,
+    "eq": "1 ball per pair",
+    "why": "Wakes up hands and footwork with crisp, on-target passes.",
+    "say": "Face your partner, step into every pass, and catch with ready hands.",
+    "how": [
+      "Partners stand 12–15 feet apart.",
+      "30 seconds each: chest, bounce, overhead, one-hand push.",
+      "Step toward your partner on every pass."
+    ],
+    "cue": [
+      "Thumbs down on release",
+      "Target = chest",
+      "Step in, don't lean"
+    ],
+    "e": "Stand closer, two-hand passes only.",
+    "h": "Non-dominant hand only, or add a shuffle between passes.",
+    "d": {
+      "s": "1 15,30;2 15,16;3 35,30;4 35,16;b:1,3",
+      "st": [
+        [
+          "1 p 2;3 p 4",
+          "Step and pass to your partner"
+        ],
+        [
+          "2 p 1;4 p 3",
+          "Return it — switch pass type every 30 seconds"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "w3",
+    "cat": "warm",
+    "n": "Form Shooting Warm-Up",
+    "lv": "123",
+    "p": [
+      1,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per 1–2 players",
+    "why": "Grooves a clean shooting motion before range shooting.",
+    "say": "Start close, shoot with one hand, hold your follow-through until it lands.",
+    "how": [
+      "Start 3 feet from the rim, one hand under the ball.",
+      "Make 5, take one step back.",
+      "Work out to the free-throw line, then add the guide hand."
+    ],
+    "cue": [
+      "Elbow under the ball",
+      "Wrist snaps — hand in the cookie jar",
+      "Hold the finish"
+    ],
+    "e": "Use a lower rim or smaller ball.",
+    "h": "Must swish 3 in a row to move back.",
+    "d": {
+      "s": "1 21,9;2 29,9;3 25,12;b:1,2,3",
+      "st": [
+        [
+          "1 sh;2 sh;3 sh",
+          "One-hand form shots close to the rim"
+        ],
+        [
+          "1 rb 21,12;2 rb 29,12;3 rb 25,16",
+          "Make 5, step back and repeat"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "w4",
+    "cat": "warm",
+    "n": "Layup Lines Warm-Up",
+    "lv": "123",
+    "p": [
+      4,
+      20
+    ],
+    "t": 6,
+    "eq": "2–3 balls",
+    "why": "Classic warm-up that gets everyone moving and finishing.",
+    "say": "Shooting line attacks the rim, rebound line grabs it and passes to the next shooter.",
+    "how": [
+      "Shooting line at the right elbow-extended; rebound line on the left wing.",
+      "Shooter dribbles in for a right-hand layup.",
+      "Rebounder grabs it, outlets to the next shooter.",
+      "Players switch lines after each rep."
+    ],
+    "cue": [
+      "High knee on the jump",
+      "Hit the top corner of the box",
+      "Talk: call the next shooter's name"
+    ],
+    "e": "Jump stop then shoot.",
+    "h": "Switch to left side, left hand.",
+    "d": {
+      "s": "1 40,24 q3;5 8,24 q3;b:1",
+      "st": [
+        [
+          "1 d 32,12 28,7",
+          "Dribble in from the right side"
+        ],
+        [
+          "1 sh;5 c 22,8",
+          "Right-hand layup off the glass; rebounder steps in"
+        ],
+        [
+          "5 rb 24,6;1 c 22,16 8,24",
+          "Rebounder grabs it, shooter goes to the rebound line"
+        ],
+        [
+          "5 d 30,20 40,24",
+          "Rebounder brings it back to the shooting line"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "w5",
+    "cat": "warm",
+    "n": "Dynamic Stretch Circle",
+    "lv": "12",
+    "p": [
+      4,
+      30
+    ],
+    "t": 5,
+    "eq": "None",
+    "why": "Team-building warm-up where coach can see everyone.",
+    "say": "Circle up around center court and follow the leader's movement.",
+    "how": [
+      "Team forms a circle around center court.",
+      "Coach or captain calls a movement: arm circles, leg swings, lunges, hip openers.",
+      "Jog a lap of the circle between moves."
+    ],
+    "cue": [
+      "Controlled, not fast",
+      "Everyone counts out loud",
+      "Captain rotates each day"
+    ],
+    "e": "Coach leads every move.",
+    "h": "Players lead and explain why each stretch matters.",
+    "d": {
+      "c": "f",
+      "s": "1 25,40;2 32,47;3 25,54;4 18,47;C 25,47",
+      "st": [
+        [
+          "1 c 32,47;2 c 25,54;3 c 18,47;4 c 25,40",
+          "Jog the circle between stretches"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "w6",
+    "cat": "warm",
+    "n": "Zig-Zag Slide Warm-Up",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 5,
+    "eq": "Cones optional",
+    "why": "Wakes up defensive stance and hips early.",
+    "say": "Stay low and slide corner to corner without crossing your feet.",
+    "how": [
+      "Lines start on the baseline corners.",
+      "Slide diagonally 3–4 steps, drop step, slide the other way.",
+      "Go to half court, jog back."
+    ],
+    "cue": [
+      "Nose over toes",
+      "Push off the back foot",
+      "Hands active"
+    ],
+    "e": "Walk the pattern first.",
+    "h": "Go full court and sprint the last stretch.",
+    "d": {
+      "c": "f",
+      "s": "x1 8,3 q2;x2 42,3 q2",
+      "st": [
+        [
+          "x1 sl 18,15 8,27 18,39;x2 sl 32,15 42,27 32,39",
+          "Slide corner to corner, drop step at each turn"
+        ]
+      ]
+    }
+  }
+]

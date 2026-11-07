@@ -1,0 +1,679 @@
+[
+  {
+    "id": "m1",
+    "cat": "mot",
+    "n": "Drive & Relocate (2-on-0)",
+    "lv": "123",
+    "p": [
+      2,
+      16
+    ],
+    "t": 5,
+    "eq": "1 ball per pair",
+    "why": "The core habit: when a teammate drives, move to where they can see you.",
+    "say": "Driver attacks the gap — shooter, don't stand and watch, slide to open space.",
+    "how": [
+      "Ball at the top, shooter on the wing.",
+      "Driver attacks the gap between the top and wing.",
+      "Shooter drifts to the corner as the drive comes.",
+      "Kick out, catch ready, shoot. Switch spots."
+    ],
+    "cue": [
+      "Drive to score first",
+      "Shooter moves on the driver's 2nd dribble",
+      "Hands ready in the corner"
+    ],
+    "e": "Shooter starts in the corner.",
+    "h": "Coach as help defender — driver scores if coach doesn't help.",
+    "d": {
+      "s": "1 25,30 q2;2 8,20 q2;b:1",
+      "st": [
+        [
+          "1 d 21,16 22,9;2 c 4,7",
+          "Drive the gap — wing drifts to the corner"
+        ],
+        [
+          "1 p 2",
+          "Kick it out"
+        ],
+        [
+          "2 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m2",
+    "cat": "mot",
+    "n": "Drift, Lift & Fill (4-Out Shell)",
+    "lv": "23",
+    "p": [
+      4,
+      12
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "why": "Teaches every player where to go on every drive.",
+    "say": "On a drive: corners drift, the next player fills behind, and if the drive comes at you, lift.",
+    "how": [
+      "4-out: two slots, two corners. No defense.",
+      "Drive middle: corners drift down, opposite slot fills the top behind the driver.",
+      "Drive toward a corner: that corner lifts to the wing.",
+      "Driver kicks and relocates to the open spot. Keep it going for 60 seconds."
+    ],
+    "cue": [
+      "Drift = slide away, stay in vision",
+      "Lift = drive comes at you, rise up",
+      "Fill = take the spot behind the driver"
+    ],
+    "e": "Coach calls the drive and freezes after each one.",
+    "h": "Add 2–3 defenders.",
+    "d": {
+      "s": "1 16,28;2 34,28;3 5,10;4 45,10;b:1",
+      "st": [
+        [
+          "1 d 21,15 24,8;2 c 25,30;3 c 3,5;4 c 47,5",
+          "Middle drive — corners drift, 2 fills behind"
+        ],
+        [
+          "1 p 2;1 c 12,20 16,27",
+          "Kick back out — driver relocates"
+        ],
+        [
+          "2 d 30,16 31,10;4 c 44,18;1 c 25,30",
+          "Drive at the corner — 4 lifts, 1 fills the top"
+        ],
+        [
+          "2 p 4",
+          "Kick to the lift"
+        ],
+        [
+          "4 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m3",
+    "cat": "mot",
+    "n": "Drive-Kick-Swing (Extra Pass)",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Builds the 'good shot to great shot' extra pass.",
+    "say": "Drive, kick, and if the closeout comes hard — swing it one more.",
+    "how": [
+      "Top, wing, and corner spots; coach is the closeout defender.",
+      "Top drives the gap, kicks to the wing.",
+      "Coach closes out hard on the wing.",
+      "Wing makes the extra pass to the corner — shoot."
+    ],
+    "cue": [
+      "Catch ready to swing",
+      "Pass before the closeout arrives",
+      "Corner: feet set early"
+    ],
+    "e": "No closeout — just swing.",
+    "h": "Coach chooses: close out or stay home. Wing reads it.",
+    "d": {
+      "s": "1 25,30 q2;2 9,22;3 3,5;C 14,14;b:1",
+      "st": [
+        [
+          "1 d 21,15",
+          "Drive the gap"
+        ],
+        [
+          "1 p 2;C c 11,19",
+          "Kick — coach closes out hard"
+        ],
+        [
+          "2 p 3",
+          "Extra pass to the corner"
+        ],
+        [
+          "3 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m4",
+    "cat": "mot",
+    "n": "2-on-1 Closeout Attack",
+    "lv": "23",
+    "p": [
+      3,
+      15
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Attack a closeout, draw the help, and find the open teammate.",
+    "say": "Beat the closeout, make the defender pick — if he stops you, pass.",
+    "how": [
+      "Defender under the rim passes to a wing, closes out.",
+      "Wing drives past the closeout.",
+      "Opposite wing relocates along the baseline.",
+      "Read: score, or kick to the open teammate."
+    ],
+    "cue": [
+      "Attack the high foot",
+      "Get two feet in the paint",
+      "Teammate moves into the driver's vision"
+    ],
+    "e": "Defender closes out at half speed.",
+    "h": "Add a second defender who starts late (2-on-1 → 2-on-2).",
+    "d": {
+      "s": "1 8,22 q2;2 42,22 q2;x1 25,8 q2;b:x1",
+      "st": [
+        [
+          "x1 p 1;x1 c 11,19",
+          "Pass out — close out"
+        ],
+        [
+          "1 d 16,13 20,9;x1 sl 19,12;2 c 45,10",
+          "Beat the closeout — 2 relocates"
+        ],
+        [
+          "1 p 2",
+          "Defender helps — kick"
+        ],
+        [
+          "2 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m5",
+    "cat": "mot",
+    "n": "Drive & Dump (Dunker Spot)",
+    "lv": "23",
+    "p": [
+      2,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Bigs relocate on drives too — easy dump-off layups.",
+    "say": "Big, when the guard drives baseline, slide to the dunker spot on the other side.",
+    "how": [
+      "Guard on the wing, big on the block with a defender.",
+      "Guard drives baseline.",
+      "Big slides to the opposite dunker spot; big's defender helps.",
+      "Dump-off pass, finish."
+    ],
+    "cue": [
+      "Big: hands up, stay low",
+      "Driver: two hands, bounce or flip",
+      "Finish strong, no dribble"
+    ],
+    "e": "No defender.",
+    "h": "Defender chooses: help or stay — driver reads it.",
+    "d": {
+      "s": "1 8,20;5 19,9;x5 21,11;b:1",
+      "st": [
+        [
+          "1 d 10,8 16,5;5 c 33,4;x5 c 20,7",
+          "Baseline drive — big slides to the dunker spot"
+        ],
+        [
+          "1 p 5",
+          "Dump-off pass"
+        ],
+        [
+          "5 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m6",
+    "cat": "mot",
+    "n": "Paint-Touch Scrimmage",
+    "lv": "123",
+    "p": [
+      8,
+      20
+    ],
+    "t": 10,
+    "eq": "1 ball",
+    "why": "Forces penetration before every shot.",
+    "say": "No shot until the ball touches the paint — drive or post it first.",
+    "how": [
+      "4-on-4 or 5-on-5 half court.",
+      "The ball must touch the paint (drive or post catch) before any shot.",
+      "Bonus point for a kick-out three."
+    ],
+    "cue": [
+      "Attack gaps",
+      "Move when the ball moves",
+      "Paint touch, then kick"
+    ],
+    "e": "Paint touch only required on the first possession.",
+    "h": "Paint touch must be a drive (no post entries).",
+    "d": {
+      "s": "1 16,28;2 34,28;3 5,10;4 45,10;x1 17,24;x2 32,24;x3 8,12;x4 42,12;b:1",
+      "st": [
+        [
+          "1 d 21,15 23,10;x3 c 15,12;3 c 3,5",
+          "Paint touch — help comes, corner drifts"
+        ],
+        [
+          "1 p 3;x3 c 6,8",
+          "Kick"
+        ],
+        [
+          "3 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m7",
+    "cat": "mot",
+    "n": "4-on-3 Advantage Shell",
+    "lv": "23",
+    "p": [
+      7,
+      14
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "why": "Defense is a player short — offense must find the open player with drives and passes.",
+    "say": "You're up one — penetrate, make them help, and find the open player.",
+    "how": [
+      "4 offense on the perimeter, 3 defenders.",
+      "Offense drives and kicks until someone is wide open.",
+      "Score = open shot. Rotate a new defender in."
+    ],
+    "cue": [
+      "Attack the closest defender",
+      "Don't hold it — 2 seconds",
+      "Extra pass beats rotations"
+    ],
+    "e": "Freeze on catch; ask 'who's open?'",
+    "h": "Defense earns a point for each stop.",
+    "d": {
+      "s": "1 16,28;2 34,28;3 5,10;4 45,10;x1 20,24;x2 32,24;x3 25,12;b:1",
+      "st": [
+        [
+          "1 d 19,16;x3 c 18,13",
+          "Drive — the help defender commits"
+        ],
+        [
+          "1 p 3;x1 c 9,15",
+          "Kick — defense rotates"
+        ],
+        [
+          "3 p 2;x2 c 33,26",
+          "Extra pass"
+        ],
+        [
+          "2 p 4;x2 c 40,15",
+          "Swing again — 4 is open"
+        ],
+        [
+          "4 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m8",
+    "cat": "mot",
+    "n": "Dribble-At Backdoor",
+    "lv": "23",
+    "p": [
+      2,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Dribble toward a denied teammate is the signal to cut backdoor.",
+    "say": "If I dribble at you and you're denied, go backdoor right away.",
+    "how": [
+      "Ball at the top, wing denied by a defender.",
+      "Ball handler dribbles at the wing.",
+      "Wing cuts backdoor; bounce pass; layup."
+    ],
+    "cue": [
+      "Dribble-at = cut signal",
+      "Cut hard to the rim",
+      "Bounce pass past the defender"
+    ],
+    "e": "Defender is a cone.",
+    "h": "Read: denied = backdoor, open = handoff.",
+    "d": {
+      "s": "1 25,30;2 8,20;x2 11,20;b:1",
+      "st": [
+        [
+          "1 d 15,24",
+          "Dribble at the wing"
+        ],
+        [
+          "2 c 17,8",
+          "Wing cuts backdoor"
+        ],
+        [
+          "1 p 2",
+          "Bounce pass"
+        ],
+        [
+          "2 sh",
+          "Layup"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m9",
+    "cat": "mot",
+    "n": "Circle Movement (Drive & Rotate)",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "one": 1,
+    "why": "Keeps spacing alive: everyone rotates toward the space the driver left.",
+    "say": "When someone drives, everyone rotates one spot toward the hole they left.",
+    "how": [
+      "5-out spacing.",
+      "Drive from the top: the wing on the drive side rotates up to the top, the corner lifts.",
+      "Driver kicks and fills the open corner.",
+      "Next drive goes the other way; keep rotating."
+    ],
+    "cue": [
+      "Rotate, don't stand",
+      "Stay 15+ feet apart",
+      "Ball never stops"
+    ],
+    "e": "Walk it with no defense.",
+    "h": "Live 5-on-5 with a 2-dribble limit.",
+    "d": {
+      "s": "1 25,30;2 8,22;3 42,22;4 3,5;5 47,5;b:1",
+      "st": [
+        [
+          "1 d 31,16 29,9;3 c 25,30;5 c 42,20",
+          "Drive right — everyone rotates toward the hole"
+        ],
+        [
+          "1 p 3;1 c 47,5",
+          "Kick to the top — driver fills the corner"
+        ],
+        [
+          "3 d 20,16 21,9;2 c 25,30;4 c 8,20",
+          "Drive left — rotate again"
+        ],
+        [
+          "3 p 2",
+          "Kick"
+        ],
+        [
+          "2 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m10",
+    "cat": "mot",
+    "n": "Baseline Drive Rules",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Baseline drives need a different read: trailer behind, skip to the far corner.",
+    "say": "Baseline drive: top player trails behind for the pitch, far wing drops to the corner.",
+    "how": [
+      "Players at both wings and the top.",
+      "Wing drives baseline.",
+      "Top trails behind the drive; far wing drops to the corner.",
+      "Driver reads: pitch back to the trailer or skip to the corner."
+    ],
+    "cue": [
+      "Trailer: stay behind the ball",
+      "Corner: be ready before the pass",
+      "Driver: jump stop, pivot, pass"
+    ],
+    "e": "Driver only passes to the corner.",
+    "h": "Coach as help — driver reads where help comes from.",
+    "d": {
+      "s": "1 8,20;2 25,30;3 42,20;b:1",
+      "st": [
+        [
+          "1 d 6,8 14,4;2 c 14,22;3 c 46,5",
+          "Baseline drive — top trails, far wing drops"
+        ],
+        [
+          "1 p 3",
+          "Skip to the far corner"
+        ],
+        [
+          "3 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m11",
+    "cat": "mot",
+    "n": "Drive-Kick-Drive",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Catch on a closeout and attack again — the defense never resets.",
+    "say": "Catch on the kick, attack the closeout right away, then kick again.",
+    "how": [
+      "Top, wing, and corner.",
+      "Top drives, kicks to the wing, relocates.",
+      "Wing drives baseline immediately; corner lifts.",
+      "Kick to the lift; shoot."
+    ],
+    "cue": [
+      "Catch, rip, go — no holding",
+      "Drive the closeout's high foot",
+      "Relocate after every pass"
+    ],
+    "e": "Pause after each catch.",
+    "h": "Add two defenders who close out.",
+    "d": {
+      "s": "1 25,30;2 8,21;3 3,5;b:1",
+      "st": [
+        [
+          "1 d 22,16",
+          "Drive"
+        ],
+        [
+          "1 p 2;1 c 20,27",
+          "Kick — driver relocates"
+        ],
+        [
+          "2 d 12,12 16,8;3 c 4,15",
+          "Attack again — corner lifts"
+        ],
+        [
+          "2 p 3",
+          "Kick to the lift"
+        ],
+        [
+          "3 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m12",
+    "cat": "mot",
+    "n": "3-on-3 Drive Rules Game",
+    "lv": "123",
+    "p": [
+      6,
+      15
+    ],
+    "t": 8,
+    "eq": "1 ball per court",
+    "why": "Live game that rewards driving, relocating, and passing.",
+    "say": "Every drive must end in a score or a kick — kick-out threes count double.",
+    "how": [
+      "3-on-3 half court.",
+      "Drives must end in a layup or a pass out (no picking it up in the lane).",
+      "Kick-out threes count double; first to 7."
+    ],
+    "cue": [
+      "Attack, don't settle",
+      "Relocate after you pass",
+      "Help, then recover"
+    ],
+    "e": "Kick-out shots inside the arc count double.",
+    "h": "2-dribble limit per touch.",
+    "d": {
+      "s": "1 25,30;2 8,18;3 42,18;x1 25,26;x2 11,17;x3 39,17;b:1",
+      "st": [
+        [
+          "1 d 22,16;x2 c 18,15;2 c 4,9",
+          "Drive — help comes, wing relocates"
+        ],
+        [
+          "1 p 2;x2 c 7,12",
+          "Kick"
+        ],
+        [
+          "2 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m13",
+    "cat": "mot",
+    "n": "0.5 Passing Motion Drill",
+    "src": "St. Luke playbook",
+    "lv": "123",
+    "p": [
+      4,
+      16
+    ],
+    "t": 10,
+    "eq": "1 ball per hoop, 2 hoops",
+    "hoop": 1,
+    "why": "Decide in half a second: drive to score, relocate, and keep the ball moving.",
+    "say": "Drive to score and get your feet in the paint before you pass — receiver, HUNT a new spot.",
+    "how": [
+      "Two lines at elbow-extended (both slots), one ball. Run at 2 hoops.",
+      "Start with a middle drive; driver must get feet in the paint before passing.",
+      "Receiver must lift or drift to a new spot (HUNT).",
+      "Catch and go right away — the whole team counts every pass.",
+      "Rounds: Rip & Go to 25, Jab & Go to 25, Shot Fake + Go to 25."
+    ],
+    "cue": [
+      "0.5 seconds — catch and decide",
+      "Feet in the paint before the pass",
+      "Receiver: lift or drift, never stand"
+    ],
+    "e": "Count to 15 per round.",
+    "h": "Add one help defender in the lane.",
+    "d": {
+      "s": "1 31,28 q3;2 19,28 q3;b:1",
+      "st": [
+        [
+          "1 d 26,16 24,10;2 c 8,20",
+          "Middle drive, feet in the paint — receiver drifts (HUNT)"
+        ],
+        [
+          "1 p 2",
+          "Pass — team counts '1!'"
+        ],
+        [
+          "2 d 15,14 21,9;1 c 42,15",
+          "Rip & go — driver relocates to a new spot"
+        ],
+        [
+          "2 p 1",
+          "Pass — '2!' Keep it going to 25"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m14",
+    "cat": "mot",
+    "n": "Pass & Move (Flash to Top)",
+    "src": "St. Luke playbook",
+    "lv": "123",
+    "p": [
+      4,
+      16
+    ],
+    "t": 10,
+    "eq": "1–2 balls",
+    "why": "Three motion reads off one flash: cut, screen away, or follow for a ball screen.",
+    "say": "Flash to the top for the catch, reverse it, then run the option I call.",
+    "how": [
+      "Two lines at the wings; ball in the left line.",
+      "Right-wing player flashes to the top and gets the pass.",
+      "Reverse the ball to the next wing, then run the called option:",
+      "1) Cut to the hoop  2) Screen away  3) Pass and follow for a ball screen."
+    ],
+    "cue": [
+      "Flash hard, hands up",
+      "Reverse quickly",
+      "Option 2: screen the defender's spot, then roll"
+    ],
+    "e": "Option 1 only.",
+    "h": "Add defense on the flash player; offense picks the option.",
+    "d": {
+      "s": "1 6,20 q2;2 44,20;3 47,24 q2;b:1",
+      "st": [
+        [
+          "2 c 34,24 25,29;3 c 44,20",
+          "Flash to the top"
+        ],
+        [
+          "1 p 2",
+          "Catch at the top"
+        ],
+        [
+          "2 p 3",
+          "Reverse it"
+        ],
+        [
+          "2 c 30,18 26,8",
+          "Option 1: cut to the hoop"
+        ],
+        [
+          "3 p 2",
+          "Give-and-go pass"
+        ],
+        [
+          "2 sh",
+          "Layup"
+        ]
+      ]
+    }
+  }
+]

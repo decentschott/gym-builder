@@ -1,0 +1,42 @@
+name: Suggest a drill
+description: Add a drill to the catalog (paste a link, your own write-up, or a practice plan)
+title: "Drill: "
+labels: ["drill"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Drill name
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [Warm-Up, Ball Handling, Footwork, Shooting, Finishing, Passing, Defense, Rebounding, Transition, Team Offense, Motion Offense, Conditioning, Games]
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: How it works
+      description: Setup, steps, rotation. Coach-speak is fine — it gets simplified.
+    validations:
+      required: true
+  - type: textarea
+    id: cues
+    attributes:
+      label: Coaching cues / what you yell
+  - type: input
+    id: source
+    attributes:
+      label: Source link (optional)
+      description: Drills are rewritten in our own words — never copy-paste someone else's text.
+  - type: checkboxes
+    id: level
+    attributes:
+      label: Levels
+      options:
+        - label: Beginner
+        - label: Intermediate
+        - label: Advanced

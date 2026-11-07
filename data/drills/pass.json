@@ -1,0 +1,568 @@
+[
+  {
+    "id": "p1",
+    "cat": "pass",
+    "n": "Chest Pass Partners",
+    "lv": "12",
+    "p": [
+      2,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball per pair",
+    "why": "The most-used pass — teach it right.",
+    "say": "Step in, push the ball straight, thumbs finish down.",
+    "how": [
+      "Partners 10–15 feet apart.",
+      "Chest pass, step into it.",
+      "Receiver shows hands; 20 reps each."
+    ],
+    "cue": [
+      "Thumbs behind the ball",
+      "Step and snap",
+      "Hit the chest"
+    ],
+    "e": "Closer distance.",
+    "h": "Move back each 10 passes.",
+    "d": {
+      "s": "1 25,32;2 25,16;b:1",
+      "st": [
+        [
+          "1 p 2",
+          "Chest pass"
+        ],
+        [
+          "2 p 1",
+          "Return"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p2",
+    "cat": "pass",
+    "n": "Bounce Pass Partners",
+    "lv": "12",
+    "p": [
+      2,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball per pair",
+    "why": "Gets the ball past a defender's hands.",
+    "say": "Bounce it two-thirds of the way — it should come up at their waist.",
+    "how": [
+      "Partners 12 feet apart.",
+      "Bounce the ball 2/3 of the way to the partner.",
+      "Then one-hand bounce passes, both sides."
+    ],
+    "cue": [
+      "2/3 rule",
+      "Waist-high arrival",
+      "Step past an imaginary defender"
+    ],
+    "e": "Two hands only.",
+    "h": "Defender in the middle.",
+    "d": {
+      "s": "1 25,32;2 25,16;b:1",
+      "st": [
+        [
+          "1 p 2",
+          "Bounce pass"
+        ],
+        [
+          "2 p 1",
+          "Return"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p3",
+    "cat": "pass",
+    "n": "Star Passing",
+    "lv": "123",
+    "p": [
+      5,
+      15
+    ],
+    "t": 6,
+    "eq": "1–2 balls",
+    "why": "Pass, follow, catch in rhythm — whole team talking.",
+    "say": "Pass across the star and follow your pass to that line.",
+    "how": [
+      "5 lines in a star.",
+      "Pass across (skip one line) and run to the line you passed to.",
+      "Add a second ball when it's clean."
+    ],
+    "cue": [
+      "Call the name",
+      "Lead the target",
+      "Follow your pass"
+    ],
+    "e": "Pass to the next line around the circle.",
+    "h": "Two balls, no drops for 60s.",
+    "d": {
+      "s": "1 25,32 q1;2 40,22 q1;3 34,8 q1;4 16,8 q1;5 10,22 q1;b:1",
+      "st": [
+        [
+          "1 p 3;1 c 33,10",
+          "Pass across, follow your pass"
+        ],
+        [
+          "3 p 5;3 c 11,20",
+          "Keep the star going"
+        ],
+        [
+          "5 p 2;5 c 39,20",
+          "Two balls when ready"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p4",
+    "cat": "pass",
+    "n": "Monkey in the Middle",
+    "lv": "12",
+    "p": [
+      3,
+      30
+    ],
+    "t": 5,
+    "eq": "1 ball per group of 3",
+    "why": "Passing past pressure, using pivots and fakes.",
+    "say": "Pivot and fake to get the defender to move, then pass by them.",
+    "how": [
+      "Two passers 15 feet apart, defender in the middle.",
+      "No lobs over the head; pivot and fake.",
+      "Defender who deflects switches with the passer."
+    ],
+    "cue": [
+      "Fake a pass to make a pass",
+      "Bounce or step-through",
+      "Pivot, don't dance"
+    ],
+    "e": "Defender passive.",
+    "h": "5 seconds max to pass.",
+    "d": {
+      "s": "1 14,22;2 36,22;x1 25,22;b:1",
+      "st": [
+        [
+          "1 c 13,24;x1 c 19,23",
+          "Pivot and fake"
+        ],
+        [
+          "1 p 2",
+          "Pass past the defender"
+        ],
+        [
+          "x1 c 31,22",
+          "Defender attacks the new passer"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p5",
+    "cat": "pass",
+    "n": "Two-Ball Partner Passing",
+    "lv": "23",
+    "p": [
+      2,
+      30
+    ],
+    "t": 4,
+    "eq": "2 balls per pair",
+    "why": "Quick hands and timing.",
+    "say": "One of you chest passes, one bounce passes — at the same time.",
+    "how": [
+      "Partners, each with a ball.",
+      "One throws chest, one throws bounce, simultaneously.",
+      "Switch after 30 seconds."
+    ],
+    "cue": [
+      "Count it out loud",
+      "Hands ready",
+      "Accuracy first"
+    ],
+    "e": "Slow tempo.",
+    "h": "Speed it up for 30s.",
+    "d": {
+      "s": "1 25,32;2 25,16;b:1,2",
+      "st": [
+        [
+          "1 p 2;2 p 1",
+          "Pass at the same time"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p6",
+    "cat": "pass",
+    "n": "Three-Man Weave",
+    "lv": "23",
+    "p": [
+      3,
+      21
+    ],
+    "t": 6,
+    "eq": "1–2 balls",
+    "why": "Passing on the run and filling lanes.",
+    "say": "Pass and go behind the player you passed to — ball never hits the floor.",
+    "how": [
+      "Three lines on the baseline, ball in the middle.",
+      "Pass to a side, run behind the receiver.",
+      "Keep weaving; finish with a layup."
+    ],
+    "cue": [
+      "Pass ahead, not behind",
+      "Go behind your pass",
+      "No dribbles"
+    ],
+    "e": "Walk the pattern.",
+    "h": "Weave down, 2-on-1 back.",
+    "d": {
+      "c": "f",
+      "s": "1 25,4;2 8,6;3 42,6;b:1",
+      "st": [
+        [
+          "1 p 3;1 c 36,20;3 c 26,18;2 c 10,20",
+          "Pass and go behind"
+        ],
+        [
+          "3 p 2;3 c 12,34;2 c 24,32;1 c 40,34",
+          "Keep weaving"
+        ],
+        [
+          "2 p 1;2 c 38,50;1 c 26,48;3 c 10,50",
+          "Fill the lanes"
+        ],
+        [
+          "1 p 3;3 d 14,76 22,85;1 c 28,74;2 c 40,76",
+          "Last pass"
+        ],
+        [
+          "3 sh",
+          "Layup"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p7",
+    "cat": "pass",
+    "n": "Rebound & Outlet",
+    "lv": "123",
+    "p": [
+      2,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "First pass that starts the fast break.",
+    "say": "Grab it high, pivot to the sideline, and hit the outlet above their head.",
+    "how": [
+      "Coach shoots or tosses off the glass.",
+      "Rebounder grabs it with two hands and chins it.",
+      "Pivot outside; overhead outlet to the wing, who pushes it."
+    ],
+    "cue": [
+      "Chin the ball",
+      "Pivot outside",
+      "Outlet: call 'Outlet!'"
+    ],
+    "e": "Toss to yourself.",
+    "h": "Add a defender who pressures the outlet.",
+    "d": {
+      "s": "1 25,12;2 6,24;C 25,24;b:C",
+      "st": [
+        [
+          "C sh",
+          "Coach shoots"
+        ],
+        [
+          "1 rb 26,6",
+          "Rebound and chin it"
+        ],
+        [
+          "1 p 2;2 c 4,22",
+          "Outlet to the wing"
+        ],
+        [
+          "2 d 6,46",
+          "Push it up"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p8",
+    "cat": "pass",
+    "n": "Ball Reversal & Skip",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 5,
+    "eq": "1 ball",
+    "why": "Moving the ball side to side breaks defenses.",
+    "say": "Reverse it around the top, then skip it over the defense.",
+    "how": [
+      "Players on both wings and the top.",
+      "Reverse: wing → top → wing.",
+      "Skip pass wing to wing (overhead)."
+    ],
+    "cue": [
+      "Catch ready to shoot",
+      "Skip with two-hand overhead",
+      "Fake before the skip"
+    ],
+    "e": "Reversal only.",
+    "h": "Add 2 defenders in the middle.",
+    "d": {
+      "s": "1 8,20;2 25,30;3 42,20;b:1",
+      "st": [
+        [
+          "1 p 2",
+          "Reverse to the top"
+        ],
+        [
+          "2 p 3",
+          "To the other wing"
+        ],
+        [
+          "3 p 1",
+          "Skip pass back"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p9",
+    "cat": "pass",
+    "n": "Full-Court Partner Passing",
+    "lv": "12",
+    "p": [
+      2,
+      20
+    ],
+    "t": 5,
+    "eq": "1 ball per pair",
+    "why": "Passing ahead to a moving teammate.",
+    "say": "Run side by side and lead your partner with every pass.",
+    "how": [
+      "Partners run down the floor 15 feet apart.",
+      "Lead passes, no dribbles.",
+      "Last catch = layup."
+    ],
+    "cue": [
+      "Pass ahead of them",
+      "Hands up early",
+      "No traveling"
+    ],
+    "e": "Jog.",
+    "h": "Bounce passes only.",
+    "d": {
+      "c": "f",
+      "s": "1 15,4;2 35,4;b:1",
+      "st": [
+        [
+          "1 p 2;1 c 15,30;2 c 35,30",
+          "Lead pass on the run"
+        ],
+        [
+          "2 p 1;1 c 15,56;2 c 35,56",
+          "Back the other way"
+        ],
+        [
+          "1 p 2;1 c 15,80;2 c 32,84",
+          "Last pass"
+        ],
+        [
+          "2 sh",
+          "Layup"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p10",
+    "cat": "pass",
+    "n": "Post Entry Passing",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Getting the ball inside safely.",
+    "say": "Post seals, passer hits the hand away from the defender.",
+    "how": [
+      "Post player on the block with a defender on the high side.",
+      "Post seals low with a target hand.",
+      "Wing makes a bounce pass to the target hand."
+    ],
+    "cue": [
+      "Pass away from the defender",
+      "Post: wide, low, hands up",
+      "Fake high, pass low"
+    ],
+    "e": "No defender.",
+    "h": "Defender switches high/low; read it.",
+    "d": {
+      "s": "1 6,20;5 18,10;x5 17,12;b:1",
+      "st": [
+        [
+          "5 c 17,8",
+          "Post seals"
+        ],
+        [
+          "1 p 5",
+          "Bounce pass to the target hand"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p11",
+    "cat": "pass",
+    "n": "Drive & Kick",
+    "lv": "23",
+    "p": [
+      2,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "also": [
+      "mot"
+    ],
+    "why": "Penetrate to collapse the defense, then find the shooter.",
+    "say": "Drive into the lane — your teammate moves to open space, you kick it out.",
+    "how": [
+      "Ball at the top, shooter on the wing.",
+      "Drive middle; shooter drifts to the corner.",
+      "Pass out; shoot."
+    ],
+    "cue": [
+      "Drive with your eyes up",
+      "Shooter drifts behind the defense",
+      "Two-hand or one-hand push pass"
+    ],
+    "e": "No drift.",
+    "h": "Add a help defender — pass only if they help.",
+    "d": {
+      "s": "1 25,30;2 8,20;b:1",
+      "st": [
+        [
+          "1 d 25,14;2 c 4,9",
+          "Drive, shooter drifts"
+        ],
+        [
+          "1 p 2",
+          "Kick it out"
+        ],
+        [
+          "2 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p12",
+    "cat": "pass",
+    "n": "Four-Corner Passing",
+    "lv": "12",
+    "p": [
+      8,
+      20
+    ],
+    "t": 5,
+    "eq": "1–2 balls",
+    "why": "Pass, follow, catch on the move — with talking.",
+    "say": "Pass to the next corner and follow your pass.",
+    "how": [
+      "4 lines in half-court corners.",
+      "Pass to the next line; follow your pass.",
+      "Add a second ball."
+    ],
+    "cue": [
+      "Call the name",
+      "Pass to the lead hand",
+      "Follow your pass"
+    ],
+    "e": "Stationary, no follow.",
+    "h": "Two balls going opposite ways.",
+    "d": {
+      "s": "1 6,8 q2;2 44,8 q2;3 44,40 q2;4 6,40 q2;b:1",
+      "st": [
+        [
+          "1 p 2;1 c 42,10",
+          "Pass and follow"
+        ],
+        [
+          "2 p 3;2 c 42,38",
+          "Keep it moving"
+        ],
+        [
+          "3 p 4;3 c 8,38",
+          "Around the square"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "p13",
+    "cat": "pass",
+    "n": "Full-Court Passing: Make 40",
+    "src": "St. Luke playbook",
+    "lv": "123",
+    "p": [
+      4,
+      30
+    ],
+    "t": 5,
+    "eq": "1 ball per pair",
+    "why": "Team passing goal with energy — every catch counts.",
+    "say": "Partners pass full court — we need 40 good catches as a team. Count them all!",
+    "how": [
+      "Partners run full court passing, no dribbles.",
+      "Finish with a layup, come back the other side.",
+      "Team counts every clean catch out loud to 40; a drop doesn't count."
+    ],
+    "cue": [
+      "Pass ahead",
+      "Count out loud",
+      "No traveling"
+    ],
+    "e": "Goal of 25.",
+    "h": "40 in under 3 minutes.",
+    "d": {
+      "c": "f",
+      "s": "1 15,4 q2;2 35,4 q2;b:1",
+      "st": [
+        [
+          "1 p 2;1 c 15,30;2 c 35,30",
+          "Pass ahead — '1!'"
+        ],
+        [
+          "2 p 1;1 c 15,56;2 c 35,56",
+          "'2!'"
+        ],
+        [
+          "1 p 2;1 c 15,80;2 c 32,84",
+          "'3!'"
+        ],
+        [
+          "2 sh",
+          "Layup — keep counting"
+        ]
+      ]
+    }
+  }
+]

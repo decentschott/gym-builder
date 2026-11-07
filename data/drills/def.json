@@ -1,0 +1,491 @@
+[
+  {
+    "id": "d1",
+    "cat": "def",
+    "n": "Stance Hold & Slide",
+    "lv": "12",
+    "p": [
+      1,
+      30
+    ],
+    "t": 4,
+    "eq": "None",
+    "why": "Builds the low, balanced stance everything else depends on.",
+    "say": "Get low, feet wide, hands active — hold it, then slide on my point.",
+    "how": [
+      "Spread out facing the coach.",
+      "Hold stance 15–20 seconds.",
+      "Coach points: slide 3 steps that way, back to center."
+    ],
+    "cue": [
+      "Feet wider than shoulders",
+      "Back flat, eyes up",
+      "Never click your heels"
+    ],
+    "e": "10-second holds.",
+    "h": "Add 'chop feet' and drop steps.",
+    "d": {
+      "s": "x1 12,30;x2 25,30;x3 38,30;C 25,12",
+      "st": [
+        [
+          "x1 sl 8,30;x2 sl 21,30;x3 sl 34,30",
+          "Slide on the coach's point"
+        ],
+        [
+          "x1 sl 12,30;x2 sl 25,30;x3 sl 38,30",
+          "Back to center"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d2",
+    "cat": "def",
+    "n": "Wave Drill",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball",
+    "why": "Quick reactions and defensive footwork.",
+    "say": "Watch the ball — slide where I point, backpedal when I pull, sprint on 'shot!'.",
+    "how": [
+      "Rows of players in stance facing the coach.",
+      "Coach points left/right/back; players slide.",
+      "On 'shot!' everyone yells and sprints to box out."
+    ],
+    "cue": [
+      "Slide, don't cross feet",
+      "React to the ball",
+      "Talk"
+    ],
+    "e": "Left/right only.",
+    "h": "Add closeouts on the coach's call.",
+    "d": {
+      "s": "x1 15,30;x2 25,30;x3 35,30;C 25,14;b:C",
+      "st": [
+        [
+          "x1 sl 9,30;x2 sl 19,30;x3 sl 29,30",
+          "Slide where the coach points"
+        ],
+        [
+          "x1 sl 9,38;x2 sl 19,38;x3 sl 29,38",
+          "Drop back"
+        ],
+        [
+          "x1 sl 15,30;x2 sl 25,30;x3 sl 35,30",
+          "Slide back"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d3",
+    "cat": "def",
+    "n": "Closeouts",
+    "lv": "123",
+    "p": [
+      2,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Stops open shots without getting blown by.",
+    "say": "Sprint at the shooter, chop your feet, one hand high — stay in front.",
+    "how": [
+      "Defender under the rim passes to the wing.",
+      "Sprint two-thirds, chop steps the rest.",
+      "Offense makes one dribble move; defense contains."
+    ],
+    "cue": [
+      "Sprint, then chop",
+      "High hand",
+      "Butt down"
+    ],
+    "e": "Closeout only, no drive.",
+    "h": "Offense plays live 1v1.",
+    "d": {
+      "s": "1 8,20;x1 24,8;b:x1",
+      "st": [
+        [
+          "x1 p 1",
+          "Defender passes to the wing"
+        ],
+        [
+          "x1 c 11,17",
+          "Sprint and chop — close out"
+        ],
+        [
+          "1 d 10,9;x1 sl 12,9",
+          "Contain the drive"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d4",
+    "cat": "def",
+    "n": "Full-Court Defensive Zig-Zag",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 5,
+    "eq": "None",
+    "why": "Defensive footwork and conditioning.",
+    "say": "Slide corner to corner, drop step, and keep your chest in front.",
+    "how": [
+      "Lines on the baseline.",
+      "Slide in a zig-zag to half court (or full).",
+      "Jog back."
+    ],
+    "cue": [
+      "Drop step on the turn",
+      "Low the whole time",
+      "Arms out"
+    ],
+    "e": "Half court.",
+    "h": "Add an offensive player (b10).",
+    "d": {
+      "c": "f",
+      "s": "x1 8,4 q2;x2 42,4 q2",
+      "st": [
+        [
+          "x1 sl 18,18 8,32 18,46;x2 sl 32,18 42,32 32,46",
+          "Zig-zag slides"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d5",
+    "cat": "def",
+    "n": "Shell Drill (4-on-4)",
+    "lv": "23",
+    "p": [
+      8,
+      16
+    ],
+    "t": 10,
+    "eq": "1 ball",
+    "why": "The foundation of team defense: positioning on every pass.",
+    "say": "Every pass, everyone moves: on the ball, one pass away deny, two passes away help.",
+    "how": [
+      "4 offense on the perimeter, 4 defense.",
+      "Offense passes slowly; defense jumps to new spots on each pass.",
+      "Progress: add drives, then cuts, then live."
+    ],
+    "cue": [
+      "Ball-you-man",
+      "Jump to the ball on the pass",
+      "Talk: 'Ball! Help!'"
+    ],
+    "e": "Freeze after each pass; coach checks spots.",
+    "h": "Live, play until a stop.",
+    "d": {
+      "s": "1 15,28;2 35,28;3 6,12;4 44,12;x1 16,25;x2 31,24;x3 9,14;x4 28,12;b:1",
+      "st": [
+        [
+          "1 p 2;x2 c 34,25;x1 c 20,22;x4 c 41,15;x3 c 22,12",
+          "Pass — everyone jumps to new spots"
+        ],
+        [
+          "2 p 4;x4 c 41,11;x2 c 36,22;x1 c 27,17;x3 c 21,9",
+          "Help side sinks into the lane"
+        ],
+        [
+          "4 p 2;x2 c 34,25;x4 c 41,15;x1 c 20,22;x3 c 22,12",
+          "Back up — recover"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d6",
+    "cat": "def",
+    "n": "Deny the Wing",
+    "lv": "23",
+    "p": [
+      2,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Makes catching the ball hard.",
+    "say": "Hand in the passing lane, see your player and the ball, don't let them catch it.",
+    "how": [
+      "Coach with ball at the top, offense on the wing.",
+      "Defender denies: hand and foot in the lane.",
+      "Offense V-cuts and backdoors; play 20 seconds."
+    ],
+    "cue": [
+      "Thumb down, palm out",
+      "See ball and player",
+      "Open up on the backdoor"
+    ],
+    "e": "Offense walks.",
+    "h": "Catch = live 1v1.",
+    "d": {
+      "s": "C 25,30;2 8,18;x2 11,19;b:C",
+      "st": [
+        [
+          "2 c 12,10;x2 sl 14,12",
+          "Offense walks in"
+        ],
+        [
+          "2 c 6,21;x2 sl 9,20",
+          "Deny the V-cut"
+        ],
+        [
+          "2 c 16,7;x2 c 17,9",
+          "Open up on the backdoor"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d7",
+    "cat": "def",
+    "n": "Help & Recover (2-on-2)",
+    "lv": "23",
+    "p": [
+      4,
+      16
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Stopping the drive and getting back to your player.",
+    "say": "Help stops the ball, then sprints back to their player on the pass.",
+    "how": [
+      "2 offense, 2 defense.",
+      "Ball handler drives; help defender stops the ball.",
+      "On the pass, help recovers with a closeout."
+    ],
+    "cue": [
+      "Help early",
+      "Stop the ball outside the lane",
+      "Closeout, high hand"
+    ],
+    "e": "Walk-through.",
+    "h": "Live after the kick.",
+    "d": {
+      "s": "1 15,28;2 40,16;x1 16,24;x2 31,15;b:1",
+      "st": [
+        [
+          "1 d 20,14",
+          "Drive"
+        ],
+        [
+          "x2 c 24,13",
+          "Help stops the ball"
+        ],
+        [
+          "1 p 2;x2 c 37,15",
+          "Pass — recover and close out"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d8",
+    "cat": "def",
+    "n": "Take the Charge",
+    "lv": "23",
+    "p": [
+      2,
+      16
+    ],
+    "t": 4,
+    "eq": "Mat optional",
+    "why": "Teaches safe charge-taking and a culture of toughness.",
+    "say": "Get set early outside the circle, chest square, fall back safely.",
+    "how": [
+      "Defender sets in the lane outside the restricted area.",
+      "Offense dribbles in at walking speed.",
+      "Defender absorbs, sits, rolls back; hands to the chest."
+    ],
+    "cue": [
+      "Feet set first",
+      "Chin tucked",
+      "Sit, then roll"
+    ],
+    "e": "Practice the fall without contact.",
+    "h": "Full speed with a pad.",
+    "d": {
+      "s": "1 25,32;x1 25,12;b:1",
+      "st": [
+        [
+          "1 d 25,15",
+          "Offense drives in — defender is set"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d10",
+    "cat": "def",
+    "n": "Mirror Drill",
+    "lv": "12",
+    "p": [
+      2,
+      30
+    ],
+    "t": 3,
+    "eq": "None",
+    "why": "Reaction and footwork without a ball.",
+    "say": "Copy your partner — wherever they go, stay right in front.",
+    "how": [
+      "Partners face each other.",
+      "Offense moves side to side; defense mirrors.",
+      "15 seconds, switch."
+    ],
+    "cue": [
+      "Watch the hips",
+      "Short choppy steps",
+      "Don't reach"
+    ],
+    "e": "Slow movements.",
+    "h": "Offense can sprint 3 steps.",
+    "d": {
+      "s": "1 25,26;x1 25,22",
+      "st": [
+        [
+          "1 c 17,26;x1 sl 17,22",
+          "Defender mirrors"
+        ],
+        [
+          "1 c 33,26;x1 sl 33,22",
+          "Change direction"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d11",
+    "cat": "def",
+    "n": "1v1 from the Wing",
+    "lv": "123",
+    "p": [
+      2,
+      20
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Containing the ball one-on-one.",
+    "say": "Pass, close out, keep them out of the middle — make them take a tough shot.",
+    "how": [
+      "Defender passes to the wing and closes out.",
+      "Live 1v1, three dribbles max.",
+      "Offense to defense line, defense to the back."
+    ],
+    "cue": [
+      "Force baseline",
+      "Chest in front",
+      "Contest without fouling"
+    ],
+    "e": "Two dribbles max.",
+    "h": "Make-it take-it to 3.",
+    "d": {
+      "s": "1 6,20 q2;x1 25,9 q2;b:x1",
+      "st": [
+        [
+          "x1 p 1;x1 c 9,17",
+          "Pass and close out"
+        ],
+        [
+          "1 d 14,10 20,7;x1 sl 15,8",
+          "Live 1v1"
+        ],
+        [
+          "1 sh",
+          "Contest the shot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d12",
+    "cat": "def",
+    "n": "Ball Screen Defense (Hedge)",
+    "lv": "3",
+    "p": [
+      4,
+      12
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Defending the most common action in basketball.",
+    "say": "Screener's defender jumps out to slow the ball, then both recover.",
+    "how": [
+      "2-on-2 with a ball screen at the top.",
+      "Big's defender hedges out; guard's defender fights over.",
+      "Big recovers to the roller."
+    ],
+    "cue": [
+      "Talk: 'Screen left!'",
+      "Hedge flat and wide",
+      "Get back to your own"
+    ],
+    "e": "Show only, no hedge.",
+    "h": "Switch or ice calls.",
+    "d": {
+      "s": "1 25,30;5 20,24;x1 25,27;x5 19,21;b:1",
+      "st": [
+        [
+          "5 s 22,28",
+          "Ball screen"
+        ],
+        [
+          "1 d 31,22;x5 c 30,24;x1 c 28,30",
+          "Hedge — guard fights over"
+        ],
+        [
+          "5 c 24,12;x5 c 22,16",
+          "Recover to the roller"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d13",
+    "cat": "def",
+    "n": "Post Defense (3/4 Front)",
+    "lv": "3",
+    "p": [
+      3,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Making post entries hard.",
+    "say": "High side when the ball is up, low side when it goes to the corner.",
+    "how": [
+      "Post on the block, passers on the wing and corner.",
+      "Defender plays 3/4 front on the high side.",
+      "Ball moves to the corner: step over to low side."
+    ],
+    "cue": [
+      "Arm and leg in front",
+      "Step over, not behind",
+      "Hands up"
+    ],
+    "e": "Ball stays at the wing.",
+    "h": "Live post 1v1 on the catch.",
+    "d": {
+      "s": "1 44,20;2 47,4;5 31,8;x5 33,11;b:1",
+      "st": [
+        [
+          "1 p 2;x5 c 33,6",
+          "Ball to the corner — step over to low side"
+        ],
+        [
+          "2 p 1;x5 c 33,11",
+          "Back to the wing — high side"
+        ]
+      ]
+    }
+  }
+]

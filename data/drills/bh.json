@@ -1,0 +1,508 @@
+[
+  {
+    "id": "b1",
+    "cat": "bh",
+    "n": "Stationary Pound Series",
+    "lv": "123",
+    "p": [
+      1,
+      30
+    ],
+    "t": 5,
+    "eq": "1 ball per player",
+    "why": "Builds hand strength and control without looking at the ball.",
+    "say": "Pound it hard, keep it below your knee, and eyes on me the whole time.",
+    "how": [
+      "Spread out facing the coach, one ball each.",
+      "20 seconds each: right pound, left pound, crossover, between legs, behind back.",
+      "Coach holds up fingers — players call out the number."
+    ],
+    "cue": [
+      "Fingerpads, not palm",
+      "Ball low and hard",
+      "Eyes up"
+    ],
+    "e": "Shorter intervals, skip behind-back.",
+    "h": "Add a second ball or a tennis ball toss.",
+    "d": {
+      "s": "1 12,30;2 25,30;3 38,30;C 25,12;b:1,2,3",
+      "st": [
+        [
+          "1 d 13,31 12,30;2 d 26,31 25,30;3 d 39,31 38,30",
+          "Pound hard in place — call out the coach's fingers"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b2",
+    "cat": "bh",
+    "n": "Two-Ball Dribbling",
+    "lv": "23",
+    "p": [
+      1,
+      30
+    ],
+    "t": 5,
+    "eq": "2 balls per player",
+    "why": "Forces the weak hand to work as hard as the strong hand.",
+    "say": "Two balls, same time, then alternate — don't let the weak hand quit.",
+    "how": [
+      "One ball in each hand.",
+      "Same-time dribbles 20s, alternating 20s.",
+      "Add: high-low, side-to-side, walking forward."
+    ],
+    "cue": [
+      "Weak hand leads",
+      "Stay in a stance",
+      "Eyes up"
+    ],
+    "e": "Stationary only.",
+    "h": "Walk full court, then jog.",
+    "d": {
+      "s": "1 12,30;2 25,30;3 38,30;C 25,12;b:1,2,3",
+      "st": [
+        [
+          "1 d 12,24;2 d 25,24;3 d 38,24",
+          "Two balls at once, then walk them forward"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b3",
+    "cat": "bh",
+    "n": "Figure 8 Series",
+    "lv": "12",
+    "p": [
+      1,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball per player",
+    "why": "Fast hands and feel for the ball around the body.",
+    "say": "Wrap the ball in a figure 8 through your legs — fast but in control.",
+    "how": [
+      "Feet wide, knees bent.",
+      "Pass the ball through the legs in a figure 8, 30s.",
+      "Then dribble the figure 8, 30s each direction."
+    ],
+    "cue": [
+      "Fingertips",
+      "Low hips",
+      "Speed up only when clean"
+    ],
+    "e": "Wraps only, no dribble.",
+    "h": "Eyes closed for 10 seconds.",
+    "d": {
+      "s": "1 25,26;C 25,12;b:1",
+      "st": [
+        [
+          "1 d 26,27 24,25 25,26",
+          "Figure 8 through the legs, then dribble it"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b4",
+    "cat": "bh",
+    "n": "Cone Weave to Layup",
+    "lv": "12",
+    "p": [
+      2,
+      20
+    ],
+    "t": 6,
+    "eq": "4 cones, balls",
+    "why": "Change of direction with the correct hand, ending in a finish.",
+    "say": "Weave the cones, switch hands at every cone, and finish strong.",
+    "how": [
+      "Set 4 cones in a line from half court to the lane.",
+      "Weave through, crossing over at each cone.",
+      "Finish with a layup, rebound, back of the line."
+    ],
+    "cue": [
+      "Ball away from the cone",
+      "Low crossover",
+      "Speed after the last cone"
+    ],
+    "e": "Walk through first.",
+    "h": "Between legs or behind back at each cone.",
+    "d": {
+      "s": "1 25,46 q2;k1 25,40;k2 25,32;k3 25,24;k4 25,16;b:1",
+      "st": [
+        [
+          "1 d 21,40 29,32 21,24 29,16",
+          "Weave the cones, switch hands each time"
+        ],
+        [
+          "1 d 27,9",
+          "Attack the rim"
+        ],
+        [
+          "1 sh",
+          "Finish the layup"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b5",
+    "cat": "bh",
+    "n": "Full-Court Zig-Zag Moves",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per player",
+    "why": "Practices game moves at speed in open court.",
+    "say": "Change direction at every turn using the move I call.",
+    "how": [
+      "Start in the corner, zig-zag to the other end.",
+      "Coach calls the move: crossover, between legs, spin, behind back.",
+      "Return down the other side."
+    ],
+    "cue": [
+      "Sell the move with your shoulders",
+      "Burst after the move",
+      "Protect with off arm"
+    ],
+    "e": "Half court only.",
+    "h": "Add a defender with hands behind back.",
+    "d": {
+      "c": "f",
+      "s": "1 4,3 q2;2 46,3 q2;b:1,2",
+      "st": [
+        [
+          "1 d 18,15 4,27 18,39 4,51 18,63 4,75 18,90;2 d 32,15 46,27 32,39 46,51 32,63 46,75 32,90",
+          "Zig-zag the floor, change direction at each turn"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b6",
+    "cat": "bh",
+    "n": "Speed Dribble Lines",
+    "lv": "12",
+    "p": [
+      2,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball per line",
+    "why": "Teaches pushing the ball ahead in transition.",
+    "say": "Push the ball out in front and outrun it to the other end.",
+    "how": [
+      "Lines on the baseline.",
+      "Speed dribble the full court with the right hand, finish.",
+      "Back with the left hand."
+    ],
+    "cue": [
+      "Push ball out ahead",
+      "3–4 dribbles to half court",
+      "Eyes up the floor"
+    ],
+    "e": "Half court.",
+    "h": "Race the player next to you, loser does 5 push-ups.",
+    "d": {
+      "c": "f",
+      "s": "1 12,2 q2;2 25,2 q2;3 38,2 q2;b:1,2,3",
+      "st": [
+        [
+          "1 d 12,86;2 d 25,86;3 d 38,86",
+          "Speed dribble — push the ball ahead"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b7",
+    "cat": "bh",
+    "n": "Push-Pull (Retreat Dribble)",
+    "lv": "23",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "1 cone, balls",
+    "why": "Escapes pressure and resets the attack.",
+    "say": "Attack the cone, retreat two dribbles, then explode past it.",
+    "how": [
+      "Attack the cone with 2–3 hard dribbles.",
+      "Retreat dribble back 2 steps, keep eyes up.",
+      "Re-attack with a move and finish."
+    ],
+    "cue": [
+      "Body between defender and ball",
+      "Back is never fully turned",
+      "Change speed"
+    ],
+    "e": "No finish, just push-pull rhythm.",
+    "h": "Coach poke-checks on the retreat.",
+    "d": {
+      "s": "1 25,42;k1 25,24;b:1",
+      "st": [
+        [
+          "1 d 25,27",
+          "Attack the cone"
+        ],
+        [
+          "1 d 25,34",
+          "Retreat dribble — eyes up"
+        ],
+        [
+          "1 d 19,20 22,9",
+          "Re-attack with a crossover"
+        ],
+        [
+          "1 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b8",
+    "cat": "bh",
+    "n": "Attack the Cone Moves",
+    "lv": "123",
+    "p": [
+      1,
+      30
+    ],
+    "t": 6,
+    "eq": "Cones, balls",
+    "why": "Reps of one move into a finish, game speed.",
+    "say": "Pretend the cone is a defender — make your move at the cone and go score.",
+    "how": [
+      "Cone at the top of the key.",
+      "Attack with speed, make the called move at the cone.",
+      "Finish at the rim; rotate."
+    ],
+    "cue": [
+      "Move at the cone, not before",
+      "Lower shoulder past it",
+      "Finish with the outside hand"
+    ],
+    "e": "Only the crossover.",
+    "h": "Combo moves (cross + between).",
+    "d": {
+      "s": "1 25,44 q2;k1 25,30;b:1",
+      "st": [
+        [
+          "1 d 25,32",
+          "Attack the cone at speed"
+        ],
+        [
+          "1 d 18,26 21,10",
+          "Make the move and turn the corner"
+        ],
+        [
+          "1 sh",
+          "Finish at the rim"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b9",
+    "cat": "bh",
+    "n": "Two-Ball Full Court",
+    "lv": "3",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "2 balls per player",
+    "why": "Elite hand control while moving.",
+    "say": "Two balls full court — keep them both low and moving.",
+    "how": [
+      "Dribble two balls full court together.",
+      "Back alternating.",
+      "Advanced: crossovers with both balls."
+    ],
+    "cue": [
+      "Push both balls ahead",
+      "Weak hand sets the rhythm",
+      "Head up"
+    ],
+    "e": "Walk it.",
+    "h": "Jog with crossovers.",
+    "d": {
+      "c": "f",
+      "s": "1 15,2;2 35,2;b:1,2",
+      "st": [
+        [
+          "1 d 15,90;2 d 35,90",
+          "Two balls, full court"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b10",
+    "cat": "bh",
+    "n": "1v1 Zig-Zag (Live)",
+    "lv": "23",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per pair",
+    "why": "Ball handling against real pressure; defense works too.",
+    "say": "Ball handler zig-zags full court; defender forces turns without reaching.",
+    "how": [
+      "Pairs in each sideline lane.",
+      "Defender stays in front, forcing direction changes.",
+      "Switch roles at the far end."
+    ],
+    "cue": [
+      "Handler: protect ball with off arm",
+      "Defender: beat them to the spot",
+      "Stay in your lane"
+    ],
+    "e": "Defender hands behind back.",
+    "h": "Live — defender can steal.",
+    "d": {
+      "c": "f",
+      "s": "1 8,4;x1 9,9;b:1",
+      "st": [
+        [
+          "1 d 18,18 7,32 18,46 7,60;x1 sl 17,22 9,36 17,50 9,64",
+          "Handler zig-zags, defender cuts them off"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b11",
+    "cat": "bh",
+    "n": "Tennis Ball Toss Dribble",
+    "lv": "23",
+    "p": [
+      1,
+      20
+    ],
+    "t": 4,
+    "eq": "Balls, tennis balls",
+    "why": "Builds eyes-up dribbling and hand-eye coordination.",
+    "say": "Keep dribbling while you catch and toss the tennis ball back.",
+    "how": [
+      "Partner or coach tosses a tennis ball.",
+      "Player catches it with the free hand while dribbling.",
+      "Toss back; switch hands every 30s."
+    ],
+    "cue": [
+      "Dribble never stops",
+      "Catch with fingers",
+      "Eyes off the basketball"
+    ],
+    "e": "Underhand short tosses.",
+    "h": "Two players dribbling, toss the tennis ball to each other.",
+    "d": {
+      "s": "1 25,30;C 25,18;b:1",
+      "st": [
+        [
+          "1 d 26,30 25,30",
+          "Dribble while catching and tossing with the coach"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b12",
+    "cat": "bh",
+    "n": "Hesitation to Finish",
+    "lv": "23",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "1 cone, balls",
+    "why": "Change-of-pace move that freezes defenders.",
+    "say": "Slow down like you're stopping, then explode by.",
+    "how": [
+      "Dribble at the cone at medium speed.",
+      "Hesitate: rise up, eyes to the rim.",
+      "Explode past with a long first step; finish."
+    ],
+    "cue": [
+      "Sell it with eyes and shoulders",
+      "Ball stays alive",
+      "Long first step"
+    ],
+    "e": "Walk-jog-walk speeds.",
+    "h": "Coach live defender at the cone.",
+    "d": {
+      "s": "1 35,42;k1 35,28;b:1",
+      "st": [
+        [
+          "1 d 35,30",
+          "Medium speed into the hesitation"
+        ],
+        [
+          "1 d 30,17 27,8",
+          "Explode by"
+        ],
+        [
+          "1 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b13",
+    "cat": "bh",
+    "n": "Partner Zig-Zag: Blow-By & Seal",
+    "src": "St. Luke playbook",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 10,
+    "eq": "1 ball per pair",
+    "why": "Zig-zag control, then a blow-by with the defender on your back and a shot-fake finish.",
+    "say": "Zig-zag, then blow by — get him on your back, shot fake, and go up.",
+    "how": [
+      "Partners full court: one dribbles, one defends.",
+      "Zig-zag to half court with the defender cutting you off.",
+      "Blow by: beat him to the rim and get him on your back.",
+      "Shot fake at the rim and go up. Switch roles coming back."
+    ],
+    "cue": [
+      "Change speed to blow by",
+      "Seal him with your body",
+      "Shot fake with the eyes"
+    ],
+    "e": "Defender walks.",
+    "h": "Defender plays live after half court.",
+    "d": {
+      "c": "f",
+      "s": "1 8,4;x1 9,9;b:1",
+      "st": [
+        [
+          "1 d 18,18 7,32 18,46;x1 sl 16,22 9,36 16,48",
+          "Zig-zag to half court"
+        ],
+        [
+          "1 d 22,66 24,82;x1 c 20,64 22,79",
+          "Blow by — get him on your back"
+        ],
+        [
+          "1 sh",
+          "Shot fake and go up"
+        ]
+      ]
+    }
+  }
+]

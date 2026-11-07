@@ -1,0 +1,54 @@
+{
+  "warm": {
+    "name": "Warm-Up",
+    "color": "#d97706"
+  },
+  "bh": {
+    "name": "Ball Handling",
+    "color": "#ea580c"
+  },
+  "foot": {
+    "name": "Footwork",
+    "color": "#a16207"
+  },
+  "sh": {
+    "name": "Shooting",
+    "color": "#2563eb"
+  },
+  "fin": {
+    "name": "Finishing",
+    "color": "#0891b2"
+  },
+  "pass": {
+    "name": "Passing",
+    "color": "#059669"
+  },
+  "def": {
+    "name": "Defense",
+    "color": "#dc2626"
+  },
+  "reb": {
+    "name": "Rebounding",
+    "color": "#9333ea"
+  },
+  "tr": {
+    "name": "Transition",
+    "color": "#db2777"
+  },
+  "off": {
+    "name": "Team Offense",
+    "color": "#4f46e5"
+  },
+  "mot": {
+    "name": "Motion Offense",
+    "color": "#0f766e"
+  },
+  "cond": {
+    "name": "Conditioning",
+    "color": "#475569"
+  },
+  "game": {
+    "name": "Games",
+    "color": "#16a34a"
+  }
+}

@@ -1,0 +1,287 @@
+[
+  {
+    "id": "r1",
+    "cat": "reb",
+    "n": "Box-Out Partner",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 4,
+    "eq": "Balls",
+    "why": "Rebounding starts with contact.",
+    "say": "Find your player, hit them, then go get the ball.",
+    "how": [
+      "Defender between player and the rim.",
+      "Coach shoots; defender turns and makes contact.",
+      "Hold 2 seconds, then rebound."
+    ],
+    "cue": [
+      "Hit first",
+      "Wide base, arms up",
+      "Pursue the ball"
+    ],
+    "e": "Walk-through, no shot.",
+    "h": "Offense fights for the ball.",
+    "d": {
+      "s": "1 25,18;x1 25,14;C 25,26;b:C",
+      "st": [
+        [
+          "C sh;1 c 27,15;x1 c 26,13",
+          "Shot — turn and hit"
+        ],
+        [
+          "x1 rb 25,8",
+          "Go get it"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r2",
+    "cat": "reb",
+    "n": "Circle Box-Out",
+    "lv": "12",
+    "p": [
+      4,
+      16
+    ],
+    "t": 4,
+    "eq": "1 ball",
+    "why": "Holding a box-out longer than it feels comfortable.",
+    "say": "Keep your player away from the ball for 3 seconds.",
+    "how": [
+      "Ball on the floor inside a circle.",
+      "Defenders face out, offense outside.",
+      "On the whistle, defense holds offense off for 3 seconds."
+    ],
+    "cue": [
+      "Butt to thighs",
+      "Elbows out",
+      "Move your feet"
+    ],
+    "e": "Two seconds.",
+    "h": "Five seconds.",
+    "d": {
+      "s": "x1 25,14;1 25,10;x2 30,19;2 34,19;x3 25,24;3 25,28;x4 20,19;4 16,19;b@25,19",
+      "st": [
+        [
+          "1 c 24,11;2 c 33,18;3 c 26,27;4 c 17,20",
+          "Offense tries to get in — hold for 3 seconds"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r3",
+    "cat": "reb",
+    "n": "Superman Rebounding",
+    "lv": "23",
+    "p": [
+      1,
+      16
+    ],
+    "t": 4,
+    "eq": "1 ball",
+    "why": "Rebounding above the rim and quick jumps.",
+    "say": "Toss it off the glass, then sprint across and grab it at its highest point.",
+    "how": [
+      "Stand outside the lane.",
+      "Toss off the glass to the other side.",
+      "Sprint across, rebound high, toss it back."
+    ],
+    "cue": [
+      "Grab at the peak",
+      "Two hands",
+      "Land on balance"
+    ],
+    "e": "Toss to yourself.",
+    "h": "Add a putback.",
+    "d": {
+      "s": "1 18,6;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Toss off the glass"
+        ],
+        [
+          "1 rb 32,6",
+          "Sprint across and grab it"
+        ],
+        [
+          "1 sh",
+          "Toss it back"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r4",
+    "cat": "reb",
+    "n": "3-on-3 Box Out",
+    "lv": "23",
+    "p": [
+      6,
+      16
+    ],
+    "t": 6,
+    "eq": "1 ball",
+    "why": "Team boxing out with live competition.",
+    "say": "On the shot, everyone finds a body before anyone chases the ball.",
+    "how": [
+      "3 offense on the perimeter, 3 defense.",
+      "Coach shoots; defense boxes out.",
+      "Offense crashes; defense gets 1 point per rebound."
+    ],
+    "cue": [
+      "Find, hit, get",
+      "Call 'Shot!'",
+      "Outlet after the rebound"
+    ],
+    "e": "2-on-2.",
+    "h": "Offense gets 2 points for an offensive rebound.",
+    "d": {
+      "s": "1 8,18;2 25,28;3 42,18;x1 11,15;x2 25,24;x3 39,15;C 25,36;b:C",
+      "st": [
+        [
+          "C sh;x1 c 12,14;x2 c 25,22;x3 c 38,14",
+          "Shot! Find and hit"
+        ],
+        [
+          "1 c 14,11;2 c 26,18;3 c 36,11;x2 rb 25,9",
+          "Hold them off and grab it"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r5",
+    "cat": "reb",
+    "n": "Putback Drill",
+    "lv": "123",
+    "p": [
+      2,
+      16
+    ],
+    "t": 4,
+    "eq": "Balls",
+    "why": "Scoring off misses — easy points.",
+    "say": "Rebound with two hands and go right back up — no dribble.",
+    "how": [
+      "Player near the block.",
+      "Coach misses on purpose.",
+      "Rebound and score without bringing the ball down."
+    ],
+    "cue": [
+      "Two hands",
+      "Chin, then up",
+      "No dribble"
+    ],
+    "e": "Toss to yourself.",
+    "h": "Coach bumps on the putback.",
+    "d": {
+      "s": "1 25,12;C 18,18;b:C",
+      "st": [
+        [
+          "C sh",
+          "Coach misses"
+        ],
+        [
+          "1 rb 27,7",
+          "Rebound"
+        ],
+        [
+          "1 sh",
+          "Go right back up"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r6",
+    "cat": "reb",
+    "n": "War Rebounding",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 5,
+    "eq": "1 ball",
+    "why": "Fighting for every rebound.",
+    "say": "Three in the paint, whoever gets it scores — first to 3 wins.",
+    "how": [
+      "3 players in the paint.",
+      "Coach shoots; live until someone scores.",
+      "First to 3 baskets wins."
+    ],
+    "cue": [
+      "Always box out first",
+      "Two hands",
+      "Go straight up"
+    ],
+    "e": "Two players.",
+    "h": "No fouls called.",
+    "d": {
+      "s": "1 21,9;2 29,9;3 25,13;C 25,24;b:C",
+      "st": [
+        [
+          "C sh",
+          "Shot goes up"
+        ],
+        [
+          "2 rb 27,6",
+          "Fight for it"
+        ],
+        [
+          "2 sh",
+          "Score it"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r7",
+    "cat": "reb",
+    "n": "Rebound, Chin & Pivot",
+    "lv": "12",
+    "p": [
+      1,
+      20
+    ],
+    "t": 4,
+    "eq": "Balls",
+    "why": "Securing the ball in traffic.",
+    "say": "Grab it with two hands, elbows out, chin it — then pivot away.",
+    "how": [
+      "Coach shoots or tosses.",
+      "Rebound two hands, chin the ball.",
+      "Pivot away from pressure, pass out."
+    ],
+    "cue": [
+      "Elbows out",
+      "Chin it",
+      "Pivot outside"
+    ],
+    "e": "Toss to yourself.",
+    "h": "Coach slaps at the ball.",
+    "d": {
+      "s": "1 25,12;C 25,24;2 8,22;b:C",
+      "st": [
+        [
+          "C sh",
+          "Shot"
+        ],
+        [
+          "1 rb 24,6",
+          "Two hands, chin it"
+        ],
+        [
+          "1 p 2",
+          "Pivot and pass out"
+        ]
+      ]
+    }
+  }
+]

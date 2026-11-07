@@ -1,0 +1,48 @@
+[
+  {
+    "name": "St. Luke 5th CYO — 11/5 (Motion)",
+    "total": 90,
+    "blocks": [
+      {
+        "did": "w1",
+        "min": 10,
+        "seg": "Coach talk & warm-up"
+      },
+      {
+        "did": "b13",
+        "min": 10,
+        "seg": "Ball handling"
+      },
+      {
+        "did": "p13",
+        "min": 5,
+        "seg": "Passing"
+      },
+      {
+        "did": "m13",
+        "min": 10,
+        "seg": "Motion"
+      },
+      {
+        "did": "s6",
+        "min": 5,
+        "seg": "Free throws + water"
+      },
+      {
+        "did": "m14",
+        "min": 10,
+        "seg": "Motion"
+      },
+      {
+        "did": "s15",
+        "min": 10,
+        "seg": "Defense to shooting"
+      },
+      {
+        "did": "g14",
+        "min": 30,
+        "seg": "Scrimmage"
+      }
+    ]
+  }
+]

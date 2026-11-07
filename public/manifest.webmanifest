@@ -1,0 +1,14 @@
+{
+  "name": "Gym Builder",
+  "short_name": "Gym Builder",
+  "description": "Basketball drills with animated diagrams and a practice plan builder.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5f1",
+  "theme_color": "#14213d",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

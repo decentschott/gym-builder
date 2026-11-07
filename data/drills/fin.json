@@ -1,0 +1,511 @@
+[
+  {
+    "id": "fi1",
+    "cat": "fin",
+    "n": "Mikan Drill",
+    "lv": "123",
+    "p": [
+      1,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball per player",
+    "why": "Soft touch with both hands around the rim.",
+    "say": "Layup right, catch it before it hits the floor, layup left — keep it going.",
+    "how": [
+      "Start under the rim.",
+      "Right-hand layup on the right side, catch it out of the net.",
+      "Step across, left-hand layup on the left. Repeat 30s."
+    ],
+    "cue": [
+      "Ball stays above shoulders",
+      "Use the backboard",
+      "Opposite knee up"
+    ],
+    "e": "Let it bounce once.",
+    "h": "Reverse Mikan (back to the backboard).",
+    "d": {
+      "s": "1 29,6;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Right-hand layup"
+        ],
+        [
+          "1 rb 21,6",
+          "Catch it, step across"
+        ],
+        [
+          "1 sh",
+          "Left-hand layup"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi2",
+    "cat": "fin",
+    "n": "Reverse Mikan",
+    "lv": "23",
+    "p": [
+      1,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball per player",
+    "why": "Finishing on the far side of the rim.",
+    "say": "Same as Mikan but reverse layups — use the rim to protect the ball.",
+    "how": [
+      "Start under the rim facing out.",
+      "Reverse layup right, catch it, reverse layup left.",
+      "30 seconds, count makes."
+    ],
+    "cue": [
+      "Spin it off the glass",
+      "Look up through the rim",
+      "Quick feet"
+    ],
+    "e": "One side at a time.",
+    "h": "Alternate regular and reverse.",
+    "d": {
+      "s": "1 22,5;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Reverse layup"
+        ],
+        [
+          "1 rb 28,5",
+          "Step to the other side"
+        ],
+        [
+          "1 sh",
+          "Reverse layup again"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi3",
+    "cat": "fin",
+    "n": "Left-Hand Layup Lines",
+    "lv": "12",
+    "p": [
+      4,
+      20
+    ],
+    "t": 5,
+    "eq": "2–3 balls",
+    "why": "Fixes the most common youth weakness: the left hand.",
+    "say": "Left side, left hand, right knee up — every time.",
+    "how": [
+      "Shooting line on the left wing, rebound line on the right.",
+      "Dribble with the left hand, left-hand layup.",
+      "Rebounder outlets; switch lines."
+    ],
+    "cue": [
+      "Right knee up",
+      "Left hand under the ball",
+      "Hit the box"
+    ],
+    "e": "Jump stop then shoot.",
+    "h": "Coach with a pad bumps the shooter.",
+    "d": {
+      "s": "1 10,24 q3;5 42,24 q3;b:1",
+      "st": [
+        [
+          "1 d 18,12 22,7",
+          "Left-hand dribble to the rim"
+        ],
+        [
+          "1 sh;5 c 28,8",
+          "Left-hand layup"
+        ],
+        [
+          "5 rb 26,6;1 c 28,16 42,24",
+          "Rebound, switch lines"
+        ],
+        [
+          "5 d 20,20 10,24",
+          "Back to the shooting line"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi4",
+    "cat": "fin",
+    "n": "Power Layup",
+    "lv": "12",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Two-foot finish that absorbs contact in traffic.",
+    "say": "Jump stop on two feet, body to the rim, power up off the glass.",
+    "how": [
+      "Dribble in from the wing.",
+      "Two-foot jump stop near the block.",
+      "Explode up, shoulders square to the baseline."
+    ],
+    "cue": [
+      "Chin the ball",
+      "Wide base",
+      "Shoot it high off the glass"
+    ],
+    "e": "Start at the block, no dribble.",
+    "h": "Pad contact on the jump.",
+    "d": {
+      "s": "1 12,18 q2;b:1",
+      "st": [
+        [
+          "1 d 18,11 21,8",
+          "Dribble in, jump stop"
+        ],
+        [
+          "1 sh",
+          "Power up off the glass"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi5",
+    "cat": "fin",
+    "n": "Euro Step",
+    "lv": "23",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "1 cone, balls",
+    "why": "Side-step around a defender at the rim.",
+    "say": "First step one way, long second step the other way, and finish.",
+    "how": [
+      "Cone in the lane is the defender.",
+      "Pick up, step toward the cone.",
+      "Long step across to the other side, finish."
+    ],
+    "cue": [
+      "Ball swings away from the defender",
+      "Big second step",
+      "Stay balanced"
+    ],
+    "e": "Walk it with no dribble.",
+    "h": "Coach as live help defender.",
+    "d": {
+      "s": "1 25,34;k1 25,15;b:1",
+      "st": [
+        [
+          "1 d 25,19",
+          "Attack the defender"
+        ],
+        [
+          "1 c 21,13 27,8",
+          "Step left, long step right"
+        ],
+        [
+          "1 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi6",
+    "cat": "fin",
+    "n": "Baseline Reverse Layup",
+    "lv": "23",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Finishing on the far side to dodge shot blockers.",
+    "say": "Drive baseline, go under the rim, and finish on the other side.",
+    "how": [
+      "Start at the right wing.",
+      "Drive baseline, stay tight to it.",
+      "Finish with the left hand on the far side of the rim."
+    ],
+    "cue": [
+      "Tight to the baseline",
+      "Rim protects you",
+      "Spin it high"
+    ],
+    "e": "Walk-through.",
+    "h": "Defender trails.",
+    "d": {
+      "s": "1 44,14;b:1",
+      "st": [
+        [
+          "1 d 34,4 22,4",
+          "Drive baseline under the rim"
+        ],
+        [
+          "1 sh",
+          "Reverse finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi7",
+    "cat": "fin",
+    "n": "Contact Finishing",
+    "lv": "23",
+    "p": [
+      1,
+      16
+    ],
+    "t": 5,
+    "eq": "Pad, balls",
+    "why": "Finishing through bumps like in a real game.",
+    "say": "Expect contact — stay strong, keep your eyes on the rim, finish anyway.",
+    "how": [
+      "Coach with a pad near the block.",
+      "Player drives; coach bumps on the gather.",
+      "Finish through it."
+    ],
+    "cue": [
+      "Lower your shoulder",
+      "Ball high and away",
+      "Land balanced"
+    ],
+    "e": "Light bump.",
+    "h": "Finish with the weak hand.",
+    "d": {
+      "s": "1 40,24;C 28,11;b:1",
+      "st": [
+        [
+          "1 d 30,10",
+          "Drive"
+        ],
+        [
+          "C c 28,8",
+          "Coach bumps"
+        ],
+        [
+          "1 sh",
+          "Finish through contact"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi8",
+    "cat": "fin",
+    "n": "1-Minute Speed Layups",
+    "lv": "123",
+    "p": [
+      1,
+      12
+    ],
+    "t": 4,
+    "eq": "1 ball per hoop",
+    "why": "Finishing tired, at speed.",
+    "say": "Make as many as you can in one minute — get your own rebound.",
+    "how": [
+      "Start at the free-throw line.",
+      "Layup, rebound, dribble back out past the elbow.",
+      "Alternate sides. Count makes in 60s."
+    ],
+    "cue": [
+      "Don't slow down at the rim",
+      "Rebound before it bounces",
+      "Weak hand side too"
+    ],
+    "e": "30 seconds.",
+    "h": "Must alternate hands.",
+    "d": {
+      "s": "1 25,22;b:1",
+      "st": [
+        [
+          "1 d 31,8",
+          "Attack"
+        ],
+        [
+          "1 sh",
+          "Layup"
+        ],
+        [
+          "1 rb 22,6;1 d 19,20",
+          "Grab it, back out, go again"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi9",
+    "cat": "fin",
+    "n": "Floater",
+    "lv": "3",
+    "p": [
+      1,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Scores over tall defenders before they can block.",
+    "say": "Pick it up early, float it high, let it drop in soft.",
+    "how": [
+      "Drive the lane at a big defender (or coach).",
+      "Release early from 6–10 feet.",
+      "High arc, one hand."
+    ],
+    "cue": [
+      "One foot or two — stay balanced",
+      "Release high",
+      "Soft fingertips"
+    ],
+    "e": "From a standstill in the lane.",
+    "h": "Off a hesitation.",
+    "d": {
+      "s": "1 25,32;x1 25,9;b:1",
+      "st": [
+        [
+          "1 d 25,15",
+          "Drive at the big"
+        ],
+        [
+          "1 sh",
+          "Float it over"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi10",
+    "cat": "fin",
+    "n": "Drop Step",
+    "lv": "23",
+    "p": [
+      2,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Basic post move to the rim.",
+    "say": "Feel the defender, drop your foot past them, and power up.",
+    "how": [
+      "Post player on the block, coach on the wing.",
+      "Catch, feel the defender's position.",
+      "Drop step baseline, one power dribble, finish."
+    ],
+    "cue": [
+      "Wide stance",
+      "Drop the foot, then the ball",
+      "Chin the ball"
+    ],
+    "e": "No defender.",
+    "h": "Read: drop step either way.",
+    "d": {
+      "s": "1 31,9;x1 33,11;C 42,20;b:C",
+      "st": [
+        [
+          "C p 1",
+          "Post entry"
+        ],
+        [
+          "1 c 29,6",
+          "Drop step baseline"
+        ],
+        [
+          "1 sh",
+          "Power finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi11",
+    "cat": "fin",
+    "n": "Up-and-Under",
+    "lv": "3",
+    "p": [
+      1,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Beats defenders who bite on shot fakes.",
+    "say": "Fake the shot, step through underneath, and lay it in.",
+    "how": [
+      "Catch on the block, face or turn.",
+      "Pump fake high.",
+      "Step through past the defender, finish."
+    ],
+    "cue": [
+      "Fake with the ball high",
+      "Pivot foot stays",
+      "Step low and long"
+    ],
+    "e": "No defender.",
+    "h": "Live defender.",
+    "d": {
+      "s": "1 31,10;x1 29,7;b:1",
+      "st": [
+        [
+          "1 c 30,10",
+          "Pump fake"
+        ],
+        [
+          "1 c 26,6",
+          "Step through"
+        ],
+        [
+          "1 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fi12",
+    "cat": "fin",
+    "n": "Full-Court Outlet Layups",
+    "lv": "23",
+    "p": [
+      4,
+      20
+    ],
+    "t": 6,
+    "eq": "3–4 balls",
+    "why": "Outlet, run, finish — conditioning plus layups.",
+    "say": "Rebounder outlets to the wing, wing speed dribbles to the far end and scores.",
+    "how": [
+      "Rebounder under one basket, outlet at the wing.",
+      "Outlet pass, wing pushes the ball full court.",
+      "Finish; switch lines."
+    ],
+    "cue": [
+      "Outlet pass above the head",
+      "Push in 3–4 dribbles to half",
+      "Finish at speed"
+    ],
+    "e": "Half court.",
+    "h": "Defender chases from behind.",
+    "d": {
+      "c": "f",
+      "s": "1 25,7;2 44,20;b:1",
+      "st": [
+        [
+          "1 p 2",
+          "Outlet"
+        ],
+        [
+          "2 d 44,62 32,84;1 c 25,60",
+          "Push it ahead"
+        ],
+        [
+          "2 sh",
+          "Finish"
+        ]
+      ]
+    }
+  }
+]

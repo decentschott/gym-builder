@@ -1,0 +1,295 @@
+[
+  {
+    "id": "f1",
+    "cat": "foot",
+    "n": "Jump Stop & Pivot",
+    "lv": "12",
+    "p": [
+      2,
+      30
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Stops travelling and builds balance with the ball.",
+    "say": "Dribble, land on two feet at once, then pivot on the whistle.",
+    "how": [
+      "Lines on the baseline, ball each.",
+      "Dribble 3–4 steps, jump stop on two feet.",
+      "Front pivot, reverse pivot on command; continue."
+    ],
+    "cue": [
+      "Land both feet at once",
+      "Chin the ball",
+      "Pivot foot stays glued"
+    ],
+    "e": "No dribble, walk into the stop.",
+    "h": "Add a pass out of the pivot.",
+    "d": {
+      "s": "1 12,42;2 25,42;3 38,42;b:1,2,3",
+      "st": [
+        [
+          "1 d 12,30;2 d 25,30;3 d 38,30",
+          "Dribble and jump stop"
+        ],
+        [
+          "1 c 11,31 12,30;2 c 24,31 25,30;3 c 37,31 38,30",
+          "Front pivot, reverse pivot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f2",
+    "cat": "foot",
+    "n": "Triple Threat Series",
+    "lv": "12",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Catch ready to shoot, pass, or drive.",
+    "say": "Catch, square up, ball at your hip — then jab, and go.",
+    "how": [
+      "Coach passes to the player on the wing.",
+      "Catch in triple threat, square to the rim.",
+      "Jab-and-go drive, jab-and-shoot, or jab-crossover."
+    ],
+    "cue": [
+      "Ball on the hip",
+      "Jab is short and quick",
+      "Eyes on the rim"
+    ],
+    "e": "Catch and hold triple threat only.",
+    "h": "Add a live defender.",
+    "d": {
+      "s": "1 8,20;C 25,28;b:C",
+      "st": [
+        [
+          "C p 1",
+          "Catch in triple threat"
+        ],
+        [
+          "1 d 14,10 21,6",
+          "Jab and drive"
+        ],
+        [
+          "1 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f3",
+    "cat": "foot",
+    "n": "Pivot & Protect",
+    "lv": "12",
+    "p": [
+      2,
+      20
+    ],
+    "t": 4,
+    "eq": "1 ball per pair",
+    "why": "Keeps the ball safe from a defender when the dribble is gone.",
+    "say": "Keep your pivot foot down and swing the ball away from your defender.",
+    "how": [
+      "Player holds the ball, defender pressures.",
+      "Offense pivots to protect for 5 seconds.",
+      "Then makes a pass to a coach; switch."
+    ],
+    "cue": [
+      "Ball tight, elbows out",
+      "Rip low to high",
+      "Don't turn your back too long"
+    ],
+    "e": "Defender passive.",
+    "h": "Defender can tie it up.",
+    "d": {
+      "s": "1 25,25;x1 25,20;C 40,24;b:1",
+      "st": [
+        [
+          "1 c 26,26;x1 sl 27,22",
+          "Pivot away from the pressure"
+        ],
+        [
+          "1 p C",
+          "Pass out"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f4",
+    "cat": "foot",
+    "n": "V-Cut to Catch",
+    "lv": "123",
+    "p": [
+      2,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Creates space to get open on the wing.",
+    "say": "Walk your defender in, then plant and cut hard out to the wing.",
+    "how": [
+      "Start on the wing.",
+      "Walk toward the block 2–3 steps.",
+      "Plant outside foot, explode back out, show a target."
+    ],
+    "cue": [
+      "Slow in, fast out",
+      "Hand target",
+      "Catch facing the rim"
+    ],
+    "e": "No defender.",
+    "h": "Defender plays deny.",
+    "d": {
+      "s": "1 8,18;C 25,30;b:C",
+      "st": [
+        [
+          "1 c 14,10",
+          "Walk the defender in"
+        ],
+        [
+          "1 c 6,21",
+          "Plant and cut out hard"
+        ],
+        [
+          "C p 1",
+          "Catch facing the rim"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f5",
+    "cat": "foot",
+    "n": "L-Cut to Wing",
+    "lv": "23",
+    "p": [
+      2,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Get open from the block when the defender is high.",
+    "say": "Walk up the lane line, then cut flat out to the wing.",
+    "how": [
+      "Start on the block.",
+      "Walk up the lane line to the elbow.",
+      "Cut flat to the wing, show a target, catch."
+    ],
+    "cue": [
+      "Sharp 90-degree cut",
+      "Stay low",
+      "Sell with your eyes"
+    ],
+    "e": "Walk the shape.",
+    "h": "Defender plays deny.",
+    "d": {
+      "s": "1 19,8;C 25,32;b:C",
+      "st": [
+        [
+          "1 c 19,18",
+          "Walk up the lane line"
+        ],
+        [
+          "1 c 7,19",
+          "Cut flat to the wing"
+        ],
+        [
+          "C p 1",
+          "Catch"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f6",
+    "cat": "foot",
+    "n": "1-2 Step vs Hop Footwork",
+    "lv": "23",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Catch footwork that sets up quick, balanced shots.",
+    "say": "Step into your shot as you catch — left-right or a quick hop.",
+    "how": [
+      "Player runs to a spot as coach passes.",
+      "Catch with a 1-2 step (inside foot first) or a hop.",
+      "Shoot; alternate footwork each rep."
+    ],
+    "cue": [
+      "Feet ready before the ball",
+      "Toes to rim",
+      "Same shot every time"
+    ],
+    "e": "Catch from standing.",
+    "h": "Off the dribble too.",
+    "d": {
+      "s": "1 12,30;C 25,20;b:C",
+      "st": [
+        [
+          "1 c 14,22",
+          "Run into the catch"
+        ],
+        [
+          "C p 1",
+          "Catch with 1-2 or hop"
+        ],
+        [
+          "1 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f7",
+    "cat": "foot",
+    "n": "Elbow Pivot Series",
+    "lv": "23",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Face-up moves from the elbow — a key scoring spot.",
+    "say": "Catch at the elbow, pivot to face up, and attack in two dribbles.",
+    "how": [
+      "Toss to yourself at the elbow, land on two feet.",
+      "Front pivot to face the rim.",
+      "Rip through and attack in 1–2 dribbles."
+    ],
+    "cue": [
+      "Ball low on rip",
+      "First step past the defender's foot",
+      "Two dribbles max"
+    ],
+    "e": "No dribble — face up and shoot.",
+    "h": "Add a jab series.",
+    "d": {
+      "s": "1 19,19;b:1",
+      "st": [
+        [
+          "1 c 19,20 19,19",
+          "Catch and face up"
+        ],
+        [
+          "1 d 22,12 24,7",
+          "Rip through, attack in two dribbles"
+        ],
+        [
+          "1 sh",
+          "Finish"
+        ]
+      ]
+    }
+  }
+]

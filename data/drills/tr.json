@@ -1,0 +1,326 @@
+[
+  {
+    "id": "t1",
+    "cat": "tr",
+    "n": "2-on-1 Fast Break",
+    "lv": "23",
+    "p": [
+      3,
+      15
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Making the right read when you have the advantage.",
+    "say": "Attack the defender — if they stop you, pass; if they don't, score.",
+    "how": [
+      "Two offense from half court, one defender in the lane.",
+      "Ball handler attacks; partner runs wide.",
+      "Read the defender: pass or finish."
+    ],
+    "cue": [
+      "Stay wide",
+      "Make the defender commit",
+      "Bounce pass"
+    ],
+    "e": "Defender is passive.",
+    "h": "Defender trailing from behind too.",
+    "d": {
+      "c": "f",
+      "s": "1 15,50;2 35,50;x1 25,78;b:1",
+      "st": [
+        [
+          "1 d 18,70;2 c 36,70;x1 sl 25,76",
+          "Push and spread"
+        ],
+        [
+          "x1 sl 20,76;1 p 2",
+          "Defender commits — pass"
+        ],
+        [
+          "2 d 30,84",
+          "Attack"
+        ],
+        [
+          "2 sh",
+          "Score"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t2",
+    "cat": "tr",
+    "n": "3-on-2 Fast Break",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 8,
+    "eq": "Balls",
+    "why": "The classic advantage read; also teaches tandem defense.",
+    "say": "Middle stops at the free-throw line, wings run wide and cut.",
+    "how": [
+      "3 offense vs 2 defenders in tandem.",
+      "Middle drives to the free-throw line.",
+      "Read: pass to a wing, or score."
+    ],
+    "cue": [
+      "Wings sprint wide",
+      "Middle stops at the elbow",
+      "Defense: top stops the ball, bottom takes the first pass"
+    ],
+    "e": "Walk-through.",
+    "h": "Continuous: the 2 defenders go 2-on-1 back.",
+    "d": {
+      "c": "f",
+      "s": "1 25,40;2 8,44;3 42,44;x1 25,72;x2 25,84;b:1",
+      "st": [
+        [
+          "1 d 25,64;2 c 8,72;3 c 42,72",
+          "Fill the lanes"
+        ],
+        [
+          "x1 sl 25,68;1 p 3;x2 c 38,82",
+          "Top stops ball, bottom takes the pass"
+        ],
+        [
+          "3 p 2;x1 c 18,78",
+          "Swing it"
+        ],
+        [
+          "2 sh",
+          "Score"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t3",
+    "cat": "tr",
+    "n": "Sprint Back (Transition D)",
+    "lv": "123",
+    "p": [
+      3,
+      30
+    ],
+    "t": 4,
+    "eq": "None",
+    "why": "Getting back is effort, not talent.",
+    "say": "On the miss, sprint to the paint first, then find your player.",
+    "how": [
+      "Players at the far free-throw line.",
+      "Coach yells 'Back!'",
+      "Sprint, touch the paint, turn and find a player."
+    ],
+    "cue": [
+      "Sprint, don't backpedal",
+      "Look over your shoulder",
+      "Ball first, then player"
+    ],
+    "e": "Half court.",
+    "h": "Coach passes ahead to a cherry-picker.",
+    "d": {
+      "c": "f",
+      "s": "x1 25,76;x2 12,74;x3 38,74",
+      "st": [
+        [
+          "x1 c 25,12;x2 c 16,16;x3 c 34,16",
+          "Sprint back to the paint"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t4",
+    "cat": "tr",
+    "n": "5-Man Fill the Lanes",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 6,
+    "eq": "1 ball",
+    "why": "Teaches everyone where to run in transition.",
+    "say": "Rebound, outlet, wings sprint wide, trailer comes behind.",
+    "how": [
+      "5 players, no defense.",
+      "Rebound and outlet to the guard.",
+      "Wings sprint, big runs the middle, trailer follows; finish."
+    ],
+    "cue": [
+      "Wide lanes",
+      "Pass ahead",
+      "Finish strong"
+    ],
+    "e": "Jog it.",
+    "h": "Score within 7 seconds.",
+    "d": {
+      "c": "f",
+      "s": "5 25,8;1 8,22;2 5,32;3 45,32;4 32,15;b:5",
+      "st": [
+        [
+          "5 p 1;2 c 4,60;3 c 46,60",
+          "Outlet, wings sprint"
+        ],
+        [
+          "1 d 25,60;4 c 30,46;5 c 25,30",
+          "Guard pushes, trailer follows"
+        ],
+        [
+          "1 p 3;2 c 6,80;4 c 30,66",
+          "Ahead to the wing"
+        ],
+        [
+          "3 d 36,86",
+          "Attack"
+        ],
+        [
+          "3 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t5",
+    "cat": "tr",
+    "n": "11-Man Break",
+    "lv": "3",
+    "p": [
+      11,
+      15
+    ],
+    "t": 10,
+    "eq": "1 ball",
+    "why": "Non-stop transition: 3-on-2 back and forth.",
+    "say": "Whoever rebounds outlets to a wing — those three go the other way.",
+    "how": [
+      "3 offense vs 2 defenders; outlet players on both sides.",
+      "After the shot, rebounder and outlets attack the other way.",
+      "Shooter becomes a defender; continuous."
+    ],
+    "cue": [
+      "Outlet fast",
+      "Fill wide",
+      "Defense talk"
+    ],
+    "e": "Pause between reps.",
+    "h": "Score within 6 seconds.",
+    "d": {
+      "c": "f",
+      "s": "1 25,55;2 8,60;3 42,60;x1 25,74;x2 25,84;6 3,34;7 47,34;b:1",
+      "st": [
+        [
+          "1 d 25,70;2 c 8,76;3 c 42,76;x1 sl 25,72",
+          "3-on-2"
+        ],
+        [
+          "1 p 3;x2 c 38,84",
+          "Pass to the wing"
+        ],
+        [
+          "3 sh;x2 c 32,86",
+          "Shot"
+        ],
+        [
+          "x2 rb 28,86",
+          "Rebound"
+        ],
+        [
+          "x2 p 7;7 c 47,60;x1 c 25,64",
+          "Outlet — three go the other way"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t6",
+    "cat": "tr",
+    "n": "Pitch-Ahead Drill",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "The ball moves faster than any dribbler.",
+    "say": "Wings sprint, guard pitches it ahead — no dribbling in the backcourt.",
+    "how": [
+      "Guard with the ball, wings on both sides.",
+      "Wings sprint ahead; guard passes ahead.",
+      "Wing attacks and finishes."
+    ],
+    "cue": [
+      "Pass ahead early",
+      "Wings sprint wide",
+      "Finish at speed"
+    ],
+    "e": "No pass required.",
+    "h": "Must catch past half court.",
+    "d": {
+      "c": "f",
+      "s": "1 25,8;2 8,30;3 42,30;b:1",
+      "st": [
+        [
+          "2 c 6,58;3 c 44,58;1 d 25,20",
+          "Wings sprint"
+        ],
+        [
+          "1 p 3;1 c 25,50",
+          "Pitch ahead"
+        ],
+        [
+          "3 d 36,84",
+          "Attack"
+        ],
+        [
+          "3 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t7",
+    "cat": "tr",
+    "n": "Stop the Ball (1 Back)",
+    "lv": "23",
+    "p": [
+      2,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Slowing a fast break when outnumbered.",
+    "say": "Backpedal, stay in front, force the ball handler to pick it up.",
+    "how": [
+      "Defender retreats facing the ball.",
+      "Ball handler attacks full speed.",
+      "Defender shades and forces a stop or pull-up."
+    ],
+    "cue": [
+      "Backpedal, then turn and run",
+      "Stop the ball first",
+      "Show your hands"
+    ],
+    "e": "Handler at half speed.",
+    "h": "Add a second attacker (2-on-1).",
+    "d": {
+      "c": "f",
+      "s": "1 25,50;x1 25,58;b:1",
+      "st": [
+        [
+          "1 d 25,72;x1 sl 25,76",
+          "Retreat and stay in front"
+        ],
+        [
+          "1 sh",
+          "Contest"
+        ]
+      ]
+    }
+  }
+]

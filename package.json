@@ -1,0 +1,19 @@
+{
+  "name": "gym-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Basketball drill catalog with animated diagrams and a practice plan builder for any gym.",
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "build": "node scripts/validate.js && node scripts/build.js",
+    "dev": "node scripts/serve.js --watch",
+    "test": "playwright test",
+    "check": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

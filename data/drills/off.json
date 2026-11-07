@@ -1,0 +1,606 @@
+[
+  {
+    "id": "o1",
+    "cat": "off",
+    "n": "Give & Go",
+    "lv": "12",
+    "p": [
+      2,
+      15
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "also": [
+      "mot"
+    ],
+    "why": "The simplest, oldest scoring action.",
+    "say": "Pass it, cut to the basket, get it back and score.",
+    "how": [
+      "Ball at the top, teammate on the wing.",
+      "Pass to the wing, jab away, cut to the rim.",
+      "Wing passes back; layup."
+    ],
+    "cue": [
+      "Jab before the cut",
+      "Hand up = target",
+      "Bounce pass to the cutter"
+    ],
+    "e": "No jab.",
+    "h": "Add a defender on the cutter.",
+    "d": {
+      "s": "1 25,28;2 8,18;b:1",
+      "st": [
+        [
+          "1 p 2",
+          "Pass"
+        ],
+        [
+          "1 c 21,24 23,9",
+          "Jab and cut to the rim"
+        ],
+        [
+          "2 p 1",
+          "Pass back"
+        ],
+        [
+          "1 sh",
+          "Score"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o2",
+    "cat": "off",
+    "n": "Backdoor Cut",
+    "lv": "23",
+    "p": [
+      2,
+      15
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "also": [
+      "mot"
+    ],
+    "why": "Punishes defenders who overplay.",
+    "say": "If they're denying you, plant and cut behind them to the rim.",
+    "how": [
+      "Ball at the top, wing denied by a defender.",
+      "Wing takes a step up, plants the outside foot.",
+      "Cuts backdoor; bounce pass; layup."
+    ],
+    "cue": [
+      "Sell the step out",
+      "Hand target",
+      "Bounce pass, not lob"
+    ],
+    "e": "Defender is a cone.",
+    "h": "Read: V-cut or backdoor based on defender.",
+    "d": {
+      "s": "1 25,28;2 8,18;x2 11,18;b:1",
+      "st": [
+        [
+          "2 c 7,22;x2 sl 9,21",
+          "Step up — defender overplays"
+        ],
+        [
+          "2 c 17,8;1 p 2",
+          "Backdoor cut, bounce pass"
+        ],
+        [
+          "2 sh",
+          "Layup"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o3",
+    "cat": "off",
+    "n": "Pick & Roll (2-on-0)",
+    "lv": "23",
+    "p": [
+      2,
+      12
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "The most used two-player action in basketball.",
+    "say": "Screener sets it, ball handler uses it tight, screener rolls to the rim.",
+    "how": [
+      "Ball at the top, screener at the elbow.",
+      "Screen; ball handler drives off the hip.",
+      "Screener rolls to the rim; pass or shoot."
+    ],
+    "cue": [
+      "Set — wait for the screen",
+      "Shoulder to hip",
+      "Roll with hands up"
+    ],
+    "e": "Shoot off the screen only.",
+    "h": "Add defense: 2-on-2.",
+    "d": {
+      "s": "1 25,32;5 19,22;b:1",
+      "st": [
+        [
+          "5 s 22,29",
+          "Screen"
+        ],
+        [
+          "1 d 31,22 32,16;5 c 26,10",
+          "Use it tight — screener rolls"
+        ],
+        [
+          "1 p 5",
+          "Pass to the roller"
+        ],
+        [
+          "5 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o4",
+    "cat": "off",
+    "n": "Pick & Pop",
+    "lv": "23",
+    "p": [
+      2,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Screener gets an open shot when the defense helps.",
+    "say": "Set the screen, then pop out to the open spot ready to shoot.",
+    "how": [
+      "Same as pick & roll.",
+      "Screener pops out to the arc.",
+      "Ball handler hits the popper."
+    ],
+    "cue": [
+      "Pop to open space",
+      "Feet ready",
+      "Pass on time"
+    ],
+    "e": "No dribble, just pass.",
+    "h": "Read roll vs pop with defense.",
+    "d": {
+      "s": "1 25,32;4 19,22;b:1",
+      "st": [
+        [
+          "4 s 22,29",
+          "Screen"
+        ],
+        [
+          "1 d 31,20;4 c 15,28",
+          "Pop out"
+        ],
+        [
+          "1 p 4",
+          "Pass"
+        ],
+        [
+          "4 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o5",
+    "cat": "off",
+    "n": "Down Screen",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "also": [
+      "mot"
+    ],
+    "why": "Getting a teammate open off the ball.",
+    "say": "Screener goes down to the block; cutter waits, then comes off shoulder to shoulder.",
+    "how": [
+      "Ball at the top, cutter on the block, screener at the elbow.",
+      "Screener sets down screen.",
+      "Cutter pops to the wing; pass; shoot."
+    ],
+    "cue": [
+      "Wait for the screen",
+      "Walk them into it",
+      "Screener rolls to the rim after"
+    ],
+    "e": "Walk it.",
+    "h": "Defense on the cutter: curl, pop, or fade.",
+    "d": {
+      "s": "1 25,30;2 19,8;4 19,18;b:1",
+      "st": [
+        [
+          "4 s 18,11",
+          "Down screen"
+        ],
+        [
+          "2 c 14,13 8,20;4 c 21,7",
+          "Cutter pops, screener rolls"
+        ],
+        [
+          "1 p 2",
+          "Pass"
+        ],
+        [
+          "2 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o6",
+    "cat": "off",
+    "n": "Flare Screen",
+    "lv": "3",
+    "p": [
+      3,
+      12
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Creates open 3s away from the ball.",
+    "say": "Screener sets it facing the sideline; shooter fades away to the open wing.",
+    "how": [
+      "Ball on the left wing, shooter at the top, screener at the right elbow.",
+      "Screener sets the flare; shooter fades to the wing.",
+      "Skip pass; shoot."
+    ],
+    "cue": [
+      "Fade away from the ball",
+      "Skip pass overhead",
+      "Feet ready"
+    ],
+    "e": "No screen, just skip.",
+    "h": "Read: flare or curl based on defender.",
+    "d": {
+      "s": "1 8,20;2 25,30;4 31,22;b:1",
+      "st": [
+        [
+          "4 s 29,29",
+          "Flare screen"
+        ],
+        [
+          "2 c 41,22",
+          "Fade to the wing"
+        ],
+        [
+          "1 p 2",
+          "Skip pass"
+        ],
+        [
+          "2 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o7",
+    "cat": "off",
+    "n": "3-Out 2-In: Pass & Screen Away",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "one": 1,
+    "also": [
+      "mot"
+    ],
+    "why": "Simple motion rule that creates open looks.",
+    "say": "Pass to one side, go screen for the player on the other side.",
+    "how": [
+      "3 perimeter, 2 posts.",
+      "Pass and screen away.",
+      "Cutter comes to the top; keep moving."
+    ],
+    "cue": [
+      "Screen the defender, not the spot",
+      "Cutter waits for the screen",
+      "Keep spacing"
+    ],
+    "e": "No defense.",
+    "h": "Live 5-on-5 with this rule.",
+    "d": {
+      "s": "1 25,30;2 8,20;3 42,20;4 19,8;5 31,8;b:1",
+      "st": [
+        [
+          "1 p 2;1 s 37,23",
+          "Pass and screen away"
+        ],
+        [
+          "3 c 26,29",
+          "Cutter comes to the top"
+        ],
+        [
+          "2 p 3",
+          "Reverse"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o8",
+    "cat": "off",
+    "n": "5-Out Pass & Cut",
+    "lv": "12",
+    "p": [
+      5,
+      15
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "one": 1,
+    "also": [
+      "mot"
+    ],
+    "why": "Spacing and cutting for any age.",
+    "say": "Pass and cut to the basket — everyone fills the open spot.",
+    "how": [
+      "5 spots around the arc.",
+      "Pass, cut through to the rim.",
+      "Open spot gets filled; repeat."
+    ],
+    "cue": [
+      "Cut hard",
+      "Fill toward the ball",
+      "Keep 15 feet apart"
+    ],
+    "e": "Walk it.",
+    "h": "Defense allowed after 3 passes.",
+    "d": {
+      "s": "1 25,30;2 10,24;3 40,24;4 4,6;5 46,6;b:1",
+      "st": [
+        [
+          "1 p 2",
+          "Pass"
+        ],
+        [
+          "1 c 24,14 30,6 46,6;3 c 25,30;5 c 40,24",
+          "Cut through, everyone fills"
+        ],
+        [
+          "2 p 3",
+          "Keep it going"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o9",
+    "cat": "off",
+    "n": "Drive & Kick (Team)",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 6,
+    "eq": "1 ball",
+    "also": [
+      "mot"
+    ],
+    "why": "Collapsing the defense and finding open shooters.",
+    "say": "Drive gaps — shooters drift to where the driver can see them.",
+    "how": [
+      "5-out spacing.",
+      "Ball handler drives a gap.",
+      "Wing drifts, corner lifts; kick to the open shooter."
+    ],
+    "cue": [
+      "Drive to score first",
+      "Drift to open space",
+      "Kick when help comes"
+    ],
+    "e": "Pass to a set shooter.",
+    "h": "Live defense.",
+    "d": {
+      "s": "1 25,30;2 8,20;3 42,20;4 3,4;5 47,4;b:1",
+      "st": [
+        [
+          "1 d 30,18 28,10;3 c 44,27;5 c 46,10",
+          "Drive, shooters drift"
+        ],
+        [
+          "1 p 3",
+          "Kick it out"
+        ],
+        [
+          "3 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o10",
+    "cat": "off",
+    "n": "Horns Ball Screen",
+    "lv": "3",
+    "p": [
+      5,
+      15
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "why": "Popular set: two bigs at the elbows.",
+    "say": "Big from the elbow sets a ball screen; other big pops or dives.",
+    "how": [
+      "Bigs at both elbows, wings in the corners.",
+      "Big sets a ball screen.",
+      "Guard reads roll vs pop."
+    ],
+    "cue": [
+      "Spacing wide",
+      "Hit the roller",
+      "Corners ready to shoot"
+    ],
+    "e": "No defense.",
+    "h": "Live with switching defense.",
+    "d": {
+      "s": "1 25,32;4 19,20;5 31,20;2 3,4;3 47,4;b:1",
+      "st": [
+        [
+          "4 s 22,30",
+          "Ball screen"
+        ],
+        [
+          "1 d 16,22 15,14;4 c 21,10;5 c 31,27",
+          "Use it, roll and pop"
+        ],
+        [
+          "1 p 4",
+          "Hit the roller"
+        ],
+        [
+          "4 sh",
+          "Finish"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o11",
+    "cat": "off",
+    "n": "Box Baseline Inbound",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 6,
+    "eq": "1 ball",
+    "why": "Easy points from under your own basket.",
+    "say": "Box set — screens happen on 'go', first look is the cutter to the rim.",
+    "how": [
+      "Inbounder on the baseline, 4 players in a box.",
+      "High post screens for the low post.",
+      "Cutter to the rim, safety pops out."
+    ],
+    "cue": [
+      "Slap the ball to start",
+      "Screen and seal",
+      "Safety ready"
+    ],
+    "e": "Walk it.",
+    "h": "Add defense.",
+    "d": {
+      "s": "1 14,0;2 19,8;3 31,8;4 19,16;5 31,16;b:1",
+      "st": [
+        [
+          "5 s 21,15;4 c 28,9 27,5;2 c 6,16;3 c 34,20",
+          "Screen — cutter to the rim, safety out"
+        ],
+        [
+          "1 p 4",
+          "Inbound"
+        ],
+        [
+          "4 sh",
+          "Score"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o12",
+    "cat": "off",
+    "n": "Stack Sideline Inbound",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 5,
+    "eq": "1 ball",
+    "why": "Safe inbounds from the sideline.",
+    "say": "Line up in a stack, break on 'go' — inbounder hits the first open player.",
+    "how": [
+      "Players stacked in a line near the inbounder.",
+      "Break in different directions.",
+      "Inbound to the first open."
+    ],
+    "cue": [
+      "Break hard",
+      "Show hands",
+      "Inbounder: 5 seconds"
+    ],
+    "e": "Walk it.",
+    "h": "Add defense.",
+    "d": {
+      "s": "1 0,30;2 10,22;3 10,26;4 10,30;5 10,34;b:1",
+      "st": [
+        [
+          "2 c 6,12;3 c 22,28;4 c 8,42;5 c 18,10",
+          "Break"
+        ],
+        [
+          "1 p 3",
+          "Inbound"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "o13",
+    "cat": "off",
+    "n": "Press Break",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "why": "Calm, simple way to beat full-court pressure.",
+    "say": "Get it in, look middle, never dribble into a corner.",
+    "how": [
+      "Inbounder on the baseline.",
+      "Guards cut to get open; middle player flashes.",
+      "Pass to the middle, then up the sideline."
+    ],
+    "cue": [
+      "Meet the pass",
+      "Middle is open",
+      "Pass over, not through"
+    ],
+    "e": "No defense.",
+    "h": "Live 5-on-5 press.",
+    "d": {
+      "c": "f",
+      "s": "4 20,0;1 8,20;2 42,20;3 25,40;5 25,60;b:4",
+      "st": [
+        [
+          "1 c 10,10;2 c 40,12",
+          "Guards get open"
+        ],
+        [
+          "4 p 1;3 c 20,28",
+          "Inbound, middle flashes"
+        ],
+        [
+          "1 p 3;5 c 30,70;2 c 44,52",
+          "Pass to the middle"
+        ],
+        [
+          "3 d 25,72",
+          "Attack"
+        ]
+      ]
+    }
+  }
+]

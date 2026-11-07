@@ -1,0 +1,617 @@
+[
+  {
+    "id": "s1",
+    "cat": "sh",
+    "n": "One-Hand Form Shooting",
+    "lv": "123",
+    "p": [
+      1,
+      30
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Builds a repeatable shot from the ground up.",
+    "say": "One hand, ball on your fingerpads, elbow under — shoot it straight up and in.",
+    "how": [
+      "Stand 3 feet in front of the rim.",
+      "Shoot with your shooting hand only; guide hand behind your back.",
+      "Make 10, step back, repeat."
+    ],
+    "cue": [
+      "Elbow under the ball",
+      "High release",
+      "Hold the follow-through"
+    ],
+    "e": "Lower rim / smaller ball.",
+    "h": "Swish-only counts.",
+    "d": {
+      "s": "1 25,9;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Shoot one-handed close in"
+        ],
+        [
+          "1 rb 25,13",
+          "Make 10, step back"
+        ],
+        [
+          "1 sh",
+          "Repeat from the new spot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s2",
+    "cat": "sh",
+    "n": "Around the World",
+    "lv": "123",
+    "p": [
+      1,
+      12
+    ],
+    "t": 8,
+    "eq": "1 ball per 2–3 players",
+    "why": "Shooting reps from every angle with built-in competition.",
+    "say": "Make it from this spot to move to the next — go all the way around.",
+    "how": [
+      "7 spots around the arc (or closer for younger players).",
+      "Make it to move on; miss and you stay (or take a 'chance').",
+      "First around and back wins."
+    ],
+    "cue": [
+      "Square your feet each spot",
+      "Same shot every time",
+      "Rebound fast"
+    ],
+    "e": "Spots inside the lane.",
+    "h": "Must make 2 in a row to advance.",
+    "d": {
+      "s": "1 4,5;k1 8,15;k2 16,21;k3 25,23;k4 34,21;k5 42,15;k6 46,5;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Make it from the first spot"
+        ],
+        [
+          "1 rb 6,8;1 c 8,15",
+          "Move to the next spot"
+        ],
+        [
+          "1 sh",
+          "Keep going around the world"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s3",
+    "cat": "sh",
+    "n": "Partner Shooting",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per pair",
+    "why": "High reps with a partner rebounding and passing.",
+    "say": "Shoot, your partner rebounds and passes — move to a new spot every shot.",
+    "how": [
+      "Shooter at a spot, partner under the rim.",
+      "Shoot, partner rebounds and passes to the shooter's new spot.",
+      "Switch after 10 shots or 1 minute."
+    ],
+    "cue": [
+      "Hands ready before the catch",
+      "Rebounder: crisp chest pass",
+      "Shooter: move after every shot"
+    ],
+    "e": "Close spots only.",
+    "h": "Shooter must hit 5 in a row before switching.",
+    "d": {
+      "s": "1 12,18;2 22,8;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Shoot"
+        ],
+        [
+          "2 rb 24,7;1 c 9,15",
+          "Partner rebounds, shooter relocates"
+        ],
+        [
+          "2 p 1",
+          "Pass to the new spot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s4",
+    "cat": "sh",
+    "n": "Two-Line Catch & Shoot",
+    "lv": "123",
+    "p": [
+      4,
+      16
+    ],
+    "t": 6,
+    "eq": "3–4 balls",
+    "why": "Catch-and-shoot rhythm with constant movement.",
+    "say": "Passer feeds the shooter, shooter gets their own rebound, then switch lines.",
+    "how": [
+      "Shooting line on the wing, passing line at the top.",
+      "Pass, shooter catches ready and shoots.",
+      "Shooter rebounds and goes to the passing line; passer goes to the shooting line."
+    ],
+    "cue": [
+      "Show hands as a target",
+      "Feet set on the catch",
+      "Passer: lead pass to the shooting pocket"
+    ],
+    "e": "Shoot from inside the arc.",
+    "h": "Shot fake, one-dribble pull-up.",
+    "d": {
+      "s": "1 8,18 q2;2 25,30 q2;b:2",
+      "st": [
+        [
+          "2 p 1",
+          "Pass to the shooter"
+        ],
+        [
+          "1 sh",
+          "Catch and shoot"
+        ],
+        [
+          "1 rb 22,7;2 c 8,18",
+          "Rebound and switch lines"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s5",
+    "cat": "sh",
+    "n": "Pass-Cut-Shoot (Elbow)",
+    "lv": "23",
+    "p": [
+      2,
+      16
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "also": [
+      "mot"
+    ],
+    "why": "Shooting after movement, like in a game.",
+    "say": "Pass to the wing, cut to the elbow, get it back and shoot.",
+    "how": [
+      "Start at the top with the ball, passer on the wing.",
+      "Pass, cut hard to the elbow.",
+      "Receive the return pass and shoot. Rotate."
+    ],
+    "cue": [
+      "Cut with purpose",
+      "Plant the inside foot",
+      "Shoot on the hop"
+    ],
+    "e": "No cut — catch and shoot at the elbow.",
+    "h": "Add a shot-fake drive option.",
+    "d": {
+      "s": "1 25,30;2 8,18;b:1",
+      "st": [
+        [
+          "1 p 2",
+          "Pass to the wing"
+        ],
+        [
+          "1 c 19,19",
+          "Cut hard to the elbow"
+        ],
+        [
+          "2 p 1",
+          "Return pass"
+        ],
+        [
+          "1 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s6",
+    "cat": "sh",
+    "n": "Free Throw Routine",
+    "lv": "123",
+    "p": [
+      1,
+      30
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Builds a reliable routine for free points.",
+    "say": "Same routine every time: feet, dribbles, breath, shoot.",
+    "how": [
+      "Each player picks a routine (e.g., 3 dribbles, breath, shoot).",
+      "Shoot 2, rotate to rebound, next shooter.",
+      "Track makes out of 10."
+    ],
+    "cue": [
+      "Feet aligned to the rim",
+      "Same routine every shot",
+      "Follow-through held"
+    ],
+    "e": "Shoot from a step inside.",
+    "h": "Run a sprint before each pair.",
+    "d": {
+      "s": "1 25,19;2 18,10;3 32,10;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Run your routine and shoot"
+        ],
+        [
+          "2 rb 23,7",
+          "Rebound and rotate"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s8",
+    "cat": "sh",
+    "n": "Pull-Up Jumper",
+    "lv": "23",
+    "p": [
+      1,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Mid-range off the dribble — stops defenses that sag.",
+    "say": "Attack hard, stop on a dime, and rise straight up.",
+    "how": [
+      "Start at half court.",
+      "Attack downhill with 2–3 dribbles.",
+      "Hard two-foot stop at the free-throw line; shoot."
+    ],
+    "cue": [
+      "Last dribble hard",
+      "Stop on balance",
+      "Straight up, straight down"
+    ],
+    "e": "One dribble.",
+    "h": "Pull-up going left and right.",
+    "d": {
+      "s": "1 25,40 q2;b:1",
+      "st": [
+        [
+          "1 d 25,22",
+          "Attack downhill"
+        ],
+        [
+          "1 sh",
+          "Stop and pull up"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s9",
+    "cat": "sh",
+    "n": "Curl Cut Shooting",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Using a screen to get open for a shot.",
+    "say": "Run your defender into the screen, curl tight, catch and shoot.",
+    "how": [
+      "Shooter in the short corner, screener above them.",
+      "Shooter curls tight around the screen.",
+      "Coach passes; shoot. Rotate roles."
+    ],
+    "cue": [
+      "Shoulder to hip with the screener",
+      "Hands ready coming off",
+      "Screener holds still"
+    ],
+    "e": "Pop out instead of curling.",
+    "h": "Read: curl, fade, or back cut by defender.",
+    "d": {
+      "s": "1 6,6;5 11,14;C 25,30;b:C",
+      "st": [
+        [
+          "1 c 11,9 15,17 19,19",
+          "Curl tight around the screen"
+        ],
+        [
+          "C p 1",
+          "Catch at the elbow"
+        ],
+        [
+          "1 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s10",
+    "cat": "sh",
+    "n": "Corner-to-Corner 3s",
+    "lv": "3",
+    "p": [
+      1,
+      8
+    ],
+    "t": 5,
+    "eq": "2 balls",
+    "why": "Game 3-point spots with sprinting between shots.",
+    "say": "Shoot from the corner, sprint to the other corner, shoot again.",
+    "how": [
+      "Shooter in the corner, coach/partner passing.",
+      "Catch and shoot.",
+      "Sprint to the opposite corner for the next catch."
+    ],
+    "cue": [
+      "Feet behind the line",
+      "Hands ready while running",
+      "Sprint, don't jog"
+    ],
+    "e": "Short corners (inside arc).",
+    "h": "Count makes in 1 minute.",
+    "d": {
+      "s": "1 4,4;C 25,9;b:C",
+      "st": [
+        [
+          "C p 1",
+          "Pass to the corner"
+        ],
+        [
+          "1 sh",
+          "Catch and shoot"
+        ],
+        [
+          "1 c 25,22 46,4;C rb 25,8",
+          "Sprint to the other corner"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s11",
+    "cat": "sh",
+    "n": "Shot Fake, One-Dribble Pull-Up",
+    "lv": "23",
+    "p": [
+      1,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Beats a hard closeout with a quick counter.",
+    "say": "Fake the shot, one dribble right past the closeout, then shoot.",
+    "how": [
+      "Coach passes to the wing.",
+      "Shot fake — sell it with eyes and ball.",
+      "One hard dribble sideways or forward; pull up."
+    ],
+    "cue": [
+      "Fake with ball and eyes, legs stay bent",
+      "One dribble only",
+      "Square up before the shot"
+    ],
+    "e": "Fake and shoot, no dribble.",
+    "h": "Coach closes out live.",
+    "d": {
+      "s": "1 8,18;C 25,28;b:C",
+      "st": [
+        [
+          "C p 1",
+          "Catch"
+        ],
+        [
+          "1 d 13,15",
+          "Shot fake, one dribble"
+        ],
+        [
+          "1 sh",
+          "Pull up"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s12",
+    "cat": "sh",
+    "n": "Transition Spot-Up",
+    "lv": "23",
+    "p": [
+      2,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Running the floor and catching ready to shoot.",
+    "say": "Sprint from half court to the wing, feet set as you catch, shoot.",
+    "how": [
+      "Start at half court.",
+      "Sprint to the wing (or corner).",
+      "Catch the pass on the run, shoot."
+    ],
+    "cue": [
+      "Sprint wide",
+      "Turn the shoulders to the rim before the catch",
+      "Feet ready"
+    ],
+    "e": "Jog to the spot.",
+    "h": "Shooter calls the spot; passer must hit them in stride.",
+    "d": {
+      "s": "1 25,45 q2;C 25,10;b:C",
+      "st": [
+        [
+          "1 c 8,22",
+          "Sprint to the wing"
+        ],
+        [
+          "C p 1",
+          "Catch on the run"
+        ],
+        [
+          "1 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s13",
+    "cat": "sh",
+    "n": "Shooting Ladder",
+    "lv": "12",
+    "p": [
+      1,
+      20
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Builds range only as fast as form allows.",
+    "say": "Make 3 from here to move back — miss twice and you move up.",
+    "how": [
+      "Start 4 feet out.",
+      "Make 3 to move back one big step.",
+      "Miss twice in a row, move up one step."
+    ],
+    "cue": [
+      "Legs give power, not arms",
+      "Same release point",
+      "Stop at your range"
+    ],
+    "e": "Make 2 to move back.",
+    "h": "Make 3 in a row.",
+    "d": {
+      "s": "1 25,9;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Make 3 here"
+        ],
+        [
+          "1 rb 25,14",
+          "Move back one step"
+        ],
+        [
+          "1 sh",
+          "Shoot from the next rung"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s14",
+    "cat": "sh",
+    "n": "Rapid Fire (Two Passers)",
+    "lv": "23",
+    "p": [
+      3,
+      12
+    ],
+    "t": 5,
+    "eq": "2 balls",
+    "why": "Fast reps and quick release.",
+    "say": "Two passers keep feeding you — catch, shoot, find the next ball.",
+    "how": [
+      "Shooter at the top or elbow.",
+      "Two passers under the rim, each with a ball.",
+      "Shoot, next pass comes immediately; 30–45 seconds."
+    ],
+    "cue": [
+      "Hands up before the catch",
+      "Quick feet",
+      "Rotate every 45s"
+    ],
+    "e": "One passer.",
+    "h": "Shooter moves to a new spot every shot.",
+    "d": {
+      "s": "1 25,22;2 20,8;3 30,8;b:2,3",
+      "st": [
+        [
+          "2 p 1",
+          "First pass"
+        ],
+        [
+          "1 sh;2 c 22,7",
+          "Shoot"
+        ],
+        [
+          "3 p 1",
+          "Next pass right away"
+        ],
+        [
+          "1 sh",
+          "Shoot again"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s15",
+    "cat": "sh",
+    "n": "Slide and Shoot",
+    "src": "St. Luke playbook",
+    "lv": "123",
+    "p": [
+      3,
+      16
+    ],
+    "t": 10,
+    "eq": "Balls, 1 cone per side",
+    "why": "Defense-to-offense: close out, slide, then sprint into a catch-and-shoot.",
+    "say": "Close out at the elbow yelling 'ball ball ball', slide across, sprint around the cone, and shoot.",
+    "how": [
+      "Line on the baseline; coach/passer on the baseline with the ball.",
+      "Close out to the elbow — 'ball ball ball!'",
+      "Defensive slide across the free-throw line.",
+      "Sprint out around the cone, catch the pass from the baseline, shoot. Switch sides."
+    ],
+    "cue": [
+      "Loud on the closeout",
+      "Low slides, no crossing feet",
+      "Feet set on the catch"
+    ],
+    "e": "Shoot inside the arc.",
+    "h": "Shoot off one dribble after the catch.",
+    "d": {
+      "s": "1 17,1 q3;C 30,1;k1 41,20;b:C",
+      "st": [
+        [
+          "1 c 19,17",
+          "Close out at the elbow — 'ball ball ball!'"
+        ],
+        [
+          "1 sl 31,19",
+          "Slide across the free-throw line"
+        ],
+        [
+          "1 c 42,17 43,22 38,25",
+          "Sprint around the cone"
+        ],
+        [
+          "C p 1",
+          "Pass from the baseline"
+        ],
+        [
+          "1 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  }
+]
