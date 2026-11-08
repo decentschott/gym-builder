@@ -322,5 +322,206 @@
         ]
       ]
     }
+  },
+  {
+    "id": "t8",
+    "cat": "tr",
+    "n": "Two-Man Long-Pass Layups (Continuous)",
+    "lv": "123",
+    "p": [
+      4,
+      20
+    ],
+    "t": 6,
+    "eq": "2–3 balls, 2 cones",
+    "why": "Rebound, long lead pass, full-speed layup — nonstop running that teaches the outlet.",
+    "say": "Grab it out of the net, hit the runner with a long lead pass, then sprint around the far cone — you're the next runner.",
+    "how": [
+      "A line under each basket, a cone at each free-throw line, one runner starts up the sideline.",
+      "Rebounder takes the ball out of the net and throws a long lead pass to the runner.",
+      "Runner catches in stride, lays it in, then joins the line under that basket.",
+      "Passer sprints around the far cone, out to the sideline, and turns back as the next runner.",
+      "The player under the far basket takes it out of the net and hits them — keep it looping."
+    ],
+    "cue": [
+      "Pass ahead of the runner",
+      "Catch in stride",
+      "Sprint, don't jog"
+    ],
+    "e": "Shorter pass: the runner starts at half court.",
+    "h": "Team goal: count makes in 2 minutes — misses don't count.",
+    "d": {
+      "c": "f",
+      "s": "1 25,6;2 44,30;3 25,91 q1;4 22,3 q1;k1 32,75;k2 18,19;b:1",
+      "st": [
+        [
+          "1 p 2;2 c 44,62",
+          "1 takes it out of the net — long lead pass to 2 up the sideline"
+        ],
+        [
+          "2 d 36,82 29,86;1 c 26,40 29,70",
+          "2 attacks the rim; 1 sprints the floor"
+        ],
+        [
+          "2 sh;1 c 34,73 36,78 42,77 46,70",
+          "2 lays it in; 1 rounds the far cone and out to the side"
+        ],
+        [
+          "3 rb 25,88;2 c 21,92;1 c 46,60",
+          "3 takes it out of the net; 2 joins the line; 1 turns back up the sideline"
+        ],
+        [
+          "3 p 1;1 c 46,28",
+          "3 hits 1 with the long lead pass — the loop keeps going"
+        ],
+        [
+          "1 d 33,10 28,7",
+          "1 attacks the other rim"
+        ],
+        [
+          "1 sh",
+          "Layup — 4 is the next rebounder"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t9",
+    "cat": "tr",
+    "n": "Chase-Down Layups",
+    "lv": "123",
+    "p": [
+      2,
+      20
+    ],
+    "t": 5,
+    "eq": "1 ball per pair",
+    "why": "Finish at full speed with someone chasing — and never give up on a play.",
+    "say": "Ball handler, beat him to the rim. Defender, sprint and contest from behind — no fouls.",
+    "how": [
+      "Ball handler starts at the free-throw line extended; defender starts on the baseline behind them.",
+      "On 'go', the ball handler pushes full court for a layup.",
+      "Defender sprints to contest from behind — chest away, hand up, no swiping down.",
+      "Switch roles coming back."
+    ],
+    "cue": [
+      "Push it ahead",
+      "Finish strong",
+      "Chase — contest, don't foul"
+    ],
+    "e": "Give the ball handler a bigger head start.",
+    "h": "Defender starts right beside the ball handler.",
+    "d": {
+      "c": "f",
+      "s": "1 40,19;x1 40,2;b:1",
+      "st": [
+        [
+          "1 d 42,45 34,78 28,86;x1 c 41,45 33,78 26,83",
+          "Push it full court — defender chases from behind"
+        ],
+        [
+          "1 sh;x1 c 25,86",
+          "Finish while the chaser contests"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t10",
+    "cat": "tr",
+    "n": "Numbers Scramble (4-on-4)",
+    "lv": "23",
+    "p": [
+      8,
+      16
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "why": "Teaches sprinting back, stopping the ball, and talking when the defense is outnumbered.",
+    "say": "When I call your number, touch the baseline — everyone else sprints back, stops the ball, and finds a man.",
+    "how": [
+      "Offense on the baseline, defense facing them at the free-throw line, coach with the ball.",
+      "Coach passes to an offensive player and calls a defender's number.",
+      "That defender touches the baseline, then sprints back — 4-on-3 until they get there.",
+      "Play it out live; rotate groups."
+    ],
+    "cue": [
+      "Ball first",
+      "Talk: 'I've got ball!'",
+      "Sprint back, then match up"
+    ],
+    "e": "Call the number before the pass.",
+    "h": "Call two numbers — 4-on-2 at first.",
+    "d": {
+      "c": "f",
+      "s": "1 8,1;2 20,1;3 30,1;4 42,1;x1 8,19;x2 20,19;x3 30,19;x4 42,19;C 25,32;b:C",
+      "st": [
+        [
+          "C p 2;x3 c 30,2",
+          "Coach passes to 2 and calls 'three!' — x3 touches the baseline"
+        ],
+        [
+          "2 d 20,60;1 c 8,62;3 c 32,62;4 c 42,64;x2 c 22,76;x1 c 12,76;x4 c 38,76;x3 c 30,40",
+          "Offense pushes; the defense sprints back while x3 chases"
+        ],
+        [
+          "2 d 22,78;x2 sl 24,80",
+          "x2 stops the ball"
+        ],
+        [
+          "2 p 3;x3 c 33,70",
+          "Kick to the open player — x3 recovers"
+        ],
+        [
+          "3 sh",
+          "Shot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "t11",
+    "cat": "tr",
+    "n": "2-on-1 Plus a Trailer",
+    "lv": "23",
+    "p": [
+      4,
+      15
+    ],
+    "t": 6,
+    "eq": "Balls",
+    "why": "Score an advantage fast before a recovering defender gets back.",
+    "say": "You're up 2-on-1, but a defender is chasing — make the right read, fast.",
+    "how": [
+      "Two offense start at half court; one defender in the lane.",
+      "A second defender starts behind the offense at half court.",
+      "Offense attacks on 'go'; the trailer sprints back to help.",
+      "Score or stop, then the next group goes."
+    ],
+    "cue": [
+      "Attack before the trailer arrives",
+      "Make the defender commit",
+      "Defense: stop ball, then recover"
+    ],
+    "e": "Trailer waits one second before chasing.",
+    "h": "Trailer starts level with the offense.",
+    "d": {
+      "c": "f",
+      "s": "1 18,50;2 34,50;x1 25,76;x2 25,45;b:1",
+      "st": [
+        [
+          "1 d 20,70;2 c 36,70;x2 c 25,66;x1 sl 23,76",
+          "Attack — the trailer sprints back"
+        ],
+        [
+          "x1 sl 21,78;1 p 2;x2 c 30,78",
+          "Defender commits — pass before the trailer gets there"
+        ],
+        [
+          "2 sh",
+          "Layup"
+        ]
+      ]
+    }
   }
 ]
