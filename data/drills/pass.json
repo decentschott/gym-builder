@@ -564,5 +564,67 @@
         ]
       ]
     }
+  },
+  {
+    "id": "p14",
+    "cat": "pass",
+    "n": "Five-Star Passing to Layup (Half Court)",
+    "lv": "123",
+    "p": [
+      8,
+      25
+    ],
+    "t": 8,
+    "eq": "1–2 balls",
+    "thumb": "all",
+    "why": "Passing and catching on the move across the whole half court, finished with a layup — everyone touches the ball.",
+    "say": "Pass across the star, follow your pass to that line — the last pass hits the cutter for a layup.",
+    "how": [
+      "Five lines: under the basket, both baseline corners, and both corners at half court. Ball starts under the basket.",
+      "Pass across the star (skip the line next to you) and follow your pass to the end of that line.",
+      "Order: basket → right half-court corner → left baseline corner → right baseline corner → left half-court corner.",
+      "Left half-court corner hits the cutter from the right half-court line with a bounce pass for a layup.",
+      "Shooter grabs it and starts the next round from under the basket. Add a second ball when it's clean."
+    ],
+    "cue": [
+      "Call the name",
+      "Pass to the lead hand",
+      "Follow your pass"
+    ],
+    "e": "Shrink the star to the 3-point line.",
+    "h": "Two balls at once — count clean rounds.",
+    "d": {
+      "s": "1 25,6 q2;2 44,7 q1;3 42,42 q2;4 8,42 q2;5 6,7 q1;b:1",
+      "st": [
+        [
+          "1 p 3;1 c 39,39",
+          "Under the basket passes to the right half-court corner — and follows the pass"
+        ],
+        [
+          "3 p 5;3 c 9,10",
+          "Across to the left baseline corner — follow your pass"
+        ],
+        [
+          "5 p 2;5 c 41,10",
+          "Skip across the baseline to the right corner — follow"
+        ],
+        [
+          "2 p 4;2 c 11,39",
+          "Right corner to the left half-court corner — follow"
+        ],
+        [
+          "1 c 33,25 28,10;4 p 1",
+          "Cutter from the right half-court line goes to the rim — bounce pass"
+        ],
+        [
+          "1 sh",
+          "Layup"
+        ],
+        [
+          "1 rb 25,6",
+          "Grab it and start the next round from under the basket"
+        ]
+      ]
+    }
   }
 ]

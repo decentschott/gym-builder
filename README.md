@@ -18,7 +18,7 @@ Made for phones and tablets on the sideline and for printouts on a clipboard. It
 npm install        # only installs the test runner; the app itself has zero dependencies
 npm run dev        # http://localhost:5173 — rebuilds on save
 npm run build      # validates every drill, then writes dist/index.html
-npm test           # end-to-end tests on phone + tablet sizes (opens all 150 drills)
+npm test           # end-to-end tests on phone + tablet sizes (opens all 151 drills)
 npm run test:import  # importer tests with recorded responses (no API key needed)
 ```
 `dist/index.html` is one self-contained file. Host it anywhere, open it from a USB stick, or drop it in an artifact.
