@@ -105,6 +105,14 @@ var DRAW = (function(){
       return '<path d="M'+f(S[0])+','+f(S[1])+' Q'+f(mx)+','+f(my)+' '+f(R[0])+','+f(R[1])+'" fill="none" stroke="'+T.shot+'" stroke-width="'+(sw*.85)+'" stroke-dasharray=".3 .55"'+CAP+(anim?' class="fd"':'')+op+'/>'; }
     return '';
   }
+  // where to put a step number: middle of the step's first real movement
+  function stepMark(st){
+    for(var j=0;j<st.acts.length;j++){ var a=st.acts[j];
+      if(a.pts && !a.quiet && plen(a.pts)>4){ var p=along(a.pts,.5), q=along(a.pts,.52), dx=q[0]-p[0], dy=q[1]-p[1], m=Math.hypot(dx,dy)||1; return [p[0]-dy/m*1.9, p[1]+dx/m*1.9]; }
+      if(a.t==="p"){ var A=st.start[a.id], B=st.end[a.to]; return [(A[0]+B[0])/2+1.4,(A[1]+B[1])/2]; } }
+    return null;
+  }
+  function badge(x,y,n,full){ var r=full?1.25:.95; return '<g transform="translate('+f(x)+','+f(y)+')"><circle r="'+r+'" fill="'+T.pass+'" opacity=".9"/><text y="'+f(r*.42)+'" text-anchor="middle" font-size="'+f(r*1.25)+'" font-weight="800" fill="'+(THEME==="neon"?"#05060f":"#fff")+'" '+FONT+'>'+n+'</text></g>'; }
   function awayFromRim(x,y,full){ var ry = (!full||y<47)?5.25:88.75; var dx=x-25, dy=y-ry, m=Math.hypot(dx,dy)||1; return [dx/m, dy/m]; }
   var FONT='font-family="Barlow Condensed,system-ui,sans-serif"';
   function token(e, x, y, full, id, uid){
@@ -135,20 +143,25 @@ var DRAW = (function(){
     var uid=++uidc, s=svgOpen(P,cls)+defs(uid)+court(P.full,uid), acts='', ents='';
     var si = i<0?0:i, state=P.states[si];
     var stepsToDraw = i<0 ? P.steps : [P.steps[si]];
-    stepsToDraw.forEach(function(st,k){ if(!st) return; st.acts.forEach(function(a){ acts+=action(a,st,uid, i<0 && k>0 ? 0.55 : 0); }); });
+    stepsToDraw.forEach(function(st,k){ if(!st) return; st.acts.forEach(function(a){ acts+=action(a,st,uid, i<0 && k>0 ? 0.6 : 0); }); });
+    if(i<0 && P.steps.length>1) P.steps.forEach(function(st,k){ var m=stepMark(st); if(m) acts+=badge(m[0],m[1],k+1,P.full); });
     P.order.forEach(function(id){ var p=state.pos[id]; ents+=token(P.ents[id],p[0],p[1],P.full,id,uid); });
     state.balls.forEach(function(b){ if(b.h){ var p=state.pos[b.h], o=holderOffset(); ents+=ballSvg(p[0]+o[0],p[1]+o[1]); } else ents+=ballSvg(b.x,b.y); });
     return s+wrapFx(acts,uid)+wrapFx(ents,uid)+'</svg>';
   }
   var reduced = typeof matchMedia!=="undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
   // Animated player: each step draws its lines first, then the players move along them.
-  function Player(el, P, onStep){
+  function Player(el, P, onStep, opts){
+    this.trailOn=!!(opts&&opts.trail);
     this.el=el; this.P=P; this.i=0; this.t=0; this.playing=false; this.speed=1; this.onStep=onStep; this.uid=++uidc; this.pre=0;
     ensureHolo(); this.render(false);
   }
   Player.prototype.render=function(animate){
-    var P=this.P, st=P.steps[this.i], uid=this.uid, anim=animate && !reduced, acts='';
+    var P=this.P, st=P.steps[this.i], uid=this.uid, anim=animate && !reduced, acts='', past='';
+    // keep earlier steps on screen faintly so the whole pattern (e.g. a full-court loop) builds up
+    if(this.trailOn) for(var k=0;k<this.i;k++) (function(ps){ ps.acts.forEach(function(a){ if(a.t!=="sh") past+=action(a,ps,uid,0.3,false); }); })(P.steps[k]);
     if(st) st.acts.forEach(function(a){ acts+=action(a,st,uid,0.9,anim); });
+    acts='<g class="past">'+past+'</g>'+acts;
     this.el.innerHTML=svgOpen(P)+defs(uid)+court(P.full,uid)+'<g class="trail">'+wrapFx(acts,uid)+'</g>'+(T.glow?'<g filter="url(#glow'+uid+')"><g class="ents"></g><g class="balls"></g></g>':'<g class="ents"></g><g class="balls"></g>')+'</svg>';
     this.ents=this.el.querySelector(".ents"); this.balls=this.el.querySelector(".balls");
     var svg=this.el.querySelector("svg");

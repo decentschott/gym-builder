@@ -43,6 +43,8 @@ Each drill is one object in `data/drills/<category>.json`. The file name must ma
 | `ref` *(optional)* | Link to where the drill idea came from (shown as "Adapted from …"). The text must still be written in our own words. |
 | `also` *(optional)* | Extra categories it should show under, e.g. `["mot"]`. |
 | `hoop` *(optional)* | `1` = needs a hoop even if the diagram has no shot. |
+| `thumb` *(optional)* | `"all"` = the card thumbnail shows every step at once with step numbers (good for loops). |
+| `trail` *(optional)* | `1` = keep earlier steps faintly on screen while it plays (always on for full-court drills). |
 | `one` *(optional)* | `1` = always one whole-team group (scrimmages, 5-player sets). |
 
 ## Diagram language

@@ -121,7 +121,7 @@ function metaRow(d){ return '<span>'+ic("clock")+d.t+' min</span><span>'+ic("peo
 function card(d, showCat){
   var f=fit(d), c=CATS[d.cat];
   return '<div class="card'+(usable(d)?"":" dim")+'" data-id="'+d.id+'">'+
-    '<div class="thumb">'+DRAW.staticSvg(d.P,0,"court thumbsvg")+'</div>'+
+    '<div class="thumb">'+DRAW.staticSvg(d.P,d.thumb==="all"?-1:0,"court thumbsvg")+'</div>'+
     '<div class="cbody">'+(showCat?'<div class="ccat"><i style="background:'+c[1]+'"></i>'+c[0]+'</div>':'')+'<div class="cname">'+esc(d.n)+'</div>'+
     '<div class="cwhy">'+esc(d.why)+'</div>'+
     '<div class="cmeta">'+metaRow(d)+'</div>'+
@@ -173,7 +173,7 @@ function openDrill(id, fromPlan, fromThumb){
   function init(root){
     var dots=$("#pdots",root), cap=$("#pcap",root), n=d.P.steps.length;
     dots.innerHTML=d.P.steps.map(function(_,i){return '<button data-i="'+i+'">'+(i+1)+'</button>';}).join("");
-    player=new DRAW.Player($("#stage",root), d.P, function(i){ $$("button",dots).forEach(function(b,k){b.classList.toggle("on",k===i);}); cap.innerHTML='<b>Step '+(i+1)+' of '+n+'</b> '+esc(d.P.steps[i]?d.P.steps[i].cap:""); });
+    player=new DRAW.Player($("#stage",root), d.P, function(i){ $$("button",dots).forEach(function(b,k){b.classList.toggle("on",k===i);}); cap.innerHTML='<b>Step '+(i+1)+' of '+n+'</b> '+esc(d.P.steps[i]?d.P.steps[i].cap:""); }, {trail: d.P.full || !!d.trail});
     var pb=$("#pplay",root);
     function setPlay(on){ pb.innerHTML=ic(on?"pause":"play"); pb.setAttribute("aria-label",on?"Pause":"Play"); }
     pb.onclick=function(){ if(player.playing){player.pause();setPlay(false);} else {player.play();setPlay(true);} };

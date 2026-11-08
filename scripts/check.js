@@ -3,7 +3,7 @@ const path = require("path");
 const GB = require(path.join(__dirname, "..", "src/engine.js"));
 
 const REQUIRED = { id: "string", cat: "string", n: "string", lv: "string", p: "object", t: "number", eq: "string", why: "string", say: "string", how: "object", cue: "object", e: "string", h: "string", d: "object" };
-const ALLOWED = ["id", "cat", "n", "src", "ref", "lv", "p", "t", "eq", "hoop", "one", "also", "why", "say", "how", "cue", "e", "h", "d"];
+const ALLOWED = ["id", "cat", "n", "src", "ref", "lv", "p", "t", "eq", "hoop", "one", "also", "thumb", "trail", "why", "say", "how", "cue", "e", "h", "d"];
 
 /** Returns a list of human-readable problems for one drill (empty = valid). */
 function checkDrill(d, cats) {

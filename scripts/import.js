@@ -157,7 +157,7 @@ function toolSchema(cats) {
               cat: { type: "string", enum: Object.keys(cats) },
               n: str, src: str, ref: str, lv: { type: "string", description: "e.g. \"123\" or \"23\"" },
               p: { type: "array", items: { type: "integer" }, minItems: 2, maxItems: 2 },
-              t: { type: "integer" }, eq: str, hoop: { type: "integer" }, one: { type: "integer" },
+              t: { type: "integer" }, eq: str, hoop: { type: "integer" }, one: { type: "integer" }, thumb: { type: "string", enum: ["all"] }, trail: { type: "integer" },
               also: { type: "array", items: { type: "string", enum: Object.keys(cats) } },
               why: str, say: str, how: { type: "array", items: str }, cue: { type: "array", items: str }, e: str, h: str,
               d: { type: "object", required: ["s", "st"], properties: { c: { type: "string", enum: ["f", "h"] }, s: str, st: { type: "array", items: { type: "array", items: str, minItems: 2, maxItems: 2 } } } },
