@@ -334,53 +334,53 @@
     ],
     "t": 6,
     "eq": "2–3 balls, 2 cones",
-    "why": "Rebound, long lead pass, full-speed layup — nonstop running that teaches the outlet.",
-    "say": "Grab it out of the net, hit the runner with a long lead pass, then sprint around the far cone — you're the next runner.",
+    "why": "Rebound, dribble up, long lead pass, full-speed layup — everyone circles the court nonstop.",
+    "say": "Dribble up, hit the runner as they cut in at the free-throw line, then sprint the circle — you're next.",
     "how": [
-      "A line under each basket, a cone at each free-throw line, one runner starts up the sideline.",
-      "Rebounder takes the ball out of the net and throws a long lead pass to the runner.",
-      "Runner catches in stride, lays it in, then joins the line under that basket.",
-      "Passer sprints around the far cone, out to the sideline, and turns back as the next runner.",
-      "The player under the far basket takes it out of the net and hits them — keep it looping."
+      "A line under each basket, a cone at each free-throw line. Start on the right side (right-hand layups).",
+      "Rebounder takes it out of the net and dribbles up a few steps.",
+      "Runner sprints up the sideline; at the free-throw line extended they cut in — that's when the long lead pass comes.",
+      "Runner lays it in and joins the line under that basket. Passer sprints around the far cone, out to the other sideline, and becomes the next runner coming back.",
+      "Everyone circles the court the same direction. After a few minutes, flip to the left side for left-hand layups."
     ],
     "cue": [
-      "Pass ahead of the runner",
+      "Pass on the cut",
       "Catch in stride",
-      "Sprint, don't jog"
+      "Sprint the circle"
     ],
     "e": "Shorter pass: the runner starts at half court.",
     "h": "Team goal: count makes in 2 minutes — misses don't count.",
     "d": {
       "c": "f",
-      "s": "1 25,6;2 44,30;3 25,91 q1;4 22,3 q1;k1 32,75;k2 18,19;b:1",
+      "s": "1 25,6;2 3,30;3 25,91 q1;4 29,3 q1;k1 30,75;k2 20,19;b:1",
       "st": [
         [
-          "1 p 2;2 c 44,62",
-          "1 takes it out of the net — long lead pass to 2 up the sideline"
+          "1 d 24,14 23,23;2 c 3,72",
+          "1 takes it out of the net and dribbles up; 2 sprints up the right side"
         ],
         [
-          "2 d 36,82 29,86;1 c 26,40 29,70",
-          "2 attacks the rim; 1 sprints the floor"
+          "2 c 9,77 17,82;1 p 2",
+          "2 cuts in at the free-throw line extended — 1 throws the long lead pass"
         ],
         [
-          "2 sh;1 c 34,73 36,78 42,77 46,70",
-          "2 lays it in; 1 rounds the far cone and out to the side"
+          "2 sh;1 c 22,45 27,70",
+          "2: right-hand layup. 1 sprints the floor"
         ],
         [
-          "3 rb 25,88;2 c 21,92;1 c 46,60",
-          "3 takes it out of the net; 2 joins the line; 1 turns back up the sideline"
+          "3 rb 25,88;2 c 21,92;1 c 31,72 34,77 41,77 47,70",
+          "3 takes it out of the net, 2 joins that line, 1 rounds the cone and out to the side"
         ],
         [
-          "3 p 1;1 c 46,28",
-          "3 hits 1 with the long lead pass — the loop keeps going"
+          "3 d 26,80 27,70;1 c 47,26",
+          "3 dribbles up; 1 sprints up the other sideline"
         ],
         [
-          "1 d 33,10 28,7",
-          "1 attacks the other rim"
+          "1 c 41,18 33,11;3 p 1",
+          "1 cuts in at the free-throw line extended — long lead pass"
         ],
         [
           "1 sh",
-          "Layup — 4 is the next rebounder"
+          "Right-hand layup — 4 is the next rebounder. Keep circling."
         ]
       ]
     }
