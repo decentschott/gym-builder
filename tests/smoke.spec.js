@@ -109,3 +109,17 @@ test("drag and drop reorders practice blocks", async ({ page }, testInfo) => {
   await page.keyboard.press("ArrowUp");
   expect(await names()).toEqual(before);
 });
+
+test("search looks through every drill, even with a category chip selected", async ({ page }) => {
+  await page.locator('[data-cat="tr"]').click();
+  await page.locator("#q").fill("star");
+  await expect(page.locator(".card .cname", { hasText: "Star Passing" }).first()).toBeVisible();
+  // a drill hidden by "Fits my gym" is mentioned, with a way to show it
+  await page.locator("#gymBtn").click();
+  await page.locator("#gpl").fill("3");
+  await page.locator("#gdone").click();
+  await page.locator("#q").fill("star passing");
+  await expect(page.locator("#showall")).toBeVisible();
+  await page.locator("#showall").click();
+  await expect(page.locator(".card .cname", { hasText: "Star Passing" }).first()).toBeVisible();
+});

@@ -56,6 +56,7 @@ nav button.on{color:var(--team);background:var(--team-10)}
 .chip i{width:9px;height:9px;border-radius:50%;display:inline-block}
 .chip b{color:var(--mut);font-weight:600;font-variant-numeric:tabular-nums}
 .chip .ic{color:var(--accent)}
+.chips.searching .chip.on{background:#fff;color:var(--ink);border-color:var(--line)}.chips.searching .chip.on b{color:var(--mut)}
 .chip.on{background:var(--team);color:var(--team-ink);border-color:var(--team)}.chip.on b{color:color-mix(in srgb,var(--team-ink) 70%,transparent)}
 .sect{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:16px 0;overflow:hidden}
 .sect h3{display:flex;align-items:baseline;gap:9px;margin:0;padding:14px 16px 8px;font:800 25px/1 var(--display)}

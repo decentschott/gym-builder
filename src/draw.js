@@ -109,7 +109,7 @@ var DRAW = (function(){
   function stepMark(st){
     for(var j=0;j<st.acts.length;j++){ var a=st.acts[j];
       if(a.pts && !a.quiet && plen(a.pts)>4){ var p=along(a.pts,.5), q=along(a.pts,.52), dx=q[0]-p[0], dy=q[1]-p[1], m=Math.hypot(dx,dy)||1; return [p[0]-dy/m*1.9, p[1]+dx/m*1.9]; }
-      if(a.t==="p"){ var A=st.start[a.id], B=st.end[a.to]; return [(A[0]+B[0])/2+1.4,(A[1]+B[1])/2]; } }
+      if(a.t==="p"){ var A=st.start[a.id], B=st.end[a.to], dx2=B[0]-A[0], dy2=B[1]-A[1], m2=Math.hypot(dx2,dy2)||1; return [A[0]+dx2*.3-dy2/m2*1.8, A[1]+dy2*.3+dx2/m2*1.8]; } }
     return null;
   }
   function badge(x,y,n,full){ var r=full?1.25:.95; return '<g transform="translate('+f(x)+','+f(y)+')"><circle r="'+r+'" fill="'+T.pass+'" opacity=".9"/><text y="'+f(r*.42)+'" text-anchor="middle" font-size="'+f(r*1.25)+'" font-weight="800" fill="'+(THEME==="neon"?"#05060f":"#fff")+'" '+FONT+'>'+n+'</text></g>'; }

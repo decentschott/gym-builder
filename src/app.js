@@ -130,25 +130,32 @@ function card(d, showCat){
 }
 function renderDrills(){
   var q=UI.q.toLowerCase().trim();
+  // A search always looks through every drill — the category chips only filter when the search box is empty.
+  function matchQ(d){ return (d.n+" "+d.why+" "+d.say+" "+CATS[d.cat][0]+" "+(d.src||"")).toLowerCase().indexOf(q)>=0; }
   var list=DR.filter(function(d){
-    if(UI.cat==="pb"){ if(!d.src) return false; } else if(UI.cat!=="all" && !inCat(d,UI.cat)) return false;
+    if(q){ if(!matchQ(d)) return false; }
+    else if(UI.cat==="pb"){ if(!d.src) return false; } else if(UI.cat!=="all" && !inCat(d,UI.cat)) return false;
     if(UI.fit && !usable(d)) return false;
-    if(q && (d.n+" "+d.why+" "+d.say+" "+CATS[d.cat][0]).toLowerCase().indexOf(q)<0) return false;
     return true; });
+  var hidden = (q && UI.fit) ? DR.filter(function(d){ return matchQ(d) && !usable(d); }).length : 0;
   var npb=DR.filter(function(d){return d.src&&(!UI.fit||usable(d));}).length;
   var chips='<button class="chip '+(UI.cat==="all"?"on":"")+'" data-cat="all">All</button><button class="chip '+(UI.cat==="pb"?"on":"")+'" data-cat="pb">'+ic("star")+'My playbook <b>'+npb+'</b></button>'+Object.keys(CATS).map(function(k){ var n=DR.filter(function(d){return inCat(d,k) && (!UI.fit||usable(d));}).length; return '<button class="chip '+(UI.cat===k?"on":"")+'" data-cat="'+k+'"><i style="background:'+CATS[k][1]+'"></i>'+CATS[k][0]+' <b>'+n+'</b></button>';}).join("");
   var body;
-  if(!list.length) body='<div class="empty">No drills match. Try another search, or turn off <b>Fits my gym</b> to see everything.</div>';
+  var more = hidden ? '<p class="hint" style="margin:10px 2px 0">'+hidden+' more match'+(hidden>1?'':'es')+' but '+(hidden>1?"don't":"doesn't")+' fit your gym or level. <button class="link" id="showall">Show '+(hidden>1?'them':'it')+'</button></p>' : '';
+  if(!list.length) body=(q?'<div class="empty">No drills match “'+esc(UI.q)+'”.'+(hidden?'':' Try a different word.')+'</div>':'<div class="empty">No drills here fit your gym. Turn off <b>Fits my gym</b> to see everything.</div>')+more;
   else if(UI.cat==="all" && !q) body=Object.keys(CATS).map(function(k){ var l=list.filter(function(d){return d.cat===k;}); if(!l.length) return ""; return '<section class="sect"><h3><i style="background:'+CATS[k][1]+'"></i>'+CATS[k][0]+'<small>'+l.length+'</small></h3><div class="rows">'+l.map(function(d){return card(d,false);}).join("")+'</div></section>'; }).join("");
-  else { var title=q?'Results for “'+esc(UI.q)+'”':UI.cat==="pb"?"My playbook":CATS[UI.cat][0]; body='<section class="sect"><h3>'+title+'<small>'+list.length+'</small></h3><div class="rows">'+list.map(function(d){return card(d,UI.cat==="pb"||!!q||UI.cat==="mot");}).join("")+'</div></section>'; }
+  else { var title=q?'Results for “'+esc(UI.q)+'”':UI.cat==="pb"?"My playbook":CATS[UI.cat][0]; body=more+'<section class="sect"><h3>'+title+'<small>'+list.length+'</small></h3><div class="rows">'+list.map(function(d){return card(d,UI.cat==="pb"||!!q||UI.cat==="mot");}).join("")+'</div></section>'; }
   $("#main").innerHTML=
     '<h1 class="ptitle">Drills</h1><p class="psub">'+list.length+' of '+DR.length+(UI.fit?' fit your gym and level':' drills')+'</p>'+
     '<div class="tools"><div class="search">'+ic("search")+'<input id="q" type="search" placeholder="Search drills" aria-label="Search drills" value="'+esc(UI.q)+'"></div>'+
     '<label class="switch"><input type="checkbox" id="fit" '+(UI.fit?"checked":"")+'><span></span>Fits my gym</label></div>'+
-    '<div class="chips">'+chips+'</div>'+body;
+    '<div class="chips'+(q?' searching':'')+'">'+chips+'</div>'+body;
+  // keep the selected chip visible so a hidden filter never surprises anyone
+  var on=$(".chips .chip.on"), row=$(".chips"); if(on && row) row.scrollLeft=Math.max(0,on.offsetLeft-row.clientWidth/2+on.offsetWidth/2);
+  if($("#showall")) $("#showall").onclick=function(){ UI.fit=false; renderDrills(); };
   var qi=$("#q"); qi.oninput=function(){ UI.q=qi.value; var pos=qi.selectionStart; renderDrills(); var n=$("#q"); n.focus(); n.setSelectionRange(pos,pos); };
   $("#fit").onchange=function(e){ UI.fit=e.target.checked; renderDrills(); };
-  $$(".chip[data-cat]").forEach(function(b){ b.onclick=function(){ UI.cat=b.dataset.cat; renderDrills(); }; });
+  $$(".chip[data-cat]").forEach(function(b){ b.onclick=function(){ UI.cat=b.dataset.cat; if(UI.q){ UI.q=""; } renderDrills(); }; });
   $$(".card").forEach(function(c){ c.onclick=function(e){ if(e.target.closest("[data-add]")) return; openDrill(c.dataset.id, false, $(".thumbsvg",c)); }; });
   $$("[data-add]").forEach(function(b){ b.onclick=function(){ addToPlan(b.dataset.add); }; });
 }
