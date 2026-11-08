@@ -116,8 +116,9 @@ var DRAW = (function(){
   function awayFromRim(x,y,full){ var ry = (!full||y<47)?5.25:88.75; var dx=x-25, dy=y-ry, m=Math.hypot(dx,dy)||1; return [dx/m, dy/m]; }
   var FONT='font-family="Barlow Condensed,system-ui,sans-serif"';
   function token(e, x, y, full, id, uid){
-    var s='', d=awayFromRim(x,y,full), k=full?1.3:1;
-    for(var i=e.q;i>=1;i--){ var qx=x+d[0]*2.4*i, qy=y+d[1]*2.4*i; s+='<circle cx="'+f(qx)+'" cy="'+f(qy)+'" r="'+f(1.05*k)+'" fill="'+(e.k==="def"?T.qDef:T.qOff)+'"'+(THEME==="neon"?'':' stroke="#fff" stroke-width=".15"')+'/>'; }
+    // the waiting line stays at the player's starting spot, even after the front player leaves it
+    var s='', d=awayFromRim(e.x,e.y,full), k=full?1.3:1, moved=Math.hypot(x-e.x,y-e.y)>1;
+    for(var i=e.q;i>=1;i--){ var qx=e.x+d[0]*2.4*(moved?i-1:i), qy=e.y+d[1]*2.4*(moved?i-1:i); s+='<circle cx="'+f(qx)+'" cy="'+f(qy)+'" r="'+f(1.05*k)+'" fill="'+(e.k==="def"?T.qDef:T.qOff)+'"'+(THEME==="neon"?'':' stroke="#fff" stroke-width=".15"')+'/>'; }
     var g='<g data-id="'+id+'" transform="translate('+f(x)+','+f(y)+')'+(full?' scale(1.3)':'')+'">';
     var shadow = T.magnet ? '<ellipse cx=".18" cy=".32" rx="1.55" ry="1.5" fill="#0b1220" opacity=".22"/>' : '';
     if(e.k==="off") g+=shadow+'<circle r="1.5" fill="'+T.off+'" stroke="'+T.offRing+'" stroke-width="'+(T.magnet?.18:.22)+'"/>'+(T.magnet?'<circle r="1.5" fill="url(#mag'+uid+')"/>':'')+'<text y=".68" text-anchor="middle" font-size="2.05" font-weight="800" fill="'+T.offTxt+'" '+FONT+'>'+id+'</text>';
