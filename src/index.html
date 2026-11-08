@@ -10,12 +10,18 @@
 <meta name="theme-color" content="#14213d">
 <meta name="description" content="Basketball drill catalog with animated diagrams and a practice plan builder for any gym."></head>
 <body>
-<header><div class="brand"><i></i>Gym Builder</div><button id="gymBtn"><b>My gym</b><span id="gymSum"></span></button></header>
+<header>
+  <div class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="currentColor" stroke="none"/><g stroke="var(--team)" stroke-width="1.5"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5v19M2.5 12h19M5.3 5.3c2.8 3 2.8 10.4 0 13.4M18.7 5.3c-2.8 3-2.8 10.4 0 13.4"/></g></svg><span>Gym Builder</span></div>
+  <div class="hbtns">
+    <button id="gymBtn" aria-label="My gym settings"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="3" width="15" height="9" rx="1.5"/><rect x="9.5" y="6.5" width="5" height="3" rx=".5"/><path d="M8.2 12l1.4 8.5M15.8 12l-1.4 8.5M8.8 15.5h6.4M9.3 18.5h5.4"/></svg><span id="gymSum"></span></button>
+    <button id="lookBtn" class="iconbtn" aria-label="Look: team colors and diagram style"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
+  </div>
+</header>
 <main id="main"></main>
-<nav>
-<button data-tab="drills" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Drills</button>
-<button data-tab="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4h6M5 6h14v15H5z"/><path d="M8 11h8M8 15h5"/></svg>Practice Plan</button>
-<button data-tab="saved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Saved</button>
+<nav aria-label="Sections">
+<button data-tab="drills" class="on"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/><circle cx="12" cy="12" r="3"/></svg>Drills</button>
+<button data-tab="plan"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3.5h6v3H9z"/><path d="M8.5 11h7M8.5 15h4.5"/></svg>Practice</button>
+<button data-tab="saved"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-3.8-5.5 3.8z"/></svg>Saved</button>
 </nav>
 <div id="toast"></div>
 <div id="print"></div>

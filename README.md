@@ -10,6 +10,7 @@ Made for phones and tablets on the sideline and for printouts on a clipboard. It
 - **Gym-aware filtering.** You set full, half, or short court, 1–6 hoops, roster size, and level. The app works out which drills fit and splits players into groups ("3 groups of 4 · one per hoop").
 - **Practice plan generator.** Pick 30–120 minutes and up to three focus areas. It builds a timed plan with water breaks, and you can swap, reorder, or resize any block.
 - **★ Coach playbooks and templates.** The St. Luke 5th grade CYO practice ships as a one-tap template.
+- **Your look:** team colors (St. Luke royal and gold preset, or pick your own) and three diagram styles: Classic, Whiteboard, and Neon.
 - **Print view** with step-by-step diagram panels, and **copy as text** for sending a plan to your staff.
 
 ## Run it

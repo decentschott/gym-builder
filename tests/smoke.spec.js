@@ -30,16 +30,16 @@ test("gym settings filter the catalog", async ({ page }) => {
   await page.locator("#gdone").click();
   const after = await page.locator(".card").count();
   expect(after).toBeLessThan(before);
-  await expect(page.locator("#gymSum")).toContainText("Half court");
+  await expect(page.locator("#gymBtn")).toHaveAttribute("title", /Half court/);
 });
 
 test("3-point line has straight corners and follows the chosen style", async ({ page }) => {
   const arc = () => page.locator(".card .thumbsvg").first().locator('path[d*=" L"][d*=" A"]').first().getAttribute("d");
   // High school (default): straight lines 63" in from the sidelines, then the 19'9" arc
   expect(await arc()).toMatch(/^M5\.25,0 L5\.25,5\.25 A19\.75/);
-  await page.locator("#gymBtn").click();
+  await page.locator("#lookBtn").click();
   await page.locator('.seg[data-k="line"] button[data-v="nba"]').click();
-  await page.locator("#gdone").click();
+  await page.locator("#ldone").click();
   expect(await arc()).toMatch(/^M3,0 L3,14\.2\d? A23\.75/);
 });
 

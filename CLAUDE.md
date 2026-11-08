@@ -18,6 +18,12 @@ Always run `npm run check` (build + importer tests + e2e) before committing.
 - Gym fit is computed in `fit()` in app.js. Full-court and hoop needs are derived from the diagram; the `hoop` and `one` flags override that.
 - localStorage keys: `gb_gym`, `gb_cur` (current plan), `gb_plans` (saved plans). Wrap every access in try/catch; the artifact sandbox can throw.
 
+## Look & design system
+- Team colors are CSS variables (`--team`, `--accent`, plus auto-contrast `--team-ink` / `--accent-ink`) set by `applyLook()` from `gb_look`. Presets live in `TEAMS` in app.js (Gym Builder, St. Luke royal `#1d3fa6` + gold `#f5c400`); "Custom" uses two color pickers.
+- Diagram styles live in `THEMES` in draw.js: `classic`, `whiteboard` (marker wobble, magnet players), `neon` (glow filter, holographic players). Every color in a diagram comes from the theme object, so add new looks there. Print always renders in `whiteboard` because it's ink-friendly.
+- Animated steps draw their lines first (`.dr` draws on, `.fd` fades in), then the players move. Respect `prefers-reduced-motion`.
+- Type: Barlow Condensed (600/800, OFL, `src/fonts/`, inlined at build) for titles and every number; the system UI font for body text. Icons are one 24px line set in `ICONS` (app.js). No emoji in the UI, no all-caps labels, no "a · b · c" meta strings (use icons).
+
 ## Importer
 - `scripts/import.js` turns links, text, or PDFs/images into drills + templates using the Claude API (tool-forced JSON).
 - Each round's output goes through `scripts/check.js` (the same rules as the validator), an 8-word copy detector, and duplicate-name checks. Failures go back to the model, up to 3 rounds; drills that still fail are dropped and listed in the PR.

@@ -19,8 +19,11 @@ const js = [
   read("src/app.js"),
 ].join("\n");
 
+// Inline the bundled font files so the single-file build works offline.
+const css = read("src/styles.css").replace(/url\(fonts\/([^)]+\.woff2)\)/g, (_, f) =>
+  "url(data:font/woff2;base64," + fs.readFileSync(path.join(ROOT, "src/fonts", f)).toString("base64") + ")");
 const html = read("src/index.html")
-  .replace("/*__CSS__*/", () => read("src/styles.css"))
+  .replace("/*__CSS__*/", () => css)
   .replace("/*__JS__*/", () => js.replace(/<\/script/gi, "<\\/script"));
 
 const out = path.join(ROOT, "dist");
