@@ -291,5 +291,97 @@
         ]
       ]
     }
+  },
+  {
+    "id": "f8",
+    "cat": "foot",
+    "n": "Quick Feet Line Hops",
+    "lv": "123",
+    "p": [
+      1,
+      30
+    ],
+    "t": 4,
+    "eq": "Balls",
+    "why": "Fast, light feet — then turn that speed into a catch-and-shoot.",
+    "say": "Quick hops over the line for 15 seconds, then sprint to the wing for a catch and shoot.",
+    "how": [
+      "Stand beside a lane line.",
+      "Hop side to side over it for 15 seconds, then forward and back.",
+      "On 'go', sprint to the wing, catch the coach's pass, and shoot.",
+      "Rotate to the back of the line."
+    ],
+    "cue": [
+      "On your toes",
+      "Quiet feet",
+      "Feet set before the catch"
+    ],
+    "e": "Two-foot hops only, no shot.",
+    "h": "One-foot hops; shoot off one dribble.",
+    "d": {
+      "s": "1 19,12;2 31,12;C 25,30;b:C",
+      "st": [
+        [
+          "1 c 18,12 20,12 18,12 20,12;2 c 32,12 30,12 32,12 30,12",
+          "Quick hops over the lane line"
+        ],
+        [
+          "1 c 10,20;C p 1",
+          "Sprint to the wing and catch"
+        ],
+        [
+          "1 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f9",
+    "cat": "foot",
+    "n": "Gather Series (1-2 vs. Two-Foot)",
+    "lv": "23",
+    "p": [
+      1,
+      20
+    ],
+    "t": 5,
+    "eq": "1 cone, balls",
+    "why": "Two ways to gather at the rim, so players can finish through or around help.",
+    "say": "Attack the cone, then gather — first round 1-2 step, second round two-foot jump stop.",
+    "how": [
+      "Cone at the free-throw line is the help defender.",
+      "Attack the cone with speed, rip past it.",
+      "Round 1: 1-2 gather (inside foot first) into a layup.",
+      "Round 2: two-foot jump stop, pump fake, finish."
+    ],
+    "cue": [
+      "Last dribble hard",
+      "Big first step past the cone",
+      "Eyes on the rim"
+    ],
+    "e": "Walk the footwork with no ball.",
+    "h": "Coach with a pad bumps on the gather.",
+    "d": {
+      "s": "1 25,40 q2;k1 25,22;b:1",
+      "st": [
+        [
+          "1 d 25,26",
+          "Attack the cone"
+        ],
+        [
+          "1 d 29,16",
+          "Rip past it"
+        ],
+        [
+          "1 c 30,12 28,8",
+          "Gather — 1-2 step (or a two-foot stop)"
+        ],
+        [
+          "1 sh",
+          "Finish"
+        ]
+      ]
+    }
   }
 ]

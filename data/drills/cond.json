@@ -250,5 +250,98 @@
         ]
       ]
     }
+  },
+  {
+    "id": "c7",
+    "cat": "cond",
+    "n": "Team 2-Minute Layups",
+    "lv": "123",
+    "p": [
+      6,
+      20
+    ],
+    "t": 5,
+    "eq": "2 balls",
+    "why": "Full-court running with a team goal — everyone counts every make.",
+    "say": "Two lines, opposite corners — dribble full court, score, join the other line. We need 30 in two minutes.",
+    "how": [
+      "Two lines in opposite corners, first player in each has a ball.",
+      "Speed dribble the length of the floor for a layup.",
+      "Rebound your own, hand it to the next player in that corner's line, and join that line.",
+      "Team counts makes out loud; set a goal for two minutes."
+    ],
+    "cue": [
+      "Push it ahead",
+      "Finish at speed",
+      "Count out loud"
+    ],
+    "e": "Goal of 20.",
+    "h": "Weak-hand layups only.",
+    "d": {
+      "c": "f",
+      "s": "1 3,4 q3;2 47,90 q3;b:1,2",
+      "st": [
+        [
+          "1 d 15,60 28,84;2 d 35,34 22,10",
+          "Both lines go at once — opposite directions"
+        ],
+        [
+          "1 sh;2 sh",
+          "Layups"
+        ],
+        [
+          "1 rb 26,86;2 rb 24,8",
+          "Rebound your own"
+        ],
+        [
+          "1 d 44,91;2 d 6,3",
+          "Join the line in that corner — count the makes"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "c8",
+    "cat": "cond",
+    "n": "Sprint & Shoot",
+    "lv": "23",
+    "p": [
+      1,
+      16
+    ],
+    "t": 5,
+    "eq": "Balls",
+    "why": "Shooting tired — like the fourth quarter.",
+    "say": "Sprint sideline to sideline, come to the top, catch and shoot. Ten rounds.",
+    "how": [
+      "Start on a sideline at the top of the key.",
+      "Sprint to the far sideline and back to the top.",
+      "Catch the coach's pass and shoot.",
+      "Ten rounds; count makes."
+    ],
+    "cue": [
+      "Sprint hard",
+      "Feet set before the catch",
+      "Same shot tired"
+    ],
+    "e": "Shoot from inside the arc.",
+    "h": "Free throw after every round.",
+    "d": {
+      "s": "1 1,24;C 25,8;b:C",
+      "st": [
+        [
+          "1 c 48,24 25,27",
+          "Sprint to the far sideline and back to the top"
+        ],
+        [
+          "C p 1",
+          "Catch"
+        ],
+        [
+          "1 sh",
+          "Shoot tired"
+        ]
+      ]
+    }
   }
 ]

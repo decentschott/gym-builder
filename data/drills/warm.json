@@ -236,5 +236,90 @@
         ]
       ]
     }
+  },
+  {
+    "id": "w7",
+    "cat": "warm",
+    "n": "Station Warm-Up Circuit",
+    "lv": "123",
+    "p": [
+      6,
+      30
+    ],
+    "t": 9,
+    "eq": "Balls, 2 cones",
+    "why": "Everyone gets touches right away — no standing in lines.",
+    "say": "Three stations, 2 minutes each: form shooting, ball handling, footwork. Rotate on my whistle.",
+    "how": [
+      "Split into three groups.",
+      "Station 1: form shooting close to the rim. Station 2: stationary ball handling. Station 3: footwork around two cones.",
+      "Two minutes, whistle, rotate clockwise.",
+      "Coach floats and corrects one thing per player."
+    ],
+    "cue": [
+      "Hustle between stations",
+      "Quality reps",
+      "One thing better each round"
+    ],
+    "e": "90 seconds per station.",
+    "h": "Add a fourth station: partner passing.",
+    "d": {
+      "s": "1 22,8;2 12,32;3 38,32;k1 35,26;k2 41,26;b:1,2",
+      "st": [
+        [
+          "1 sh;2 d 13,33 12,32;3 c 35,26 41,26 38,32",
+          "Shooting, ball handling, footwork — all at once"
+        ],
+        [
+          "1 rb 24,7",
+          "Whistle — grab your ball"
+        ],
+        [
+          "1 c 13,30;2 d 37,31;3 c 22,9",
+          "Rotate to the next station"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "w8",
+    "cat": "warm",
+    "n": "Dynamic Dribble Lines",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per player",
+    "why": "Warms up legs and hands together — dynamic moves while dribbling.",
+    "say": "Keep the dribble alive while you do the move — high knees, skips, shuffles, backpedal.",
+    "how": [
+      "Lines on the baseline, a ball each.",
+      "Go to half court with the called movement while dribbling.",
+      "Jog back down the sideline with the other hand.",
+      "Moves: high knees, skips, side shuffles, backpedal, lunge-and-dribble."
+    ],
+    "cue": [
+      "Eyes up",
+      "Ball stays low",
+      "Switch hands coming back"
+    ],
+    "e": "Walk the movements.",
+    "h": "Add a crossover every three steps.",
+    "d": {
+      "c": "f",
+      "s": "1 10,2 q2;2 25,2 q2;3 40,2 q2;b:1,2,3",
+      "st": [
+        [
+          "1 d 10,46;2 d 25,46;3 d 40,46",
+          "Move to half court while dribbling"
+        ],
+        [
+          "1 d 2,40 2,4;2 d 46,44 44,4;3 d 49,40 49,6",
+          "Back down the sideline, other hand"
+        ]
+      ]
+    }
   }
 ]

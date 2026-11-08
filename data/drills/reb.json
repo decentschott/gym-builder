@@ -283,5 +283,97 @@
         ]
       ]
     }
+  },
+  {
+    "id": "r8",
+    "cat": "reb",
+    "n": "Crash the Glass",
+    "lv": "23",
+    "p": [
+      4,
+      16
+    ],
+    "t": 6,
+    "eq": "1 ball",
+    "why": "Teaches offensive rebounders to beat a box-out and get inside position.",
+    "say": "On the shot, crash — swim past your box-out and get to the front of the rim.",
+    "how": [
+      "Two offense on the wings, two defenders inside them, coach at the top.",
+      "Coach shoots; defenders find a body and box out.",
+      "Offense crashes: fake one way, swim or spin to the inside.",
+      "Offensive rebound = putback. Defensive rebound = outlet to the coach. Rotate."
+    ],
+    "cue": [
+      "Crash every shot",
+      "Swim, don't push",
+      "Two hands, go back up"
+    ],
+    "e": "Defense boxes out at half speed.",
+    "h": "Offense gets 2 points for a putback.",
+    "d": {
+      "s": "1 8,20;2 42,20;x1 11,17;x2 39,17;C 25,30;b:C",
+      "st": [
+        [
+          "C sh;1 c 12,14;2 c 38,14;x1 c 14,12;x2 c 36,12",
+          "Shot — offense crashes, defense meets them"
+        ],
+        [
+          "1 c 16,10 20,7;x1 sl 17,9",
+          "1 swims past the box-out to the inside"
+        ],
+        [
+          "1 rb 22,6",
+          "Offensive rebound"
+        ],
+        [
+          "1 sh",
+          "Putback"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r9",
+    "cat": "reb",
+    "n": "Block Out & Score (1-on-1)",
+    "lv": "123",
+    "p": [
+      2,
+      16
+    ],
+    "t": 5,
+    "eq": "1 ball per group",
+    "why": "Live, one-on-one rebounding where both players compete for every miss.",
+    "say": "Defense, hit and hold — you get it, you score a point. Offense, if you get it, go score.",
+    "how": [
+      "Offense at the elbow, defender between them and the basket, coach on the wing.",
+      "Coach shoots; defender turns, makes contact, and holds.",
+      "Defense rebound = 1 point and an outlet. Offense rebound = play live to score.",
+      "First to 3, then switch."
+    ],
+    "cue": [
+      "Hit first",
+      "Wide and low",
+      "Chin it, then outlet"
+    ],
+    "e": "Offense walks in.",
+    "h": "Offense scores 2 points on a putback.",
+    "d": {
+      "s": "1 19,20;x1 19,16;C 33,24;b:C",
+      "st": [
+        [
+          "C sh;x1 c 20,15;1 c 21,17",
+          "Shot — defender turns and hits"
+        ],
+        [
+          "x1 rb 24,8",
+          "Hold the box-out, then go get it"
+        ],
+        [
+          "x1 p C",
+          "Outlet to the coach"
+        ]
+      ]
+    }
   }
 ]
