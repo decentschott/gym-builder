@@ -1,6 +1,6 @@
 [
   {
-    "name": "St. Luke 5th CYO — 11/5 (Motion)",
+    "name": "St. Luke 5th CYO \u2014 11/5 (Motion)",
     "total": 90,
     "blocks": [
       {
@@ -43,6 +43,7 @@
         "min": 30,
         "seg": "Scrimmage"
       }
-    ]
+    ],
+    "start": "15:30"
   }
 ]

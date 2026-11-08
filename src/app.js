@@ -178,6 +178,11 @@ function addToPlan(id){
   var d=BY[id]; PLAN.blocks.push({did:id,min:d.t,seg:CATS[d.cat][0],pool:[d.cat]}); save("gb_cur",PLAN); toast("Added “"+d.n+"” to your plan");
 }
 function fmt(m){ var h=Math.floor(m/60), mm=m%60; return h+":"+(mm<10?"0":"")+mm; }
+// Block times: real clock times when the plan has a start time ("15:30"), otherwise elapsed time (0:00, 0:10…).
+function startMin(){ var s=PLAN&&PLAN.start; if(!s||!/^\d{1,2}:\d{2}$/.test(s)) return null; var p=s.split(":"); return (+p[0])*60+(+p[1]); }
+function clock(m, ampm){ var s=startMin(); if(s==null) return fmt(m); var t=(s+m)%1440, h=Math.floor(t/60), mm=t%60, h12=h%12||12; return h12+":"+(mm<10?"0":"")+mm+(ampm?(h<12?" AM":" PM"):""); }
+function rangeTxt(a,b){ return clock(a)+"–"+clock(b); }
+function spanTxt(){ var tot=planTotal(); return startMin()==null ? "ends at "+fmt(tot) : clock(0,true)+" – "+clock(tot,true); }
 function planTotal(){ return PLAN?PLAN.blocks.reduce(function(a,b){return a+b.min;},0):0; }
 
 function renderPlan(){
@@ -192,14 +197,18 @@ function renderPlan(){
   if(PLAN && PLAN.blocks.length){
     var t=0, tot=planTotal();
     h+='<div class="panel plan"><input class="pname" id="pname" value="'+esc(PLAN.name)+'" aria-label="Plan name">'+
-      '<div class="psum"><b>'+tot+' min</b>'+(PLAN.total&&tot!==PLAN.total?' <span class="'+(tot>PLAN.total?"over":"under")+'">('+(tot>PLAN.total?"+":"")+(tot-PLAN.total)+' vs '+PLAN.total+')</span>':"")+' · '+gymSummary()+'</div>';
+      '<div class="psum"><b>'+tot+' min</b> · '+spanTxt()+(PLAN.total&&tot!==PLAN.total?' <span class="'+(tot>PLAN.total?"over":"under")+'">('+(tot>PLAN.total?"+":"")+(tot-PLAN.total)+' min vs '+PLAN.total+' planned)</span>':"")+'<br>'+gymSummary()+'</div>'+
+      '<label class="pstartl">Practice starts at <input type="time" id="pstart" value="'+esc(PLAN.start||"")+'"> <span class="muted">'+(startMin()==null?"(optional — shows real clock times)":'<button class="link" id="pclear">clear</button>')+'</span></label>'+
+      '<div class="dhint">Drag <b>⋮⋮</b> to reorder</div>';
     h+='<div class="blocks">'+PLAN.blocks.map(function(b,i){
-      var start=fmt(t); t+=b.min;
-      if(b.water) return '<div class="block water"><div class="bt">'+start+'</div><div class="bb"><div class="bname">💧 Water break</div></div><div class="bm">'+mins(i,b)+'</div><div class="bact"><button data-rm="'+i+'" aria-label="Remove">✕</button></div></div>';
+      var a0=t; t+=b.min;
+      var grip='<div class="grip" data-drag="'+i+'" tabindex="0" role="button" aria-label="Drag to reorder (or use arrow keys)">⋮⋮</div>';
+      var tm='<div class="bt">'+clock(a0)+'<small>–'+clock(t)+'</small></div>';
+      if(b.water) return '<div class="block water" data-i="'+i+'">'+grip+tm+'<div class="bb"><div class="bname">💧 Water break</div></div><div class="bm">'+mins(i,b)+'</div><div class="bact"><button data-rm="'+i+'" aria-label="Remove">✕</button></div></div>';
       var d=BY[b.did], f=fit(d), c=CATS[d.cat];
-      return '<div class="block" style="--c:'+c[1]+'"><div class="bt">'+start+'</div><div class="bb" data-open="'+d.id+'"><div class="bseg">'+esc(b.seg)+'</div><div class="bname">'+esc(d.n)+'</div><div class="bnote">'+esc(f.ok?f.note:f.why)+'</div></div>'+
-        '<div class="bm">'+mins(i,b)+'</div><div class="bact"><button data-sw="'+i+'" title="Swap drill" aria-label="Swap">↻</button><button data-up="'+i+'" aria-label="Move up">↑</button><button data-rm="'+i+'" aria-label="Remove">✕</button></div></div>';
-    }).join("")+'</div>'+
+      return '<div class="block" data-i="'+i+'" style="--c:'+c[1]+'">'+grip+tm+'<div class="bb" data-open="'+d.id+'"><div class="bseg">'+esc(b.seg)+'</div><div class="bname">'+esc(d.n)+'</div><div class="bnote">'+esc(f.ok?f.note:f.why)+'</div></div>'+
+        '<div class="bm">'+mins(i,b)+'</div><div class="bact"><button data-sw="'+i+'" title="Swap drill" aria-label="Swap">↻</button><button data-rm="'+i+'" aria-label="Remove">✕</button></div></div>';
+    }).join("")+'<div class="bend">🏁 Done <b>'+clock(t,true)+'</b><span>'+t+' min total</span></div></div>'+
     '<div class="row gap wrap"><button class="btn" id="addd">+ Add drill</button><button class="btn" id="addw">+ Water</button><button class="btn" id="psave">Save</button><button class="btn" id="pcopy">Copy as text</button><button class="btn primary" id="pprint">Print view</button></div></div>';
   } else h+='<div class="empty">Pick a length and tap <b>Build my practice</b> — or add drills from the catalog with the <b>+</b> button.</div>';
   $("#main").innerHTML=h;
@@ -207,12 +216,14 @@ function renderPlan(){
   $$("[data-focus]").forEach(function(b){ b.onclick=function(){ var k=b.dataset.focus, i=UI.focus.indexOf(k); if(i>=0) UI.focus.splice(i,1); else { if(UI.focus.length>=3) UI.focus.shift(); UI.focus.push(k);} renderPlan(); }; });
   $("#editgym").onclick=openGym;
   $("#gen").onclick=function(){ PLAN=buildPlan(UI.minutes, UI.focus.slice()); save("gb_cur",PLAN); renderPlan(); toast("Practice built — tap any drill to see it move"); };
-  $$("[data-tpl]").forEach(function(b){ b.onclick=function(){ var t=TEMPLATES[+b.dataset.tpl]; PLAN={name:t.name,total:t.total,focus:[],gym:JSON.parse(JSON.stringify(G)),blocks:t.blocks.map(function(x){return {did:x.did,min:x.min,seg:x.seg,pool:[BY[x.did].cat]};})}; save("gb_cur",PLAN); renderPlan(); toast("Loaded template — edit anything"); }; });
+  $$("[data-tpl]").forEach(function(b){ b.onclick=function(){ var t=TEMPLATES[+b.dataset.tpl]; PLAN={name:t.name,total:t.total,start:t.start||"",focus:[],gym:JSON.parse(JSON.stringify(G)),blocks:t.blocks.map(function(x){return {did:x.did,min:x.min,seg:x.seg,pool:[BY[x.did].cat]};})}; save("gb_cur",PLAN); renderPlan(); toast("Loaded template — edit anything"); }; });
   if(!PLAN||!PLAN.blocks.length) return;
   $("#pname").onchange=function(e){ PLAN.name=e.target.value; save("gb_cur",PLAN); };
   $$("[data-open]").forEach(function(el){ el.onclick=function(){ openDrill(el.dataset.open,true); }; });
   $$("[data-rm]").forEach(function(b){ b.onclick=function(){ PLAN.blocks.splice(+b.dataset.rm,1); save("gb_cur",PLAN); renderPlan(); }; });
-  $$("[data-up]").forEach(function(b){ b.onclick=function(){ var i=+b.dataset.up; if(i>0){ var x=PLAN.blocks.splice(i,1)[0]; PLAN.blocks.splice(i-1,0,x); save("gb_cur",PLAN); renderPlan(); } }; });
+  $("#pstart").onchange=function(e){ PLAN.start=e.target.value||""; save("gb_cur",PLAN); renderPlan(); };
+  if($("#pclear")) $("#pclear").onclick=function(e){ e.preventDefault(); PLAN.start=""; save("gb_cur",PLAN); renderPlan(); };
+  initDrag();
   $$("[data-sw]").forEach(function(b){ b.onclick=function(){ var i=+b.dataset.sw, bl=PLAN.blocks[i], used=PLAN.blocks.map(function(x){return x.did;}).filter(Boolean); var c=candidates(bl.pool||[BY[bl.did].cat],used,false); if(!c.length) c=candidates(bl.pool||[BY[bl.did].cat],used,true); if(!c.length){toast("No other drills fit this slot");return;} var n=c[Math.floor(Math.random()*c.length)]; bl.did=n.id; save("gb_cur",PLAN); renderPlan(); toast("Swapped in “"+n.n+"”"); }; });
   $$("[data-mm]").forEach(function(b){ b.onclick=function(){ var i=+b.dataset.mm, bl=PLAN.blocks[i]; bl.min=Math.max(1,bl.min+(+b.dataset.d)); save("gb_cur",PLAN); renderPlan(); }; });
   $("#addd").onclick=function(){ setTab("drills"); toast("Tap + on any drill to add it"); };
@@ -222,9 +233,34 @@ function renderPlan(){
   $("#pprint").onclick=printPlan;
 }
 function mins(i,b){ return '<button data-mm="'+i+'" data-d="-1" aria-label="Less time">−</button><span>'+b.min+'<small>min</small></span><button data-mm="'+i+'" data-d="1" aria-label="More time">+</button>'; }
+// ---------- drag to reorder (pointer events: works with mouse and touch) ----------
+function moveBlock(from,to){ if(from===to) return; var x=PLAN.blocks.splice(from,1)[0]; PLAN.blocks.splice(to,0,x); save("gb_cur",PLAN); renderPlan(); }
+function initDrag(){
+  $$(".grip").forEach(function(g){
+    g.onkeydown=function(e){ var i=+g.dataset.drag, to=e.key==="ArrowUp"?i-1:e.key==="ArrowDown"?i+1:-1; if(to<0||to>=PLAN.blocks.length) return; e.preventDefault(); moveBlock(i,to); var n=$('.grip[data-drag="'+to+'"]'); if(n) n.focus(); };
+    g.onpointerdown=function(e){
+      if(e.button>0) return; e.preventDefault();
+      var from=+g.dataset.drag, els=$$(".blocks .block"), el=els[from], startY=e.pageY, to=from;
+      var mids=els.map(function(b){ var r=b.getBoundingClientRect(); return r.top+window.scrollY+r.height/2; });
+      var h=el.getBoundingClientRect().height+8, lastY=e.clientY, timer=null;
+      el.classList.add("dragging"); document.body.classList.add("dragmode");
+      try{ g.setPointerCapture(e.pointerId); }catch(_){}
+      function update(pageY){
+        var dy=pageY-startY; el.style.transform="translateY("+dy+"px)";
+        var center=mids[from]+dy; to=from;
+        mids.forEach(function(m,k){ if(k<from && center<m) to=Math.min(to,k); if(k>from && center>m) to=Math.max(to,k); });
+        els.forEach(function(b,k){ if(k===from) return; var s=0; if(from<to && k>from && k<=to) s=-h; if(from>to && k<from && k>=to) s=h; b.style.transform=s?"translateY("+s+"px)":""; });
+      }
+      function edge(){ var v=lastY<70?-12:lastY>window.innerHeight-90?12:0; if(v){ window.scrollBy(0,v); update(lastY+window.scrollY); } timer=requestAnimationFrame(edge); }
+      timer=requestAnimationFrame(edge);
+      g.onpointermove=function(ev){ lastY=ev.clientY; update(ev.pageY); };
+      g.onpointerup=g.onpointercancel=function(){ cancelAnimationFrame(timer); g.onpointermove=g.onpointerup=g.onpointercancel=null; document.body.classList.remove("dragmode"); els.forEach(function(b){b.style.transform="";}); el.classList.remove("dragging"); if(to!==from){ moveBlock(from,to); toast("Moved “"+(PLAN.blocks[to].water?"Water break":BY[PLAN.blocks[to].did].n)+"”"); } };
+    };
+  });
+}
 function planText(){
-  var t=0, s=PLAN.name+" ("+planTotal()+" min · "+gymSummary()+")\n\n";
-  PLAN.blocks.forEach(function(b){ var st=fmt(t); t+=b.min; if(b.water){ s+=st+"  Water ("+b.min+")\n"; return; } var d=BY[b.did]; s+=st+"  "+d.n+" ("+b.min+" min) — "+d.say+"\n"; });
+  var t=0, s=PLAN.name+"\n"+planTotal()+" min · "+spanTxt()+" · "+gymSummary()+"\n\n";
+  PLAN.blocks.forEach(function(b){ var st=rangeTxt(t,t+b.min); t+=b.min; if(b.water){ s+=st+"  Water ("+b.min+" min)\n"; return; } var d=BY[b.did]; s+=st+"  "+d.n+" ("+b.min+" min) — "+d.say+"\n"; });
   return s;
 }
 function copyText(s){
@@ -257,8 +293,8 @@ function printDrills(ids, title){
   showPrint('<h1>'+esc(title)+'</h1><div class="plegend">'+legend()+'</div>'+ids.map(function(id){return drillPrint(BY[id]);}).join(""));
 }
 function printPlan(){
-  var t=0, rows=PLAN.blocks.map(function(b){ var st=fmt(t); t+=b.min; if(b.water) return '<div class="pwater">'+st+' · Water break ('+b.min+' min)</div>'; return drillPrint(BY[b.did],b.min,st); }).join("");
-  showPrint('<h1>'+esc(PLAN.name)+'</h1><div class="psub">'+planTotal()+' min · '+gymSummary()+'</div><div class="plegend">'+legend()+'</div>'+rows);
+  var t=0, rows=PLAN.blocks.map(function(b){ var st=rangeTxt(t,t+b.min); t+=b.min; if(b.water) return '<div class="pwater">'+st+' · Water break ('+b.min+' min)</div>'; return drillPrint(BY[b.did],b.min,st); }).join("");
+  showPrint('<h1>'+esc(PLAN.name)+'</h1><div class="psub">'+planTotal()+' min · '+spanTxt()+' · '+gymSummary()+'</div><div class="plegend">'+legend()+'</div>'+rows);
 }
 
 // ---------- tabs ----------
