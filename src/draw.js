@@ -1,21 +1,28 @@
 // SVG court + diagram rendering, static and animated.
 var DRAW = (function(){
-  var INK="#1f2937", DEF="#c62828", OFF="#0f2a4a", WOOD="#f3e7d3", PAINT="#ead7b8", LINE="#9a7b55";
+  var INK="#1f2937", DEF="#c62828", OFF="#0f2a4a", WOOD="#f3e7d3", PAINT="#ead7b8", LINEC="#9a7b55";
   function f(n){ return Math.round(n*100)/100; }
+  // 3-point line styles (feet). r = arc radius from rim center; x = corner straight line distance from sideline.
+  var LINES={ hs:{r:19.75,x:5.25}, college:{r:22.146,x:3.35}, nba:{r:23.75,x:3} }, LINE="hs";
+  function threePt(){
+    var L=LINES[LINE]||LINES.hs, cx=25, cy=5.25, x1=L.x, x2=50-L.x, dy=Math.sqrt(Math.max(0,L.r*L.r-(cx-x1)*(cx-x1))), yj=cy+dy;
+    // straight corner line from the baseline, then the arc over the top (sweep 0 = curve toward half court)
+    return 'M'+f(x1)+',0 L'+f(x1)+','+f(yj)+' A'+L.r+','+L.r+' 0 '+(yj<cy?1:0)+' 0 '+f(x2)+','+f(yj)+' L'+f(x2)+',0';
+  }
   function half(){
-    return '<rect x="19" y="0" width="12" height="19" fill="'+PAINT+'" stroke="'+LINE+'" stroke-width=".25"/>'+
-      '<path d="M19,19 A6,6 0 0 0 31,19" fill="none" stroke="'+LINE+'" stroke-width=".25"/>'+
-      '<path d="M19,19 A6,6 0 0 1 31,19" fill="none" stroke="'+LINE+'" stroke-width=".25" stroke-dasharray=".8 .8"/>'+
-      '<path d="M5.96,0 A19.75,19.75 0 1 0 44.04,0" fill="none" stroke="'+LINE+'" stroke-width=".25"/>'+
-      '<path d="M21,5.25 A4,4 0 0 0 29,5.25" fill="none" stroke="'+LINE+'" stroke-width=".2"/>'+
+    return '<rect x="19" y="0" width="12" height="19" fill="'+PAINT+'" stroke="'+LINEC+'" stroke-width=".25"/>'+
+      '<path d="M19,19 A6,6 0 0 0 31,19" fill="none" stroke="'+LINEC+'" stroke-width=".25"/>'+
+      '<path d="M19,19 A6,6 0 0 1 31,19" fill="none" stroke="'+LINEC+'" stroke-width=".25" stroke-dasharray=".8 .8"/>'+
+      '<path d="'+threePt()+'" fill="none" stroke="'+LINEC+'" stroke-width=".25"/>'+
+      '<path d="M21,5.25 A4,4 0 0 0 29,5.25" fill="none" stroke="'+LINEC+'" stroke-width=".2"/>'+
       '<line x1="22" y1="4" x2="28" y2="4" stroke="'+INK+'" stroke-width=".4"/>'+
       '<circle cx="25" cy="5.25" r=".85" fill="none" stroke="#ea580c" stroke-width=".3"/>';
   }
   function court(full){
     var h = full ? 94 : 47;
-    var s = '<rect x="0" y="0" width="50" height="'+h+'" fill="'+WOOD+'" stroke="'+LINE+'" stroke-width=".35"/>' + half();
-    if(full) s += '<g transform="translate(0,94) scale(1,-1)">'+half()+'</g><line x1="0" y1="47" x2="50" y2="47" stroke="'+LINE+'" stroke-width=".25"/><circle cx="25" cy="47" r="6" fill="none" stroke="'+LINE+'" stroke-width=".25"/>';
-    else s += '<line x1="0" y1="47" x2="50" y2="47" stroke="'+LINE+'" stroke-width=".35"/><path d="M19,47 A6,6 0 0 1 31,47" fill="none" stroke="'+LINE+'" stroke-width=".25"/>';
+    var s = '<rect x="0" y="0" width="50" height="'+h+'" fill="'+WOOD+'" stroke="'+LINEC+'" stroke-width=".35"/>' + half();
+    if(full) s += '<g transform="translate(0,94) scale(1,-1)">'+half()+'</g><line x1="0" y1="47" x2="50" y2="47" stroke="'+LINEC+'" stroke-width=".25"/><circle cx="25" cy="47" r="6" fill="none" stroke="'+LINEC+'" stroke-width=".25"/>';
+    else s += '<line x1="0" y1="47" x2="50" y2="47" stroke="'+LINEC+'" stroke-width=".35"/><path d="M19,47 A6,6 0 0 1 31,47" fill="none" stroke="'+LINEC+'" stroke-width=".25"/>';
     return s;
   }
   function defs(uid){
@@ -137,5 +144,5 @@ var DRAW = (function(){
   Player.prototype.pause=function(){ this.playing=false; cancelAnimationFrame(this.raf); this.frame(ease(this.t)); };
   Player.prototype.destroy=function(){ this.pause(); };
   function ease(t){ return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2; }
-  return {staticSvg:staticSvg, Player:Player};
+  return {staticSvg:staticSvg, Player:Player, setLine:function(k){ if(LINES[k]) LINE=k; }, lines:LINES};
 })();

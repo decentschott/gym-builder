@@ -11,6 +11,7 @@ function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 function inCat(d,k){ return d.cat===k || (d.also||[]).indexOf(k)>=0; }
 var BY={}; DR.forEach(function(d){ BY[d.id]=d; d.P=GB.parse(d.d); if(d.hoop) d.P.needHoop=true; });
 var G=load("gb_gym",{space:"full",hoops:2,players:10,level:2});
+if(!G.line) G.line="hs"; DRAW.setLine(G.line);
 var UI={tab:"drills",cat:"all",q:"",fit:true,minutes:60,focus:[]};
 var PLAN=load("gb_cur",null);
 
@@ -45,11 +46,12 @@ function openGym(){
     '<label class="lbl">Hoops available</label>'+seg("hoops",[[1,"1"],[2,"2"],[3,"3"],[4,"4"],[5,"5"],[6,"6"]],G.hoops)+
     '<label class="lbl">Players at practice</label><div class="stepper"><button data-d="-1">−</button><input id="gpl" type="number" min="1" max="40" value="'+G.players+'"><button data-d="1">+</button></div>'+
     '<label class="lbl">Skill level</label>'+seg("level",[[1,"Beginner"],[2,"Intermediate"],[3,"Advanced"]],G.level)+
+    '<label class="lbl">3-point line on diagrams</label>'+seg("line",[["hs","High school"],["college","College"],["nba","NBA"]],G.line)+
     '<p class="hint">Short court = smaller gym (elementary/middle school). Full-court drills stay in, with shorter distances.</p>'+
     '<button class="btn primary wide" id="gdone">Done</button>', function(root){
-      $$(".seg",root).forEach(function(sg){ sg.addEventListener("click",function(e){ var b=e.target.closest("button"); if(!b) return; $$("button",sg).forEach(function(x){x.classList.remove("on");}); b.classList.add("on"); var k=sg.dataset.k; G[k]= k==="space"?b.dataset.v:+b.dataset.v; }); });
+      $$(".seg",root).forEach(function(sg){ sg.addEventListener("click",function(e){ var b=e.target.closest("button"); if(!b) return; $$("button",sg).forEach(function(x){x.classList.remove("on");}); b.classList.add("on"); var k=sg.dataset.k; G[k]= (k==="space"||k==="line")?b.dataset.v:+b.dataset.v; }); });
       $$(".stepper button",root).forEach(function(b){ b.onclick=function(){ var i=$("#gpl",root); i.value=Math.max(1,Math.min(40,(+i.value||1)+(+b.dataset.d))); }; });
-      $("#gdone",root).onclick=function(){ G.players=Math.max(1,Math.min(40,+$("#gpl",root).value||10)); save("gb_gym",G); closeSheet(); renderGymBar(); render(); };
+      $("#gdone",root).onclick=function(){ G.players=Math.max(1,Math.min(40,+$("#gpl",root).value||10)); save("gb_gym",G); DRAW.setLine(G.line); closeSheet(); renderGymBar(); render(); };
   });
 }
 
