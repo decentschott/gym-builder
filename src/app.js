@@ -1,4 +1,4 @@
-// Gym Builder app
+// Baseline — Basketball Practice Planner
 (function(){
 var CATS={}; Object.keys(GB_CATS).forEach(function(k){ CATS[k]=[GB_CATS[k].name, GB_CATS[k].color]; });
 var LV={1:"Beginner",2:"Intermediate",3:"Advanced"};
@@ -38,7 +38,7 @@ function inCat(d,k){ return d.cat===k || (d.also||[]).indexOf(k)>=0; }
 var BY={}; DR.forEach(function(d){ BY[d.id]=d; d.P=GB.parse(d.d); if(d.hoop) d.P.needHoop=true; });
 var G=load("gb_gym",{space:"full",hoops:2,players:10,level:2});
 // ---------- look: team colors + diagram style ----------
-var TEAMS={ gb:{name:"Gym Builder",c1:"#14213d",c2:"#f26b1d"}, stluke:{name:"St. Luke",c1:"#1d3fa6",c2:"#f5c400"} };
+var TEAMS={ gb:{name:"Baseline",c1:"#14213d",c2:"#f26b1d"}, stluke:{name:"St. Luke",c1:"#1d3fa6",c2:"#f5c400"} };
 var DIAGRAMS=[["classic","Classic"],["whiteboard","Whiteboard"],["neon","Neon"]];
 var LOOK=load("gb_look",{diagram:"classic",team:"gb",c1:"#14213d",c2:"#f26b1d",line:G.line||"hs"});
 function inkOn(hex){ var c=hex.replace("#",""); if(c.length===3) c=c.replace(/./g,"$&$&"); var n=parseInt(c,16), r=(n>>16)&255, g=(n>>8)&255, b=n&255;

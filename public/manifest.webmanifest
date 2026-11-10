@@ -1,6 +1,6 @@
 {
-  "name": "Gym Builder",
-  "short_name": "Gym Builder",
+  "name": "Baseline — Basketball Practice Planner",
+  "short_name": "Baseline",
   "description": "Basketball drills with animated diagrams and a practice plan builder.",
   "start_url": "./",
   "scope": "./",

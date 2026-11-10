@@ -61,7 +61,7 @@ async function parseIssue(md, inp) {
 }
 
 async function download(url) {
-  const headers = { "user-agent": "gym-builder-importer" };
+  const headers = { "user-agent": "baseline-importer" };
   if (process.env.GITHUB_TOKEN) headers.authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   const res = await fetch(url, { headers, redirect: "follow" });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -73,7 +73,7 @@ async function download(url) {
 }
 
 async function fetchPage(url) {
-  const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (gym-builder importer)" }, redirect: "follow" });
+  const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (baseline importer)" }, redirect: "follow" });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   const html = await res.text();
   return html
@@ -115,7 +115,7 @@ function systemPrompt(data) {
   const fmt = fs.readFileSync(path.join(ROOT, "docs/DRILL_FORMAT.md"), "utf8");
   const catalog = data.drills.map((d) => `${d.id} | ${d.cat} | ${d.n} | ${d.say}`).join("\n");
   const examples = ["m13", "s15", "o3"].map((id) => data.drills.find((d) => d.id === id)).filter(Boolean).map(({ _file, ...d }) => JSON.stringify(d)).join("\n");
-  return `You convert basketball drills and practice plans into Gym Builder's drill format. You are an experienced youth/high school basketball coach and a careful data engineer.
+  return `You convert basketball drills and practice plans into Baseline's drill format. You are an experienced youth/high school basketball coach and a careful data engineer.
 
 ${fmt}
 

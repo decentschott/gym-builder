@@ -1,5 +1,5 @@
 // Offline cache so the app works in gyms with no Wi-Fi. Version is stamped at build time.
-const CACHE = "gym-builder-__VERSION__";
+const CACHE = "baseline-__VERSION__";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg", "./icon-512.png"];
 
 self.addEventListener("install", (e) => {

@@ -81,7 +81,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: gym-builder-dist
+          name: baseline-dist
           path: dist
 
       - name: Open pull request
@@ -89,14 +89,14 @@ jobs:
           TITLE: ${{ github.event.issue.title || 'Import drills' }}
         run: |
           branch="import/${ISSUE:-run}-${GITHUB_RUN_ID}"
-          git config user.name "gym-builder-bot"
+          git config user.name "baseline-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
           git add data
           git commit -m "$TITLE" -m "Imported by the drill importer (run $GITHUB_RUN_ID)."
           git push origin "$branch"
           body="$RUNNER_TEMP/summary.md"
-          printf '\n\nPreview build: %s/%s/actions/runs/%s (download **gym-builder-dist**, open index.html)\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> "$body"
+          printf '\n\nPreview build: %s/%s/actions/runs/%s (download **baseline-dist**, open index.html)\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> "$body"
           [ -n "$ISSUE" ] && printf '\nCloses #%s\n' "$ISSUE" >> "$body"
           url=$(gh pr create --title "$TITLE" --body-file "$body" --head "$branch" --base main)
           echo "PR: $url"

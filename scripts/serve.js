@@ -20,4 +20,4 @@ http.createServer((req, res) => {
   if (!p.startsWith(DIST) || !fs.existsSync(p)) { res.writeHead(404); return res.end("not found"); }
   res.writeHead(200, { "content-type": TYPES[path.extname(p)] || "application/octet-stream", "cache-control": "no-store" });
   fs.createReadStream(p).pipe(res);
-}).listen(PORT, () => console.log(`Gym Builder → http://localhost:${PORT}`));
+}).listen(PORT, () => console.log(`Baseline → http://localhost:${PORT}`));

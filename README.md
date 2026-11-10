@@ -1,4 +1,6 @@
-# 🏀 Gym Builder
+# 🏀 Baseline
+
+**Basketball Practice Planner**
 
 A basketball drill catalog with **animated diagrams** and a **practice plan builder**. You tell it your gym (court space, hoops, players, level) and it builds a practice you can run.
 

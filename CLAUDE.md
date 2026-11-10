@@ -1,4 +1,6 @@
-# Gym Builder — notes for Claude
+# Baseline (Basketball Practice Planner) — notes for Claude
+
+The app was renamed from "Gym Builder" to **Baseline** on Nov 10, 2026. The repo is still named `gym-builder`; localStorage keys keep their `gb_` prefix so saved plans survive.
 
 The goal: a basketball practice app that coaches actually use on the sideline. Optimize for **phone readability, speed, and simple coach language**. The owner is Ron Schott (high school assistant coach, youth CYO coach). He wants to get to the best version quickly. Make decisions and ship; flag tradeoffs briefly.
 
@@ -19,7 +21,7 @@ Always run `npm run check` (build + importer tests + e2e) before committing.
 - localStorage keys: `gb_gym`, `gb_cur` (current plan), `gb_plans` (saved plans). Wrap every access in try/catch; the artifact sandbox can throw.
 
 ## Look & design system
-- Team colors are CSS variables (`--team`, `--accent`, plus auto-contrast `--team-ink` / `--accent-ink`) set by `applyLook()` from `gb_look`. Presets live in `TEAMS` in app.js (Gym Builder, St. Luke royal `#1d3fa6` + gold `#f5c400`); "Custom" uses two color pickers.
+- Team colors are CSS variables (`--team`, `--accent`, plus auto-contrast `--team-ink` / `--accent-ink`) set by `applyLook()` from `gb_look`. Presets live in `TEAMS` in app.js (Baseline, St. Luke royal `#1d3fa6` + gold `#f5c400`); "Custom" uses two color pickers.
 - Diagram styles live in `THEMES` in draw.js: `classic`, `whiteboard` (marker wobble, magnet players), `neon` (glow filter, holographic players). Every color in a diagram comes from the theme object, so add new looks there. Print always renders in `whiteboard` because it's ink-friendly.
 - Animated steps draw their lines first (`.dr` draws on, `.fd` fades in), then the players move. Respect `prefers-reduced-motion`.
 - Type: Barlow Condensed (600/800, OFL, `src/fonts/`, inlined at build) for titles and every number; the system UI font for body text. Icons are one 24px line set in `ICONS` (app.js). No emoji in the UI, no all-caps labels, no "a · b · c" meta strings (use icons).
