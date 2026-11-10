@@ -7,7 +7,7 @@ const { execSync } = require("child_process");
 const ROOT = path.join(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
 const PORT = +process.env.PORT || 5173;
-const TYPES = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".webmanifest": "application/manifest+json" };
+const TYPES = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".pdf": "application/pdf", ".webmanifest": "application/manifest+json" };
 
 const build = () => { try { execSync("node scripts/build.js", { cwd: ROOT, stdio: "inherit" }); } catch (e) { /* error already printed */ } };
 build();

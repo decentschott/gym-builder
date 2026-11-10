@@ -1,6 +1,6 @@
 // Offline cache so the app works in gyms with no Wi-Fi. Version is stamped at build time.
 const CACHE = "baseline-__VERSION__";
-const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg", "./icon-512.png"];
+const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg", "./icon-512.png", "./quick-start.pdf"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));

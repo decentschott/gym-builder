@@ -123,3 +123,15 @@ test("search looks through every drill, even with a category chip selected", asy
   await page.locator("#showall").click();
   await expect(page.locator(".card .cname", { hasText: "Star Passing" }).first()).toBeVisible();
 });
+
+test("quick-start guide is linked and served", async ({ page, request }) => {
+  await expect(page.locator("#qstip a")).toHaveAttribute("href", "quick-start.pdf");
+  await page.locator("#qsx").click();
+  await page.reload();
+  await expect(page.locator("#qstip")).toHaveCount(0); // dismissed tip stays dismissed
+  await page.locator('nav button[data-tab="saved"]').click();
+  await expect(page.locator(".guidelink")).toHaveAttribute("href", "quick-start.pdf");
+  const res = await request.get("/quick-start.pdf");
+  expect(res.ok()).toBeTruthy();
+  expect(res.headers()["content-type"]).toContain("pdf");
+});

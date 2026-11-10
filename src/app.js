@@ -30,7 +30,8 @@ var ICONS={
   drop:'<path d="M12 3.5c3.5 4.3 5.5 7.4 5.5 10a5.5 5.5 0 0 1-11 0c0-2.6 2-5.7 5.5-10z"/>',
   print:'<path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v6H7z"/>',
   copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>',
-  check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>'
+  check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  guide:'<path d="M6 3.5h8l4 4v13H6z"/><path d="M14 3.5v4h4M9 12h6M9 15.5h6"/>'
 };
 function ic(n){ return '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[n]||"")+'</svg>'; }
 
@@ -104,7 +105,7 @@ function openLook(){
     '<label class="lbl">Team colors</label><div class="swatches">'+sw+'</div>'+
     '<div class="customc"><label>Main <input type="color" id="lc1" value="'+LOOK.c1+'"></label><label>Accent <input type="color" id="lc2" value="'+LOOK.c2+'"></label></div>'+
     '<label class="lbl">3-point line on diagrams</label>'+seg("line",[["hs","High school"],["college","College"],["nba","NBA"]],LOOK.line)+
-    '<button class="btn team wide" id="ldone">Done</button>', function(root){
+    '<button class="btn team wide" id="ldone">Done</button>'+guideLink("guidelink center"), function(root){
       function live(){ applyLook(); save("gb_look",LOOK); }
       $$(".thm",root).forEach(function(b){ b.onclick=function(){ LOOK.diagram=b.dataset.th; $$(".thm",root).forEach(function(x){x.classList.toggle("on",x===b);}); live(); }; });
       $$(".sw",root).forEach(function(b){ b.onclick=function(){ LOOK.team=b.dataset.team; $$(".sw",root).forEach(function(x){x.classList.toggle("on",x===b);}); live(); }; });
@@ -112,6 +113,14 @@ function openLook(){
       $('.seg[data-k="line"]',root).addEventListener("click",function(e){ var b=e.target.closest("button"); if(!b) return; $$('.seg[data-k="line"] button',root).forEach(function(x){x.classList.toggle("on",x===b);}); LOOK.line=b.dataset.v; live(); });
       $("#ldone",root).onclick=function(){ live(); closeSheet(); render(); };
   });
+}
+
+// ---------- quick-start guide (public/quick-start.pdf) ----------
+var GUIDE_URL="quick-start.pdf";
+function guideLink(cls){ return '<a class="'+(cls||"guidelink")+'" href="'+GUIDE_URL+'" target="_blank" rel="noopener">'+ic("guide")+'Quick start guide <span>1-page PDF</span></a>'; }
+function guideTip(){
+  if(load("gb_tip_qs",false)) return "";
+  return '<div class="tip" id="qstip">'+ic("guide")+'<div><b>New to Baseline?</b> The quick start shows you everything in six steps. <a href="'+GUIDE_URL+'" target="_blank" rel="noopener">Open the guide</a></div><button aria-label="Dismiss" id="qsx">'+ic("x")+'</button></div>';
 }
 
 // ---------- drills tab ----------
@@ -146,13 +155,15 @@ function renderDrills(){
   else if(UI.cat==="all" && !q) body=Object.keys(CATS).map(function(k){ var l=list.filter(function(d){return d.cat===k;}); if(!l.length) return ""; return '<section class="sect"><h3><i style="background:'+CATS[k][1]+'"></i>'+CATS[k][0]+'<small>'+l.length+'</small></h3><div class="rows">'+l.map(function(d){return card(d,false);}).join("")+'</div></section>'; }).join("");
   else { var title=q?'Results for “'+esc(UI.q)+'”':UI.cat==="pb"?"My playbook":CATS[UI.cat][0]; body=more+'<section class="sect"><h3>'+title+'<small>'+list.length+'</small></h3><div class="rows">'+list.map(function(d){return card(d,UI.cat==="pb"||!!q||UI.cat==="mot");}).join("")+'</div></section>'; }
   $("#main").innerHTML=
-    '<h1 class="ptitle">Drills</h1><p class="psub">'+list.length+' of '+DR.length+(UI.fit?' fit your gym and level':' drills')+'</p>'+
+    guideTip()+'<h1 class="ptitle">Drills</h1><p class="psub">'+list.length+' of '+DR.length+(UI.fit?' fit your gym and level':' drills')+'</p>'+
     '<div class="tools"><div class="search">'+ic("search")+'<input id="q" type="search" placeholder="Search drills" aria-label="Search drills" value="'+esc(UI.q)+'"></div>'+
     '<label class="switch"><input type="checkbox" id="fit" '+(UI.fit?"checked":"")+'><span></span>Fits my gym</label></div>'+
     '<div class="chips'+(q?' searching':'')+'">'+chips+'</div>'+body;
   // keep the selected chip visible so a hidden filter never surprises anyone
   var on=$(".chips .chip.on"), row=$(".chips"); if(on && row) row.scrollLeft=Math.max(0,on.offsetLeft-row.clientWidth/2+on.offsetWidth/2);
   if($("#showall")) $("#showall").onclick=function(){ UI.fit=false; renderDrills(); };
+  if($("#qsx")) $("#qsx").onclick=function(){ save("gb_tip_qs",true); var t=$("#qstip"); if(t) t.remove(); };
+  if($("#qstip a")) $("#qstip a").addEventListener("click",function(){ save("gb_tip_qs",true); });
   var qi=$("#q"); qi.oninput=function(){ UI.q=qi.value; var pos=qi.selectionStart; renderDrills(); var n=$("#q"); n.focus(); n.setSelectionRange(pos,pos); };
   $("#fit").onchange=function(e){ UI.fit=e.target.checked; renderDrills(); };
   $$(".chip[data-cat]").forEach(function(b){ b.onclick=function(){ UI.cat=b.dataset.cat; if(UI.q){ UI.q=""; } renderDrills(); }; });
@@ -358,7 +369,8 @@ function copyText(s){
 // ---------- saved ----------
 function renderSaved(){
   var all=load("gb_plans",[]);
-  $("#main").innerHTML='<h1 class="ptitle">Saved</h1><p class="psub">Practices you saved on this device.</p><div class="panel">'+(all.length?all.map(function(p,i){ var tot=p.blocks.reduce(function(a,b){return a+b.min;},0); return '<div class="saved"><div><b>'+esc(p.name)+'</b><div class="muted">'+tot+' min · '+p.blocks.filter(function(b){return !b.water;}).length+' drills</div></div><div class="row gap"><button class="btn" data-load="'+i+'">Open</button><button class="btn ghost" data-del="'+i+'" aria-label="Delete">'+ic("x")+'</button></div></div>';}).join(""):'<p class="muted">Nothing saved yet. Build a plan and tap Save.</p>')+'</div>';
+  $("#main").innerHTML='<h1 class="ptitle">Saved</h1><p class="psub">Practices you saved on this device.</p><div class="panel">'+(all.length?all.map(function(p,i){ var tot=p.blocks.reduce(function(a,b){return a+b.min;},0); return '<div class="saved"><div><b>'+esc(p.name)+'</b><div class="cmeta"><span>'+ic("clock")+tot+' min</span><span>'+ic("court")+p.blocks.filter(function(b){return !b.water;}).length+' drills</span></div></div><div class="row gap"><button class="btn" data-load="'+i+'">Open</button><button class="btn ghost" data-del="'+i+'" aria-label="Delete">'+ic("x")+'</button></div></div>';}).join(""):'<p class="muted">Nothing saved yet. Build a plan and tap Save.</p>')+'</div>'+
+    '<div class="panel"><h2>Help</h2><p class="psub" style="margin:4px 0 10px">Six steps from setting up your gym to a printed plan.</p>'+guideLink()+'</div>';
   $$("[data-load]").forEach(function(b){ b.onclick=function(){ PLAN=JSON.parse(JSON.stringify(all[+b.dataset.load])); save("gb_cur",PLAN); setTab("plan"); }; });
   $$("[data-del]").forEach(function(b){ b.onclick=function(){ all.splice(+b.dataset.del,1); save("gb_plans",all); renderSaved(); }; });
 }

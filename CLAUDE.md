@@ -38,5 +38,9 @@ Always run `npm run check` (build + importer tests + e2e) before committing.
 - Ron's own drills carry `"src": "St. Luke playbook"` (or similar) and keep his vocabulary: "HUNT", "lift or drift", "feet in the paint", Rip & Go / Jab & Go / Shot Fake + Go.
 - Motion offense principles (penetrate → relocate → pass) are a core emphasis.
 
+## Quick-start guide
+- `public/quick-start.pdf` ships with the app (linked from a one-time tip on Drills, the Look sheet, and Help on the Saved tab; cached offline).
+- Source lives in `guide/` (`guide.html` + screenshots). After UI changes, regenerate it with the steps in `guide/README.md`.
+
 ## Deploy
 Pushes to `main` run `.github/workflows/ci.yml`: build, tests, then a GitHub Pages deploy.
