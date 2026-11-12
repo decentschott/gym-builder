@@ -39,49 +39,6 @@
     }
   },
   {
-    "id": "f2",
-    "cat": "foot",
-    "n": "Triple Threat Series",
-    "lv": "12",
-    "p": [
-      1,
-      20
-    ],
-    "t": 5,
-    "eq": "Balls",
-    "why": "Catch ready to shoot, pass, or drive.",
-    "say": "Catch, square up, ball at your hip — then jab, and go.",
-    "how": [
-      "Coach passes to the player on the wing.",
-      "Catch in triple threat, square to the rim.",
-      "Jab-and-go drive, jab-and-shoot, or jab-crossover."
-    ],
-    "cue": [
-      "Ball on the hip",
-      "Jab is short and quick",
-      "Eyes on the rim"
-    ],
-    "e": "Catch and hold triple threat only.",
-    "h": "Add a live defender.",
-    "d": {
-      "s": "1 8,20;C 25,28;b:C",
-      "st": [
-        [
-          "C p 1",
-          "Catch in triple threat"
-        ],
-        [
-          "1 d 14,10 21,6",
-          "Jab and drive"
-        ],
-        [
-          "1 sh",
-          "Finish"
-        ]
-      ]
-    }
-  },
-  {
     "id": "f3",
     "cat": "foot",
     "n": "Pivot & Protect",
@@ -116,135 +73,6 @@
         [
           "1 p C",
           "Pass out"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "f4",
-    "cat": "foot",
-    "n": "V-Cut to Catch",
-    "lv": "123",
-    "p": [
-      2,
-      20
-    ],
-    "t": 5,
-    "eq": "Balls",
-    "why": "Creates space to get open on the wing.",
-    "say": "Walk your defender in, then plant and cut hard out to the wing.",
-    "how": [
-      "Start on the wing.",
-      "Walk toward the block 2–3 steps.",
-      "Plant outside foot, explode back out, show a target."
-    ],
-    "cue": [
-      "Slow in, fast out",
-      "Hand target",
-      "Catch facing the rim"
-    ],
-    "e": "No defender.",
-    "h": "Defender plays deny.",
-    "d": {
-      "s": "1 8,18;C 25,30;b:C",
-      "st": [
-        [
-          "1 c 14,10",
-          "Walk the defender in"
-        ],
-        [
-          "1 c 6,21",
-          "Plant and cut out hard"
-        ],
-        [
-          "C p 1",
-          "Catch facing the rim"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "f5",
-    "cat": "foot",
-    "n": "L-Cut to Wing",
-    "lv": "23",
-    "p": [
-      2,
-      20
-    ],
-    "t": 5,
-    "eq": "Balls",
-    "why": "Get open from the block when the defender is high.",
-    "say": "Walk up the lane line, then cut flat out to the wing.",
-    "how": [
-      "Start on the block.",
-      "Walk up the lane line to the elbow.",
-      "Cut flat to the wing, show a target, catch."
-    ],
-    "cue": [
-      "Sharp 90-degree cut",
-      "Stay low",
-      "Sell with your eyes"
-    ],
-    "e": "Walk the shape.",
-    "h": "Defender plays deny.",
-    "d": {
-      "s": "1 19,8;C 25,32;b:C",
-      "st": [
-        [
-          "1 c 19,18",
-          "Walk up the lane line"
-        ],
-        [
-          "1 c 7,19",
-          "Cut flat to the wing"
-        ],
-        [
-          "C p 1",
-          "Catch"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "f6",
-    "cat": "foot",
-    "n": "1-2 Step vs Hop Footwork",
-    "lv": "23",
-    "p": [
-      1,
-      20
-    ],
-    "t": 5,
-    "eq": "Balls",
-    "why": "Catch footwork that sets up quick, balanced shots.",
-    "say": "Step into your shot as you catch — left-right or a quick hop.",
-    "how": [
-      "Player runs to a spot as coach passes.",
-      "Catch with a 1-2 step (inside foot first) or a hop.",
-      "Shoot; alternate footwork each rep."
-    ],
-    "cue": [
-      "Feet ready before the ball",
-      "Toes to rim",
-      "Same shot every time"
-    ],
-    "e": "Catch from standing.",
-    "h": "Off the dribble too.",
-    "d": {
-      "s": "1 12,30;C 25,20;b:C",
-      "st": [
-        [
-          "1 c 14,22",
-          "Run into the catch"
-        ],
-        [
-          "C p 1",
-          "Catch with 1-2 or hop"
-        ],
-        [
-          "1 sh",
-          "Shoot"
         ]
       ]
     }
@@ -337,49 +165,100 @@
     }
   },
   {
-    "id": "f9",
+    "id": "f10",
     "cat": "foot",
-    "n": "Gather Series (1-2 vs. Two-Foot)",
-    "lv": "23",
+    "n": "Coach Says Footwork",
+    "lv": "12",
     "p": [
-      1,
-      20
+      3,
+      30
     ],
     "t": 5,
-    "eq": "1 cone, balls",
-    "why": "Two ways to gather at the rim, so players can finish through or around help.",
-    "say": "Attack the cone, then gather — first round 1-2 step, second round two-foot jump stop.",
+    "eq": "1 ball per player",
+    "why": "Jump stops, pivots, and jabs for the whole team at once, as a game.",
+    "say": "Only move when I say 'Coach says.' Jump stops on two feet, and keep that pivot foot down.",
     "how": [
-      "Cone at the free-throw line is the help defender.",
-      "Attack the cone with speed, rip past it.",
-      "Round 1: 1-2 gather (inside foot first) into a layup.",
-      "Round 2: two-foot jump stop, pump fake, finish."
+      "Everyone spreads out with a ball, facing the coach.",
+      "Coach calls footwork: dribble and jump stop, front pivot, reverse pivot, jab, shot fake.",
+      "No 'Coach says'? Freeze."
     ],
     "cue": [
-      "Last dribble hard",
-      "Big first step past the cone",
-      "Eyes on the rim"
+      "Land on two feet",
+      "Pivot foot glued",
+      "Chin the ball"
     ],
-    "e": "Walk the footwork with no ball.",
-    "h": "Coach with a pad bumps on the gather.",
+    "e": "Call it slowly, no ball.",
+    "h": "Speed up the calls and mix in fakes.",
+    "var": [
+      "Caught moving? Five pound dribbles, then back in",
+      "Add a shot fake before every move",
+      "Let a player be the caller",
+      "Finish each round with a sprint to a line"
+    ],
     "d": {
-      "s": "1 25,40 q2;k1 25,22;b:1",
+      "s": "1 10,40;2 20,40;3 30,40;4 40,40;C 25,6;b:1,2,3,4",
       "st": [
         [
-          "1 d 25,26",
-          "Attack the cone"
+          "1 d 10,30;2 d 20,30;3 d 30,30;4 d 40,30",
+          "'Coach says dribble and jump stop' — land on two feet"
         ],
         [
-          "1 d 29,16",
-          "Rip past it"
+          "1 c 12,29;2 c 22,29;3 c 32,29;4 c 42,29",
+          "'Coach says front pivot' — the pivot foot stays down"
         ],
         [
-          "1 c 30,12 28,8",
-          "Gather — 1-2 step (or a two-foot stop)"
+          "1 d 12,20;2 d 22,20;3 d 32,20;4 d 42,20",
+          "'Coach says jab and go' — no 'Coach says' means freeze"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f11",
+    "cat": "foot",
+    "n": "Partner Jab & Go",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per pair",
+    "why": "Triple threat, jab, and a first step — every pair working at once.",
+    "say": "Catch in triple threat, jab hard at their foot, then rip and go for two dribbles. Switch every rep.",
+    "how": [
+      "Pairs spread around the arc: one on offense, one on defense.",
+      "Offense starts in triple threat and jabs.",
+      "Rip through and go for two dribbles; defender slides to stay in front.",
+      "Hand the ball over and switch."
+    ],
+    "cue": [
+      "Short, quick jab",
+      "Rip low",
+      "Long first step"
+    ],
+    "e": "Defender is a statue.",
+    "h": "Play it live to one shot.",
+    "var": [
+      "Jab and shoot",
+      "Jab, crossover step, go the other way",
+      "Shot fake, then go",
+      "V-cut to get open before the catch"
+    ],
+    "d": {
+      "s": "1 8,22;x1 11,19;2 25,31;x2 25,27;3 42,22;x3 39,19;b:1,2,3",
+      "st": [
+        [
+          "1 c 9,21;2 c 25,30;3 c 41,21",
+          "Triple threat, then a hard jab at the defender's foot"
         ],
         [
-          "1 sh",
-          "Finish"
+          "1 d 14,12;x1 sl 16,13;2 d 20,22;x2 sl 22,21;3 d 36,12;x3 sl 34,13",
+          "Rip and go — two dribbles, defender stays in front"
+        ],
+        [
+          "1 p x1;2 p x2;3 p x3",
+          "Hand it over and switch roles"
         ]
       ]
     }

@@ -204,49 +204,6 @@
     }
   },
   {
-    "id": "d6",
-    "cat": "def",
-    "n": "Deny the Wing",
-    "lv": "23",
-    "p": [
-      2,
-      20
-    ],
-    "t": 5,
-    "eq": "Balls",
-    "why": "Makes catching the ball hard.",
-    "say": "Hand in the passing lane, see your player and the ball, don't let them catch it.",
-    "how": [
-      "Coach with ball at the top, offense on the wing.",
-      "Defender denies: hand and foot in the lane.",
-      "Offense V-cuts and backdoors; play 20 seconds."
-    ],
-    "cue": [
-      "Thumb down, palm out",
-      "See ball and player",
-      "Open up on the backdoor"
-    ],
-    "e": "Offense walks.",
-    "h": "Catch = live 1v1.",
-    "d": {
-      "s": "C 25,30;2 8,18;x2 11,19;b:C",
-      "st": [
-        [
-          "2 c 12,10;x2 sl 14,12",
-          "Offense walks in"
-        ],
-        [
-          "2 c 6,21;x2 sl 9,20",
-          "Deny the V-cut"
-        ],
-        [
-          "2 c 16,7;x2 c 17,9",
-          "Open up on the backdoor"
-        ]
-      ]
-    }
-  },
-  {
     "id": "d7",
     "cat": "def",
     "n": "Help & Recover (2-on-2)",
@@ -285,41 +242,6 @@
         [
           "1 p 2;x2 c 37,15",
           "Pass — recover and close out"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "d8",
-    "cat": "def",
-    "n": "Take the Charge",
-    "lv": "23",
-    "p": [
-      2,
-      16
-    ],
-    "t": 4,
-    "eq": "Mat optional",
-    "why": "Teaches safe charge-taking and a culture of toughness.",
-    "say": "Get set early outside the circle, chest square, fall back safely.",
-    "how": [
-      "Defender sets in the lane outside the restricted area.",
-      "Offense dribbles in at walking speed.",
-      "Defender absorbs, sits, rolls back; hands to the chest."
-    ],
-    "cue": [
-      "Feet set first",
-      "Chin tucked",
-      "Sit, then roll"
-    ],
-    "e": "Practice the fall without contact.",
-    "h": "Full speed with a pad.",
-    "d": {
-      "s": "1 25,32;x1 25,12;b:1",
-      "st": [
-        [
-          "1 d 25,15",
-          "Offense drives in — defender is set"
         ]
       ]
     }
@@ -484,6 +406,159 @@
         [
           "2 p 1;x5 c 33,11",
           "Back to the wing — high side"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d14",
+    "cat": "def",
+    "n": "Partner Closeout Circuit",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per pair",
+    "why": "Every player closing out on every rep.",
+    "say": "Pass out, sprint, chop your feet, hand high, yell 'ball!' — then keep them in front for one dribble.",
+    "how": [
+      "Pairs around the arc: defenders start in the lane with the ball.",
+      "Defender passes out and closes out.",
+      "Offense takes one hard dribble; defender contains.",
+      "Switch roles, then rotate one spot."
+    ],
+    "cue": [
+      "Sprint, then chop",
+      "High hand",
+      "Stay down on fakes"
+    ],
+    "e": "Closeout only, no dribble.",
+    "h": "Live 1-on-1 to one shot.",
+    "var": [
+      "Shot fake, then contain",
+      "Close out from help position in the lane",
+      "Offense may shoot: contest without fouling",
+      "Winner stays on defense"
+    ],
+    "d": {
+      "s": "1 8,20;2 25,30;3 42,20;x1 20,9;x2 25,11;x3 30,9;b:x1,x2,x3",
+      "st": [
+        [
+          "x1 p 1;x2 p 2;x3 p 3",
+          "Every defender passes out at once"
+        ],
+        [
+          "x1 c 11,18;x2 c 25,26;x3 c 39,18",
+          "Sprint, chop, high hand — 'ball!'"
+        ],
+        [
+          "1 d 12,12;x1 sl 14,13;2 d 19,24;x2 sl 21,22;3 d 38,12;x3 sl 36,13",
+          "One hard dribble — stay in front"
+        ],
+        [
+          "1 p x1;2 p x2;3 p x3",
+          "Switch roles, then rotate one spot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d15",
+    "cat": "def",
+    "n": "Channel 1-on-1",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per pair",
+    "why": "On-ball defense for every pair at once, in a lane they can't escape.",
+    "say": "Defender, keep your chest in front and turn them. Ball handler, stay in your lane and try to get by.",
+    "how": [
+      "Split the floor into lanes; one pair per lane.",
+      "Ball handler attacks down the lane; defender turns them as many times as possible.",
+      "Switch roles coming back."
+    ],
+    "cue": [
+      "Chest in front",
+      "Beat them to the spot",
+      "Don't reach"
+    ],
+    "e": "Defender's hands behind the back.",
+    "h": "Live: a steal or a blow-by is a point.",
+    "var": [
+      "Count the turns: three turns wins for the defense",
+      "Start with a closeout",
+      "Full court for conditioning",
+      "Ball handler must use the weak hand"
+    ],
+    "d": {
+      "s": "1 8,44;x1 8,40;2 25,44;x2 25,40;3 42,44;x3 42,40;b:1,2,3",
+      "st": [
+        [
+          "1 d 12,32 5,22 11,10;x1 sl 11,29 6,19 10,8;2 d 29,32 22,22 28,10;x2 sl 28,29 23,19 27,8;3 d 46,32 39,22 45,10;x3 sl 45,29 40,19 44,8",
+          "Every pair goes — the handler attacks down the lane, the defender turns them"
+        ],
+        [
+          "1 p x1;2 p x2;3 p x3",
+          "Switch roles and come back"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d16",
+    "cat": "def",
+    "n": "Scramble Closeouts (3-on-3)",
+    "lv": "23",
+    "p": [
+      6,
+      18
+    ],
+    "t": 8,
+    "eq": "1 ball",
+    "why": "Closing out, matching up, and talking when nobody starts on their own player.",
+    "say": "When I pass it, the closest defender takes the ball. Everyone else match up and talk. One stop and you're off.",
+    "how": [
+      "Three offense on the arc, three defenders in the lane, coach under the basket with the ball.",
+      "Coach passes to any offensive player.",
+      "Closest defender closes out; the others match up.",
+      "Play live to one shot. Defense must rebound to rotate off."
+    ],
+    "cue": [
+      "Point and call your player",
+      "Closeout, high hand",
+      "Finish with a rebound"
+    ],
+    "e": "Offense holds the ball for two seconds.",
+    "h": "Offense may shoot on the catch.",
+    "var": [
+      "Defense starts lying on their backs",
+      "4-on-4",
+      "Offense is limited to three dribbles",
+      "Defense needs two stops in a row to get off"
+    ],
+    "d": {
+      "s": "1 8,20;2 25,30;3 42,20;x1 21,8;x2 25,10;x3 29,8;C 25,3;b:C",
+      "st": [
+        [
+          "C p 3;x3 c 39,18;x2 c 30,22;x1 c 20,13",
+          "Coach passes — closest defender closes out, the others match up and talk"
+        ],
+        [
+          "3 d 36,12;x3 sl 35,13;x1 c 27,10",
+          "Live: contain the ball, help early"
+        ],
+        [
+          "3 p 2;x2 c 26,27",
+          "Kick-out — close out again"
+        ],
+        [
+          "2 sh",
+          "One shot. Defense must rebound to get off"
         ]
       ]
     }

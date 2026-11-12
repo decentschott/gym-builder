@@ -217,41 +217,6 @@
     }
   },
   {
-    "id": "c6",
-    "cat": "cond",
-    "n": "Tip Drill",
-    "lv": "23",
-    "p": [
-      3,
-      12
-    ],
-    "t": 3,
-    "eq": "1 ball",
-    "why": "Jumping, timing, and team rhythm.",
-    "say": "Tip it off the glass, go to the back of the other line — don't let it drop.",
-    "how": [
-      "Line on one side of the rim.",
-      "Tip the ball off the glass, run to the other side.",
-      "Keep it alive for 30 seconds."
-    ],
-    "cue": [
-      "Fingertips",
-      "Jump to it",
-      "Go to the back of the line"
-    ],
-    "e": "Catch and toss.",
-    "h": "Count tips without a drop.",
-    "d": {
-      "s": "1 19,4 q3;b:1",
-      "st": [
-        [
-          "1 sh;1 c 31,4",
-          "Tip it, run to the other side"
-        ]
-      ]
-    }
-  },
-  {
     "id": "c7",
     "cat": "cond",
     "n": "Team 2-Minute Layups",
@@ -340,6 +305,53 @@
         [
           "1 sh",
           "Shoot tired"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "c9",
+    "cat": "cond",
+    "n": "Full-Court Dribble Tag",
+    "lv": "12",
+    "p": [
+      5,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball per player",
+    "why": "Conditioning with a ball in every player's hands.",
+    "say": "Everybody dribbles, the whole floor is live. If you're tagged, you're a tagger too. Last one free wins.",
+    "how": [
+      "Everyone has a ball; pick one or two taggers.",
+      "Taggers must dribble while they tag.",
+      "Tagged players become taggers.",
+      "Play until one player is left; go again."
+    ],
+    "cue": [
+      "Eyes up",
+      "Change speed",
+      "Keep your dribble alive"
+    ],
+    "e": "Half court.",
+    "h": "Weak hand only.",
+    "var": [
+      "Tagged players do five pound dribbles, then rejoin as runners",
+      "Taggers must tag with the off hand",
+      "Freeze tag: a teammate unfreezes you with a bounce pass",
+      "Two-minute rounds, count your tags"
+    ],
+    "d": {
+      "c": "f",
+      "s": "1 10,20;2 40,24;3 24,44;4 12,66;5 38,70;x1 25,56;b:1,2,3,4,5,x1",
+      "st": [
+        [
+          "x1 d 28,46;3 d 14,36;1 d 8,34;2 d 44,40;4 d 8,80;5 d 42,84",
+          "Everyone dribbles the whole floor — the tagger dribbles too"
+        ],
+        [
+          "x1 d 16,38;3 d 20,24;1 d 6,50",
+          "Tagged? You're a tagger now. Last one free wins"
         ]
       ]
     }

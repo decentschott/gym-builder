@@ -3,7 +3,7 @@ const path = require("path");
 const GB = require(path.join(__dirname, "..", "src/engine.js"));
 
 const REQUIRED = { id: "string", cat: "string", n: "string", lv: "string", p: "object", t: "number", eq: "string", why: "string", say: "string", how: "object", cue: "object", e: "string", h: "string", d: "object" };
-const ALLOWED = ["id", "cat", "n", "src", "ref", "lv", "p", "t", "eq", "hoop", "one", "also", "thumb", "trail", "why", "say", "how", "cue", "e", "h", "d"];
+const ALLOWED = ["id", "cat", "n", "src", "ref", "lv", "p", "t", "eq", "hoop", "one", "also", "thumb", "trail", "var", "why", "say", "how", "cue", "e", "h", "d"];
 
 /** Returns a list of human-readable problems for one drill (empty = valid). */
 function checkDrill(d, cats) {
@@ -15,6 +15,7 @@ function checkDrill(d, cats) {
   if (!Array.isArray(d.p) || d.p.length !== 2 || !(d.p[0] <= d.p[1])) errs.push("p must be [min, max] players");
   if (!Array.isArray(d.how) || d.how.length < 2) errs.push("how needs at least 2 steps");
   if (!Array.isArray(d.cue) || !d.cue.length) errs.push("cue needs at least 1 entry");
+  if (d.var !== undefined && (!Array.isArray(d.var) || d.var.some((v) => typeof v !== "string"))) errs.push("var must be a list of short variation strings");
   (d.also || []).forEach((c) => { if (!cats[c]) errs.push(`also has unknown category "${c}"`); });
   if (typeof d.say === "string" && d.say.length > 160) errs.push(`"say" is ${d.say.length} chars — keep it under 160 so players actually hear it`);
   if (d.d && typeof d.d === "object") {

@@ -118,54 +118,6 @@
     }
   },
   {
-    "id": "w4",
-    "cat": "warm",
-    "n": "Layup Lines Warm-Up",
-    "lv": "123",
-    "p": [
-      4,
-      20
-    ],
-    "t": 6,
-    "eq": "2–3 balls",
-    "why": "Classic warm-up that gets everyone moving and finishing.",
-    "say": "Shooting line attacks the rim, rebound line grabs it and passes to the next shooter.",
-    "how": [
-      "Shooting line at the right elbow-extended; rebound line on the left wing.",
-      "Shooter dribbles in for a right-hand layup.",
-      "Rebounder grabs it, outlets to the next shooter.",
-      "Players switch lines after each rep."
-    ],
-    "cue": [
-      "High knee on the jump",
-      "Hit the top corner of the box",
-      "Talk: call the next shooter's name"
-    ],
-    "e": "Jump stop then shoot.",
-    "h": "Switch to left side, left hand.",
-    "d": {
-      "s": "1 40,24 q3;5 8,24 q3;b:1",
-      "st": [
-        [
-          "1 d 32,12 28,7",
-          "Dribble in from the right side"
-        ],
-        [
-          "1 sh;5 c 22,8",
-          "Right-hand layup off the glass; rebounder steps in"
-        ],
-        [
-          "5 rb 24,6;1 c 22,16 8,24",
-          "Rebounder grabs it, shooter goes to the rebound line"
-        ],
-        [
-          "5 d 30,20 40,24",
-          "Rebounder brings it back to the shooting line"
-        ]
-      ]
-    }
-  },
-  {
     "id": "w5",
     "cat": "warm",
     "n": "Dynamic Stretch Circle",

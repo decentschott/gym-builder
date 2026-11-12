@@ -675,5 +675,390 @@
         ]
       ]
     }
+  },
+  {
+    "id": "m15",
+    "cat": "mot",
+    "n": "3-on-3 No-Dribble",
+    "lv": "123",
+    "p": [
+      6,
+      18
+    ],
+    "t": 8,
+    "eq": "1 ball per hoop",
+    "also": [
+      "game"
+    ],
+    "why": "Forces cutting and moving without the ball — nobody can stand.",
+    "say": "No dribbling at all. The only way to get open is to cut. Pass, cut, and fill the open spot.",
+    "how": [
+      "3-on-3 in the half court, no dribbling.",
+      "Pass and cut to the rim; the next player fills.",
+      "Score on a cut or an open shot.",
+      "Make it, take it to 5."
+    ],
+    "cue": [
+      "Cut hard",
+      "Fill the open spot",
+      "Meet the pass"
+    ],
+    "e": "Defense plays with hands behind the back.",
+    "h": "Five passes before a shot.",
+    "var": [
+      "One dribble allowed, only to score",
+      "A backdoor layup counts double",
+      "4-on-4",
+      "Every score must come off a cut"
+    ],
+    "d": {
+      "s": "1 25,30;2 8,20;3 42,20;x1 25,26;x2 11,19;x3 39,19;b:1",
+      "st": [
+        [
+          "1 p 2;1 c 22,18 24,8;3 c 25,30;x1 c 23,20",
+          "Pass and cut — the next player fills the open spot"
+        ],
+        [
+          "2 p 3;1 c 42,20;x3 c 27,27",
+          "No dribbles: get open with a cut"
+        ],
+        [
+          "3 p 1",
+          "Find the open cutter"
+        ],
+        [
+          "1 sh",
+          "Score — make it, take it"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m16",
+    "cat": "mot",
+    "n": "4-Out Screen-Away Continuity",
+    "lv": "23",
+    "p": [
+      4,
+      16
+    ],
+    "t": 8,
+    "eq": "1 ball per group",
+    "thumb": "all",
+    "why": "Pass and screen away in a loop that never stops — all four players moving.",
+    "say": "Pass, screen away, cutter comes to the ball, screener pops back. Reverse it and run it again.",
+    "how": [
+      "4-out: two slots and two wings, at each hoop.",
+      "Slot passes to the wing and screens away for the other slot.",
+      "Cutter comes to the ball; screener pops back to the open slot.",
+      "Reverse the ball and run the same action on the other side."
+    ],
+    "cue": [
+      "Screen a body, not a spot",
+      "Cutter waits for the screen",
+      "Screener pops back"
+    ],
+    "e": "Walk it 4-on-0.",
+    "h": "Go live 4-on-4 after three reversals.",
+    "var": [
+      "Cutter curls to the rim for a layup",
+      "Cutter reads the defender: curl, pop, or backdoor",
+      "Screener slips to the basket",
+      "Add a ball screen on the third reversal"
+    ],
+    "d": {
+      "s": "1 16,28;2 34,28;3 5,12;4 45,12;b:1",
+      "st": [
+        [
+          "1 p 3",
+          "Pass to the wing"
+        ],
+        [
+          "1 s 31,27",
+          "Screen away for the other slot"
+        ],
+        [
+          "2 c 27,21 16,28;1 c 34,28",
+          "Cutter comes to the ball, screener pops back"
+        ],
+        [
+          "3 p 2",
+          "Wing hits the cutter"
+        ],
+        [
+          "2 p 1",
+          "Reverse it"
+        ],
+        [
+          "1 p 4;1 s 19,27",
+          "Same action on the other side"
+        ],
+        [
+          "2 c 23,21 34,28;1 c 16,28",
+          "It never stops — everyone keeps moving"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m17",
+    "cat": "mot",
+    "n": "Call-It Motion (5-Out)",
+    "lv": "23",
+    "p": [
+      5,
+      15
+    ],
+    "t": 10,
+    "eq": "1 ball",
+    "one": 1,
+    "why": "Three motion actions in one drill; all five players move on every pass.",
+    "say": "After every pass, I call it: 'cut,' 'screen away,' or 'ball screen.' All five of you move every time.",
+    "how": [
+      "5-out spacing, no defense to start.",
+      "After each pass the coach calls the action.",
+      "'Cut': passer cuts through, everyone fills up.",
+      "'Screen away': pass one way, screen the other.",
+      "'Ball screen': follow your pass and set it; finish the play."
+    ],
+    "cue": [
+      "Move on every pass",
+      "Fill toward the ball",
+      "Talk the action"
+    ],
+    "e": "Run one action at a time.",
+    "h": "Players call the action themselves; then go live 5-on-5.",
+    "var": [
+      "Add a defense that plays at half speed",
+      "Every action ends in a shot",
+      "No calls: read the defender",
+      "Two-dribble limit once it's live"
+    ],
+    "d": {
+      "s": "1 25,30;2 8,22;3 42,22;4 3,5;5 47,5;b:1",
+      "st": [
+        [
+          "1 p 2",
+          "Pass to the wing — coach calls the action"
+        ],
+        [
+          "1 c 24,14 30,6 46,7;3 c 25,30;5 c 42,22",
+          "'Cut!' Passer cuts through, everyone fills up a spot"
+        ],
+        [
+          "2 p 3",
+          "Back to the top"
+        ],
+        [
+          "3 p 5;3 s 12,24",
+          "'Screen away!' Pass one way, screen the other"
+        ],
+        [
+          "2 c 15,29 25,30;3 c 8,22",
+          "Cutter comes off to the top, screener takes the wing"
+        ],
+        [
+          "2 s 39,25",
+          "'Ball screen!' Go set it"
+        ],
+        [
+          "5 d 33,17 29,9;2 c 38,13",
+          "Use it and attack — the screener rolls"
+        ],
+        [
+          "5 sh",
+          "Score, then reset and go again"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m18",
+    "cat": "mot",
+    "n": "Screen-Away Shooting",
+    "lv": "23",
+    "p": [
+      3,
+      18
+    ],
+    "t": 8,
+    "eq": "2 balls per group of 3",
+    "also": [
+      "sh"
+    ],
+    "why": "Screen-away action where both the cutter and the screener get a shot every rep.",
+    "say": "Pass and screen away. Cutter, curl for the shot. Screener, pop back — the second ball is coming to you.",
+    "how": [
+      "Groups of three with two balls: top, both wings.",
+      "Top passes to one wing and screens away for the other.",
+      "Cutter curls to the elbow, catches, and shoots.",
+      "Screener pops back for the second ball and shoots.",
+      "Both rebound; rotate passer → screener → cutter."
+    ],
+    "cue": [
+      "Set a real screen",
+      "Cutter: hands ready",
+      "Screener: pop with your feet set"
+    ],
+    "e": "Walk the screen; shoot from close.",
+    "h": "The passer calls 'curl' or 'fade' as the cut starts.",
+    "var": [
+      "Cutter fades to the corner instead",
+      "Cutter goes backdoor for a layup",
+      "Screener slips to the rim",
+      "Run it on both sides"
+    ],
+    "d": {
+      "s": "1 25,30;2 8,20;3 42,20;b:1,3",
+      "st": [
+        [
+          "1 p 3",
+          "Pass to the wing"
+        ],
+        [
+          "1 s 12,22",
+          "Screen away"
+        ],
+        [
+          "2 c 14,26 20,20;3 p 2",
+          "Cutter curls to the elbow for the catch"
+        ],
+        [
+          "2 sh;1 c 25,30;3 p 1",
+          "Cutter shoots — the screener pops back for the second ball"
+        ],
+        [
+          "1 sh",
+          "Screener shoots too"
+        ],
+        [
+          "2 rb 22,7;1 rb 27,7",
+          "Both rebound, then rotate"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m19",
+    "cat": "mot",
+    "n": "Handoff Weave to Attack",
+    "lv": "23",
+    "p": [
+      3,
+      15
+    ],
+    "t": 8,
+    "eq": "1 ball per group",
+    "why": "Dribble handoffs into a drive-and-kick, with all three players moving.",
+    "say": "Dribble at your teammate, hand it off, and replace. On my whistle, whoever has it attacks — everyone else lift or drift.",
+    "how": [
+      "Three players: top and both wings.",
+      "Dribble at a wing and hand off; take their spot.",
+      "Keep weaving with handoffs.",
+      "On the whistle, the ball handler drives; the other two lift or drift for the kick."
+    ],
+    "cue": [
+      "Hand it off, don't toss it",
+      "Receiver comes off tight",
+      "Lift or drift on the drive"
+    ],
+    "e": "Walk the weave.",
+    "h": "Add a defender on the ball.",
+    "var": [
+      "Receiver fakes the handoff and goes backdoor",
+      "Shoot straight off the handoff",
+      "Go live 3-on-3 after three handoffs",
+      "Run it at every hoop"
+    ],
+    "d": {
+      "s": "1 25,31;2 8,22;3 42,22;b:1",
+      "st": [
+        [
+          "1 d 13,25",
+          "Dribble at the wing"
+        ],
+        [
+          "1 h 2",
+          "Handoff — the dribbler becomes a screen"
+        ],
+        [
+          "2 d 20,29 36,25;1 c 8,20",
+          "New ball handler dribbles at the other wing; the passer replaces"
+        ],
+        [
+          "2 h 3",
+          "Handoff again"
+        ],
+        [
+          "3 d 30,18 27,9;2 c 44,14;1 c 5,9",
+          "Whistle! Drive it — the other two lift or drift"
+        ],
+        [
+          "3 p 1",
+          "Kick to the open teammate"
+        ],
+        [
+          "1 sh",
+          "Shoot"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "m20",
+    "cat": "mot",
+    "n": "3-on-3 Screen First",
+    "lv": "23",
+    "p": [
+      6,
+      18
+    ],
+    "t": 8,
+    "eq": "1 ball per hoop",
+    "also": [
+      "game"
+    ],
+    "why": "A live game that makes players screen away before anyone dribbles.",
+    "say": "Nobody dribbles until somebody sets a screen away. Score straight off the screen and it counts double.",
+    "how": [
+      "3-on-3 in the half court.",
+      "No dribbling until a screen away has been set.",
+      "A basket straight off the screen counts double.",
+      "Play to 7, make it, take it."
+    ],
+    "cue": [
+      "Pass, then screen away",
+      "Cutter: set your defender up",
+      "Screener: find open space after"
+    ],
+    "e": "Defense plays at half speed.",
+    "h": "Two screens before a dribble.",
+    "var": [
+      "Back screens count too",
+      "4-on-4",
+      "Screener must slip or pop every time",
+      "A ball screen also unlocks the dribble"
+    ],
+    "d": {
+      "s": "1 25,30;2 8,20;3 42,20;x1 25,26;x2 11,19;x3 39,19;b:1",
+      "st": [
+        [
+          "1 p 2;1 s 38,23",
+          "No dribbling until someone screens away"
+        ],
+        [
+          "3 c 33,29 25,29;1 c 36,10;x3 c 30,25",
+          "Cutter comes off the screen; the screener slips to open space"
+        ],
+        [
+          "2 p 3",
+          "Hit the cutter"
+        ],
+        [
+          "3 sh",
+          "A basket off the screen counts double"
+        ]
+      ]
+    }
   }
 ]

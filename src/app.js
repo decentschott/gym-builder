@@ -55,6 +55,9 @@ function applyLook(){
 applyLook();
 var UI={tab:"drills",cat:"all",q:"",fit:true,minutes:60,focus:[]};
 var PLAN=load("gb_cur",null);
+// Drop blocks whose drill no longer exists (the catalog changes over time).
+function cleanPlan(p){ if(p&&p.blocks) p.blocks=p.blocks.filter(function(b){ return b.water||b.scrim||BY[b.did]; }); return p; }
+cleanPlan(PLAN);
 
 // ---------- gym fit ----------
 function fit(d,g){
@@ -184,6 +187,7 @@ function openDrill(id, fromPlan, fromThumb){
     '<div class="say"><b>Tell your players</b>'+esc(d.say)+'</div>'+
     '<div class="facts"><div><b>Equipment</b>'+esc(d.eq)+'</div><div><b>Your gym</b>'+(f.ok?esc(f.note):'<span class="warntxt">'+f.why+'</span>')+'</div></div>'+
     '<h3>How it works</h3><ol class="how">'+d.how.map(function(s){return '<li>'+esc(s)+'</li>';}).join("")+'</ol>'+
+    (d.var&&d.var.length?'<h3>Variations</h3><ul class="vars">'+d.var.map(function(s){return '<li>'+esc(s)+'</li>';}).join("")+'</ul>':'')+
     '<h3>Coaching cues</h3><div class="cues">'+d.cue.map(function(s){return '<span>'+esc(s)+'</span>';}).join("")+'</div>'+
     '<div class="vary"><div><b>Make it easier</b>'+esc(d.e)+'</div><div><b>Make it harder</b>'+esc(d.h)+'</div></div>'+
     (d.ref&&/^https?:\/\//.test(d.ref)?'<p class="hint">Adapted from <a href="'+esc(d.ref)+'" target="_blank" rel="noopener">'+esc(d.ref.replace(/^https?:\/\/(www\.)?/,"").split("/")[0])+'</a></p>':'')+
@@ -391,9 +395,9 @@ function copyText(s){
 // ---------- saved ----------
 function renderSaved(){
   var all=load("gb_plans",[]);
-  $("#main").innerHTML='<h1 class="ptitle">Saved</h1><p class="psub">Practices you saved on this device.</p><div class="panel">'+(all.length?all.map(function(p,i){ var tot=p.blocks.reduce(function(a,b){return a+b.min;},0); return '<div class="saved"><div><b>'+esc(p.name)+'</b><div class="cmeta">'+(p.date?'<span>'+ic("calendar")+esc(fmtDate(p.date))+'</span>':'')+'<span>'+ic("clock")+tot+' min</span><span>'+ic("court")+p.blocks.filter(function(b){return b.did;}).length+' drills</span></div></div><div class="row gap"><button class="btn" data-load="'+i+'">Open</button><button class="btn ghost" data-del="'+i+'" aria-label="Delete">'+ic("x")+'</button></div></div>';}).join(""):'<p class="muted">Nothing saved yet. Build a plan and tap Save.</p>')+'</div>'+
+  $("#main").innerHTML='<h1 class="ptitle">Saved</h1><p class="psub">Practices you saved on this device.</p><div class="panel">'+(all.length?all.map(function(p,i){ cleanPlan(p); var tot=p.blocks.reduce(function(a,b){return a+b.min;},0); return '<div class="saved"><div><b>'+esc(p.name)+'</b><div class="cmeta">'+(p.date?'<span>'+ic("calendar")+esc(fmtDate(p.date))+'</span>':'')+'<span>'+ic("clock")+tot+' min</span><span>'+ic("court")+p.blocks.filter(function(b){return b.did&&BY[b.did];}).length+' drills</span></div></div><div class="row gap"><button class="btn" data-load="'+i+'">Open</button><button class="btn ghost" data-del="'+i+'" aria-label="Delete">'+ic("x")+'</button></div></div>';}).join(""):'<p class="muted">Nothing saved yet. Build a plan and tap Save.</p>')+'</div>'+
     '<div class="panel"><h2>Help</h2><p class="psub" style="margin:4px 0 10px">Six steps from setting up your gym to a printed plan.</p>'+guideLink()+'</div>';
-  $$("[data-load]").forEach(function(b){ b.onclick=function(){ PLAN=JSON.parse(JSON.stringify(all[+b.dataset.load])); save("gb_cur",PLAN); setTab("plan"); }; });
+  $$("[data-load]").forEach(function(b){ b.onclick=function(){ PLAN=cleanPlan(JSON.parse(JSON.stringify(all[+b.dataset.load]))); save("gb_cur",PLAN); setTab("plan"); }; });
   $$("[data-del]").forEach(function(b){ b.onclick=function(){ all.splice(+b.dataset.del,1); save("gb_plans",all); renderSaved(); }; });
 }
 
@@ -401,7 +405,7 @@ function renderSaved(){
 function drillPrint(d, minutes, start){
   var P=d.P, panels=P.steps.slice(0,4).map(function(st,i){ return '<figure>'+DRAW.staticSvg(P,i,"court pcourt")+'<figcaption><b>'+(i+1)+'.</b> '+esc(st.cap)+'</figcaption></figure>'; }).join("");
   return '<section class="pdrill"><div class="phead">'+(start!=null?'<span class="ptime">'+start+'</span>':"")+'<span class="pname">'+esc(d.n)+'</span><span class="pmeta">'+CATS[d.cat][0]+' · '+(minutes||d.t)+' min · '+esc(d.eq)+'</span></div>'+
-    '<div class="pgrid"><div class="ptext"><p class="psay">“'+esc(d.say)+'”</p><ol>'+d.how.map(function(s){return '<li>'+esc(s)+'</li>';}).join("")+'</ol><p><b>Cues:</b> '+d.cue.map(esc).join(" · ")+'</p><p class="pvary"><b>Easier:</b> '+esc(d.e)+'<br><b>Harder:</b> '+esc(d.h)+'</p><p class="pfit">'+esc(fit(d).note)+'</p></div><div class="ppanels n'+Math.min(4,P.steps.length)+'">'+panels+'</div></div></section>';
+    '<div class="pgrid"><div class="ptext"><p class="psay">“'+esc(d.say)+'”</p><ol>'+d.how.map(function(s){return '<li>'+esc(s)+'</li>';}).join("")+'</ol><p><b>Cues:</b> '+d.cue.map(esc).join(" · ")+'</p>'+(d.var&&d.var.length?'<p class="pvary"><b>Variations:</b> '+d.var.map(esc).join(" · ")+'</p>':'')+'<p class="pvary"><b>Easier:</b> '+esc(d.e)+'<br><b>Harder:</b> '+esc(d.h)+'</p><p class="pfit">'+esc(fit(d).note)+'</p></div><div class="ppanels n'+Math.min(4,P.steps.length)+'">'+panels+'</div></div></section>';
 }
 function showPrint(html){
   closeSheet(); window.scrollTo(0,0);

@@ -105,49 +105,6 @@
     }
   },
   {
-    "id": "b4",
-    "cat": "bh",
-    "n": "Cone Weave to Layup",
-    "lv": "12",
-    "p": [
-      2,
-      20
-    ],
-    "t": 6,
-    "eq": "4 cones, balls",
-    "why": "Change of direction with the correct hand, ending in a finish.",
-    "say": "Weave the cones, switch hands at every cone, and finish strong.",
-    "how": [
-      "Set 4 cones in a line from half court to the lane.",
-      "Weave through, crossing over at each cone.",
-      "Finish with a layup, rebound, back of the line."
-    ],
-    "cue": [
-      "Ball away from the cone",
-      "Low crossover",
-      "Speed after the last cone"
-    ],
-    "e": "Walk through first.",
-    "h": "Between legs or behind back at each cone.",
-    "d": {
-      "s": "1 25,46 q2;k1 25,40;k2 25,32;k3 25,24;k4 25,16;b:1",
-      "st": [
-        [
-          "1 d 21,40 29,32 21,24 29,16",
-          "Weave the cones, switch hands each time"
-        ],
-        [
-          "1 d 27,9",
-          "Attack the rim"
-        ],
-        [
-          "1 sh",
-          "Finish the layup"
-        ]
-      ]
-    }
-  },
-  {
     "id": "b5",
     "cat": "bh",
     "n": "Full-Court Zig-Zag Moves",
@@ -215,96 +172,6 @@
         [
           "1 d 12,86;2 d 25,86;3 d 38,86",
           "Speed dribble — push the ball ahead"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "b7",
-    "cat": "bh",
-    "n": "Push-Pull (Retreat Dribble)",
-    "lv": "23",
-    "p": [
-      1,
-      20
-    ],
-    "t": 5,
-    "eq": "1 cone, balls",
-    "why": "Escapes pressure and resets the attack.",
-    "say": "Attack the cone, retreat two dribbles, then explode past it.",
-    "how": [
-      "Attack the cone with 2–3 hard dribbles.",
-      "Retreat dribble back 2 steps, keep eyes up.",
-      "Re-attack with a move and finish."
-    ],
-    "cue": [
-      "Body between defender and ball",
-      "Back is never fully turned",
-      "Change speed"
-    ],
-    "e": "No finish, just push-pull rhythm.",
-    "h": "Coach poke-checks on the retreat.",
-    "d": {
-      "s": "1 25,42;k1 25,24;b:1",
-      "st": [
-        [
-          "1 d 25,27",
-          "Attack the cone"
-        ],
-        [
-          "1 d 25,34",
-          "Retreat dribble — eyes up"
-        ],
-        [
-          "1 d 19,20 22,9",
-          "Re-attack with a crossover"
-        ],
-        [
-          "1 sh",
-          "Finish"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "b8",
-    "cat": "bh",
-    "n": "Attack the Cone Moves",
-    "lv": "123",
-    "p": [
-      1,
-      30
-    ],
-    "t": 6,
-    "eq": "Cones, balls",
-    "why": "Reps of one move into a finish, game speed.",
-    "say": "Pretend the cone is a defender — make your move at the cone and go score.",
-    "how": [
-      "Cone at the top of the key.",
-      "Attack with speed, make the called move at the cone.",
-      "Finish at the rim; rotate."
-    ],
-    "cue": [
-      "Move at the cone, not before",
-      "Lower shoulder past it",
-      "Finish with the outside hand"
-    ],
-    "e": "Only the crossover.",
-    "h": "Combo moves (cross + between).",
-    "d": {
-      "s": "1 25,44 q2;k1 25,30;b:1",
-      "st": [
-        [
-          "1 d 25,32",
-          "Attack the cone at speed"
-        ],
-        [
-          "1 d 18,26 21,10",
-          "Make the move and turn the corner"
-        ],
-        [
-          "1 sh",
-          "Finish at the rim"
         ]
       ]
     }
@@ -417,49 +284,6 @@
     }
   },
   {
-    "id": "b12",
-    "cat": "bh",
-    "n": "Hesitation to Finish",
-    "lv": "23",
-    "p": [
-      1,
-      20
-    ],
-    "t": 5,
-    "eq": "1 cone, balls",
-    "why": "Change-of-pace move that freezes defenders.",
-    "say": "Slow down like you're stopping, then explode by.",
-    "how": [
-      "Dribble at the cone at medium speed.",
-      "Hesitate: rise up, eyes to the rim.",
-      "Explode past with a long first step; finish."
-    ],
-    "cue": [
-      "Sell it with eyes and shoulders",
-      "Ball stays alive",
-      "Long first step"
-    ],
-    "e": "Walk-jog-walk speeds.",
-    "h": "Coach live defender at the cone.",
-    "d": {
-      "s": "1 35,42;k1 35,28;b:1",
-      "st": [
-        [
-          "1 d 35,30",
-          "Medium speed into the hesitation"
-        ],
-        [
-          "1 d 30,17 27,8",
-          "Explode by"
-        ],
-        [
-          "1 sh",
-          "Finish"
-        ]
-      ]
-    }
-  },
-  {
     "id": "b13",
     "cat": "bh",
     "n": "Partner Zig-Zag: Blow-By & Seal",
@@ -501,6 +325,143 @@
         [
           "1 sh",
           "Shot fake and go up"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b14",
+    "cat": "bh",
+    "n": "Rush Hour Dribbling",
+    "lv": "123",
+    "p": [
+      4,
+      30
+    ],
+    "t": 5,
+    "eq": "1 ball per player",
+    "why": "Every player dribbling at once, eyes up, in traffic.",
+    "say": "Everybody dribbles in the half court — eyes up, find open space, and do the move I call.",
+    "how": [
+      "Everyone has a ball inside the half court.",
+      "Dribble anywhere, but never the same direction as the player next to you.",
+      "Coach calls moves: crossover, retreat, speed, weak hand.",
+      "On the whistle, jump stop and freeze."
+    ],
+    "cue": [
+      "Eyes up",
+      "Ball low in traffic",
+      "Change speed"
+    ],
+    "e": "Walk it; use the whole half court.",
+    "h": "Shrink the space to inside the 3-point arc.",
+    "var": [
+      "Weak hand only",
+      "On the whistle: jump stop and pivot",
+      "Two balls for advanced groups",
+      "Call a color or number to sprint to a line and back"
+    ],
+    "d": {
+      "s": "1 10,12;2 38,14;3 24,24;4 12,36;5 40,34;6 26,40;C 25,3;b:1,2,3,4,5,6",
+      "st": [
+        [
+          "1 d 20,18;2 d 30,8;3 d 36,24;4 d 22,32;5 d 34,42;6 d 14,42",
+          "Everyone dribbles through traffic — eyes up, find open space"
+        ],
+        [
+          "1 d 30,26;2 d 16,10;3 d 26,14;4 d 8,26;5 d 44,26;6 d 26,36",
+          "Coach calls a move — everybody does it at once"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b15",
+    "cat": "bh",
+    "n": "Partner Mirror Dribble",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 4,
+    "eq": "1 ball per player",
+    "why": "Reading a defender's movement while keeping the dribble alive.",
+    "say": "Leader moves any direction — partner, copy them like a mirror. Both of you keep your dribble.",
+    "how": [
+      "Partners face each other, 6 feet apart, each with a ball.",
+      "Leader slides, retreats, and attacks; partner mirrors.",
+      "Switch leaders every 30 seconds."
+    ],
+    "cue": [
+      "Eyes on your partner",
+      "Stay low",
+      "Don't stop your dribble"
+    ],
+    "e": "Side to side only.",
+    "h": "Leader adds crossovers the partner must copy.",
+    "var": [
+      "Weak hand only",
+      "Leader calls a move, both do it",
+      "Mirror with no ball for the follower: defensive slides",
+      "Winner is whoever keeps the dribble longest"
+    ],
+    "d": {
+      "s": "1 12,30;2 12,24;3 25,30;4 25,24;5 38,30;6 38,24;b:1,2,3,4,5,6",
+      "st": [
+        [
+          "1 d 6,30;2 d 6,24;3 d 31,30;4 d 31,24;5 d 44,30;6 d 44,24",
+          "Leaders slide side to side — partners mirror with their own ball"
+        ],
+        [
+          "1 d 8,35;2 d 8,19;3 d 29,35;4 d 29,19;5 d 42,35;6 d 42,19",
+          "Leader retreats, partner copies — switch leaders every 30 seconds"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b16",
+    "cat": "bh",
+    "n": "Gates 1-on-1",
+    "lv": "123",
+    "p": [
+      2,
+      30
+    ],
+    "t": 6,
+    "eq": "1 ball per pair, 2 cones per pair",
+    "why": "Every pair plays live at once: beat a defender with the dribble.",
+    "say": "Beat your defender and dribble through your gate — that's a point. Everybody goes at once.",
+    "how": [
+      "Each pair gets a gate (two cones, 6 feet apart).",
+      "Ball handler starts 15 feet away; defender in front.",
+      "Dribble through the gate for a point.",
+      "Switch roles after every rep."
+    ],
+    "cue": [
+      "Change speed and direction",
+      "Protect the ball",
+      "Defender: beat them to the spot"
+    ],
+    "e": "Defender keeps hands behind the back.",
+    "h": "Three-dribble limit.",
+    "var": [
+      "Two gates per pair: attack either one",
+      "Defender starts with a hand on the ball handler's hip",
+      "Winners move up a gate, losers move down",
+      "Finish at a hoop instead of a gate"
+    ],
+    "d": {
+      "s": "1 10,36;x1 10,31;2 25,36;x2 25,31;3 40,36;x3 40,31;k1 6,18;k2 12,18;k3 21,18;k4 27,18;k5 36,18;k6 42,18;b:1,2,3",
+      "st": [
+        [
+          "1 d 14,28 9,20;x1 sl 12,26 9,22;2 d 21,28 24,20;x2 sl 23,26 24,22;3 d 44,28 39,20;x3 sl 42,26 39,22",
+          "Every pair goes at once — beat your defender to the gate"
+        ],
+        [
+          "1 d 9,14;2 d 24,14;3 d 39,14",
+          "Through the gate is a point — switch roles and go again"
         ]
       ]
     }

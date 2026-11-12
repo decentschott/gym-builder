@@ -36,6 +36,7 @@ Always run `npm run check` (build + importer tests + e2e) before committing.
 - Drills must be **original wording**. Never copy text from drill websites. Drill names and concepts are fine.
 - `say` is one sentence a coach says out loud (under 160 characters). `how` is 3–5 short steps. `cue` items are 2–5 words each.
 - Ron's own drills carry `"src": "St. Luke playbook"` (or similar) and keep his vocabulary: "HUNT", "lift or drift", "feet in the paint", Rip & Go / Jab & Go / Shot Fake + Go.
+- **No line-standing.** Drills should keep most players active at once: everyone with a ball, pairs or threes at every hoop, or small-sided games. One-at-a-time line drills were cut on Nov 12, 2026 — don't add them back. Give drills a `var` list (variations) so one drill covers several practices.
 - Motion offense principles (penetrate → relocate → pass) are a core emphasis.
 
 ## Quick-start guide

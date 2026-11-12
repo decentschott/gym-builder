@@ -124,6 +124,7 @@ CATEGORIES: ${Object.entries(data.cats).map(([k, v]) => `${k} = ${v.name}`).join
 RULES
 - Coach language: short, concrete, readable on a phone in a loud gym. "say" is ONE sentence a coach says out loud (< 160 chars). "how" = 3-5 short steps. "cue" = 2-4 items of 2-5 words.
 - Diagrams must match the drill. Use realistic coordinates from the handy spots list. Every ball movement needs a player who has the ball (use b:ID in setup, "rb" to pick up a loose ball after a shot). One idea per step, 2-6 steps, every step has a caption.
+- Prefer drills that keep most players active at once (pairs, small groups at every hoop, small-sided games) over single lines. Give each drill 2-5 entries in "var" (variations).
 - Use "c":"f" only when the drill truly needs the full court.
 - Give each NEW drill a provisional id "new1", "new2", ... (real ids are assigned later).
 - Do NOT re-create drills that already exist in the catalog below — reference them by id in templates instead.
@@ -159,7 +160,7 @@ function toolSchema(cats) {
               p: { type: "array", items: { type: "integer" }, minItems: 2, maxItems: 2 },
               t: { type: "integer" }, eq: str, hoop: { type: "integer" }, one: { type: "integer" }, thumb: { type: "string", enum: ["all"] }, trail: { type: "integer" },
               also: { type: "array", items: { type: "string", enum: Object.keys(cats) } },
-              why: str, say: str, how: { type: "array", items: str }, cue: { type: "array", items: str }, e: str, h: str,
+              var: { type: "array", items: str, description: "2-5 short variations of the drill" }, why: str, say: str, how: { type: "array", items: str }, cue: { type: "array", items: str }, e: str, h: str,
               d: { type: "object", required: ["s", "st"], properties: { c: { type: "string", enum: ["f", "h"] }, s: str, st: { type: "array", items: { type: "array", items: str, minItems: 2, maxItems: 2 } } } },
             },
           },

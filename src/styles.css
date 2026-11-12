@@ -130,6 +130,7 @@ nav button.on{color:var(--team);background:var(--team-10)}
 .how{margin:0;padding:0;list-style:none;counter-reset:s}
 .how li{counter-increment:s;position:relative;padding:3px 0 9px 38px;font-size:15.5px;line-height:1.45}
 .how li:before{content:counter(s);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;background:var(--team);color:var(--team-ink);font:800 16px/27px var(--display);text-align:center}
+.vars{margin:0;padding:0;list-style:none;display:grid;gap:6px}.vars li{background:var(--soft);border-left:3px solid var(--accent);border-radius:4px 10px 10px 4px;padding:8px 12px;font-size:14.5px;line-height:1.35}
 .cues{display:flex;flex-wrap:wrap;gap:6px}
 .cues span{background:var(--ink);color:#fff;border-radius:9px;padding:6px 11px;font:800 16.5px var(--display);letter-spacing:.01em}
 .legend,.plegend{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 4px;font-size:12px;color:var(--mut)}

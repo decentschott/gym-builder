@@ -602,5 +602,59 @@
         ]
       ]
     }
+  },
+  {
+    "id": "o14",
+    "cat": "off",
+    "n": "2-on-2 Pick & Roll Live",
+    "lv": "23",
+    "p": [
+      4,
+      20
+    ],
+    "t": 8,
+    "eq": "1 ball per hoop",
+    "why": "The pick and roll against real defenders, at every hoop.",
+    "say": "Set it, use it shoulder to hip, and read the defense: score, or hit the roller. Play to a score or a stop.",
+    "how": [
+      "2-on-2 at each hoop: ball handler, screener, and their defenders.",
+      "Screener sets the ball screen.",
+      "Ball handler attacks; read the help.",
+      "Play live to a score or a stop, then switch offense and defense."
+    ],
+    "cue": [
+      "Wait for the screen",
+      "Shoulder to hip",
+      "Roll with hands up"
+    ],
+    "e": "Defense plays at half speed.",
+    "h": "Defense switches every screen.",
+    "var": [
+      "Screener pops instead of rolling",
+      "Add a shooter in the corner: 3-on-3",
+      "Side pick and roll from the wing",
+      "Winners stay on offense"
+    ],
+    "d": {
+      "s": "1 25,32;5 19,22;x1 25,28;x5 20,19;b:1",
+      "st": [
+        [
+          "5 s 22,29",
+          "Screener sprints up and sets it"
+        ],
+        [
+          "1 d 31,22 31,15;5 c 25,12;x5 c 29,18;x1 c 27,26",
+          "Use it shoulder to hip — the defense has to choose"
+        ],
+        [
+          "1 p 5",
+          "Help on the ball? Hit the roller"
+        ],
+        [
+          "5 sh",
+          "Play to a score or a stop, then switch"
+        ]
+      ]
+    }
   }
 ]

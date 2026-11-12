@@ -74,49 +74,6 @@
     }
   },
   {
-    "id": "r3",
-    "cat": "reb",
-    "n": "Superman Rebounding",
-    "lv": "23",
-    "p": [
-      1,
-      16
-    ],
-    "t": 4,
-    "eq": "1 ball",
-    "why": "Rebounding above the rim and quick jumps.",
-    "say": "Toss it off the glass, then sprint across and grab it at its highest point.",
-    "how": [
-      "Stand outside the lane.",
-      "Toss off the glass to the other side.",
-      "Sprint across, rebound high, toss it back."
-    ],
-    "cue": [
-      "Grab at the peak",
-      "Two hands",
-      "Land on balance"
-    ],
-    "e": "Toss to yourself.",
-    "h": "Add a putback.",
-    "d": {
-      "s": "1 18,6;b:1",
-      "st": [
-        [
-          "1 sh",
-          "Toss off the glass"
-        ],
-        [
-          "1 rb 32,6",
-          "Sprint across and grab it"
-        ],
-        [
-          "1 sh",
-          "Toss it back"
-        ]
-      ]
-    }
-  },
-  {
     "id": "r4",
     "cat": "reb",
     "n": "3-on-3 Box Out",
@@ -151,49 +108,6 @@
         [
           "1 c 14,11;2 c 26,18;3 c 36,11;x2 rb 25,9",
           "Hold them off and grab it"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "r5",
-    "cat": "reb",
-    "n": "Putback Drill",
-    "lv": "123",
-    "p": [
-      2,
-      16
-    ],
-    "t": 4,
-    "eq": "Balls",
-    "why": "Scoring off misses — easy points.",
-    "say": "Rebound with two hands and go right back up — no dribble.",
-    "how": [
-      "Player near the block.",
-      "Coach misses on purpose.",
-      "Rebound and score without bringing the ball down."
-    ],
-    "cue": [
-      "Two hands",
-      "Chin, then up",
-      "No dribble"
-    ],
-    "e": "Toss to yourself.",
-    "h": "Coach bumps on the putback.",
-    "d": {
-      "s": "1 25,12;C 18,18;b:C",
-      "st": [
-        [
-          "C sh",
-          "Coach misses"
-        ],
-        [
-          "1 rb 27,7",
-          "Rebound"
-        ],
-        [
-          "1 sh",
-          "Go right back up"
         ]
       ]
     }
@@ -237,49 +151,6 @@
         [
           "2 sh",
           "Score it"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "r7",
-    "cat": "reb",
-    "n": "Rebound, Chin & Pivot",
-    "lv": "12",
-    "p": [
-      1,
-      20
-    ],
-    "t": 4,
-    "eq": "Balls",
-    "why": "Securing the ball in traffic.",
-    "say": "Grab it with two hands, elbows out, chin it — then pivot away.",
-    "how": [
-      "Coach shoots or tosses.",
-      "Rebound two hands, chin the ball.",
-      "Pivot away from pressure, pass out."
-    ],
-    "cue": [
-      "Elbows out",
-      "Chin it",
-      "Pivot outside"
-    ],
-    "e": "Toss to yourself.",
-    "h": "Coach slaps at the ball.",
-    "d": {
-      "s": "1 25,12;C 25,24;2 8,22;b:C",
-      "st": [
-        [
-          "C sh",
-          "Shot"
-        ],
-        [
-          "1 rb 24,6",
-          "Two hands, chin it"
-        ],
-        [
-          "1 p 2",
-          "Pivot and pass out"
         ]
       ]
     }
@@ -372,6 +243,114 @@
         [
           "x1 p C",
           "Outlet to the coach"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r10",
+    "cat": "reb",
+    "n": "2-on-2 Rebound War",
+    "lv": "123",
+    "p": [
+      4,
+      20
+    ],
+    "t": 6,
+    "eq": "1 ball per hoop",
+    "why": "Live rebounding with four players battling on every shot.",
+    "say": "On the shot: defense, hit and hold. Offense, crash. Whoever gets it plays — putbacks count double.",
+    "how": [
+      "Two offense and two defenders at a hoop; a coach, parent, or extra player shoots.",
+      "On the shot, defense boxes out and offense crashes.",
+      "Defensive rebound = 1 point. Putback = 2 points.",
+      "First pair to 5; switch."
+    ],
+    "cue": [
+      "Hit first",
+      "Two hands",
+      "Go right back up"
+    ],
+    "e": "Offense starts a step farther out.",
+    "h": "No dribbles after the rebound.",
+    "var": [
+      "Run it at every hoop",
+      "Defense must outlet to score its point",
+      "3-on-3 for bigger groups",
+      "Losers of each round switch hoops"
+    ],
+    "d": {
+      "s": "1 14,18;2 36,18;x1 16,15;x2 34,15;C 25,28;b:C",
+      "st": [
+        [
+          "C sh;x1 c 17,13;x2 c 33,13;1 c 15,16;2 c 35,16",
+          "Shot — defense hits, offense crashes"
+        ],
+        [
+          "2 c 31,9;x2 sl 31,11",
+          "Fight for inside position"
+        ],
+        [
+          "2 rb 27,7",
+          "Whoever gets it plays"
+        ],
+        [
+          "2 sh",
+          "A putback counts double"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "r11",
+    "cat": "reb",
+    "n": "Triangle Rebound & Outlet",
+    "lv": "123",
+    "p": [
+      3,
+      18
+    ],
+    "t": 5,
+    "eq": "1 ball per group of 3",
+    "why": "Rebound, chin, pivot, outlet — three players rotating without stopping.",
+    "say": "Shooter, rebounder, outlet. Rebound it high, chin it, pivot out, and hit the outlet. Then rotate.",
+    "how": [
+      "Groups of three at a hoop: shooter at the elbow, rebounder at the block, outlet on the wing.",
+      "Shooter shoots; rebounder grabs it and chins it.",
+      "Pivot to the outside and outlet.",
+      "Rotate: shooter → rebounder → outlet → shooter."
+    ],
+    "cue": [
+      "Grab it at the peak",
+      "Chin it, elbows out",
+      "Outlet calls for it"
+    ],
+    "e": "Toss it off the glass instead of shooting.",
+    "h": "The old shooter bumps the rebounder.",
+    "var": [
+      "A triangle at every hoop",
+      "Outlet pushes two dribbles up the sideline before coming back",
+      "Rebounder scores a putback first",
+      "Count clean outlets in two minutes"
+    ],
+    "d": {
+      "s": "1 19,19;2 30,9;3 43,22;b:1",
+      "st": [
+        [
+          "1 sh",
+          "Shooter shoots from the elbow"
+        ],
+        [
+          "2 rb 26,7",
+          "Rebound at the top of your jump and chin it"
+        ],
+        [
+          "2 p 3;1 c 30,10",
+          "Pivot out and outlet — the shooter becomes the rebounder"
+        ],
+        [
+          "3 d 22,20;2 c 43,22",
+          "Outlet dribbles to the elbow, rebounder fills the outlet. Keep rotating"
         ]
       ]
     }
