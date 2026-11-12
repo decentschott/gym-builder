@@ -150,3 +150,18 @@ test("practice date defaults to today and can be changed", async ({ page }) => {
   await page.locator("#pprint").click();
   await expect(page.locator("#print .psub")).toContainText("December 5, 2026");
 });
+
+test("scrimmage block can be added, resized, and prints", async ({ page }) => {
+  await page.locator('nav button[data-tab="plan"]').click();
+  await page.locator('#len button[data-v="60"]').click();
+  await page.locator("#gen").click();
+  await page.locator("#adds").click();
+  const scrim = page.locator(".block.scrim");
+  await expect(scrim.locator(".bname")).toHaveText("Scrimmage");
+  await expect(scrim.locator(".bnote")).toHaveText("5-on-5");
+  await expect(page.locator(".psum b")).toHaveText("75 min");
+  await scrim.locator('[data-mm][data-d="1"]').click();
+  await expect(page.locator(".psum b")).toHaveText("76 min");
+  await page.locator("#pprint").click();
+  await expect(page.locator("#print .pwater", { hasText: "Scrimmage" })).toBeVisible();
+});

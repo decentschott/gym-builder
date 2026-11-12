@@ -177,6 +177,7 @@ nav button.on{color:var(--team);background:var(--team-10)}
 .dhint{font-size:12.5px;color:var(--mut);margin:2px 0 10px}
 .blocks{display:flex;flex-direction:column;gap:8px}
 .block{display:grid;grid-template-columns:22px 56px 1fr auto;grid-template-areas:"g t b m" "g t b a";gap:2px 8px;align-items:center;border:1px solid var(--line);border-left:5px solid var(--c,#94a3b8);border-radius:12px;padding:9px 10px;background:#fff;transition:transform .18s ease,box-shadow .18s;position:relative}
+.block.scrim{--c:var(--team);background:var(--team-10)}.block.scrim .bname .ic{color:var(--team)}
 .block.water{--c:#38bdf8;background:#f2faff}
 .bt{grid-area:t;font:800 22px/1 var(--display);font-variant-numeric:tabular-nums;color:var(--ink)}
 .bt small{display:block;font:600 15px var(--display);color:var(--mut);margin-top:2px}

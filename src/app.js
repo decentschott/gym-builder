@@ -286,6 +286,13 @@ function startMin(){ var s=PLAN&&PLAN.start; if(!s||!/^\d{1,2}:\d{2}$/.test(s)) 
 function clock(m, ampm){ var s=startMin(); if(s==null) return fmt(m); var t=(s+m)%1440, h=Math.floor(t/60), mm=t%60, h12=h%12||12; return h12+":"+(mm<10?"0":"")+mm+(ampm?(h<12?" AM":" PM"):""); }
 function rangeTxt(a,b){ return clock(a)+"–"+clock(b); }
 function spanTxt(){ var tot=planTotal(); return startMin()==null ? "ends at "+fmt(tot) : clock(0,true)+" – "+clock(tot,true); }
+// Scrimmage block: suggests a format from the roster size.
+function scrimNote(){ var n=G.players;
+  if(n>=10) return "5-on-5"+(n>10?", "+(n-10)+" sub"+(n-10>1?"s":"")+" rotate in":"");
+  if(n>=8) return "4-on-4"+(n>8?", 1 sub rotates in":"");
+  if(n>=6) return "3-on-3"+(n>6?", 1 sub rotates in":"");
+  if(n>=4) return "2-on-2"+(n>4?", 1 sub rotates in":"");
+  return "Small-sided games"; }
 function planTotal(){ return PLAN?PLAN.blocks.reduce(function(a,b){return a+b.min;},0):0; }
 
 function renderPlan(){
@@ -310,12 +317,13 @@ function renderPlan(){
       var a0=t; t+=b.min;
       var grip='<div class="grip" data-drag="'+i+'" tabindex="0" role="button" aria-label="Drag to reorder (or use arrow keys)">'+ic("grip")+'</div>';
       var tm='<div class="bt">'+clock(a0)+'<small>–'+clock(t)+'</small></div>';
+      if(b.scrim) return '<div class="block scrim" data-i="'+i+'">'+grip+tm+'<div class="bb"><div class="bname">'+ic("whistle")+'Scrimmage</div><div class="bnote">'+esc(scrimNote())+'</div></div><div class="bm">'+mins(i,b)+'</div><div class="bact"><button data-rm="'+i+'" aria-label="Remove">'+ic("x")+'</button></div></div>';
       if(b.water) return '<div class="block water" data-i="'+i+'">'+grip+tm+'<div class="bb"><div class="bname">'+ic("drop")+'Water break</div></div><div class="bm">'+mins(i,b)+'</div><div class="bact"><button data-rm="'+i+'" aria-label="Remove">'+ic("x")+'</button></div></div>';
       var d=BY[b.did], f=fit(d), c=CATS[d.cat];
       return '<div class="block" data-i="'+i+'" style="--c:'+c[1]+'">'+grip+tm+'<div class="bb" data-open="'+d.id+'"><div class="bseg">'+esc(b.seg)+'</div><div class="bname">'+esc(d.n)+'</div><div class="bnote">'+esc(f.ok?f.note:f.why)+'</div></div>'+
         '<div class="bm">'+mins(i,b)+'</div><div class="bact"><button data-sw="'+i+'" title="Swap for another drill" aria-label="Swap drill">'+ic("swap")+'</button><button data-rm="'+i+'" aria-label="Remove">'+ic("x")+'</button></div></div>';
     }).join("")+'<div class="bend">'+ic("whistle")+'Done <b>'+clock(t,true)+'</b><span>'+t+' min total</span></div></div>'+
-    '<div class="row gap wrap"><button class="btn" id="addd">'+ic("plus")+'Add drill</button><button class="btn" id="addw">'+ic("drop")+'Add water</button><button class="btn" id="psave">'+ic("bookmark")+'Save</button><button class="btn" id="pcopy">'+ic("copy")+'Copy as text</button><button class="btn primary" id="pprint">'+ic("print")+'Print view</button></div></div>';
+    '<div class="row gap wrap"><button class="btn" id="addd">'+ic("plus")+'Add drill</button><button class="btn" id="adds">'+ic("whistle")+'Add scrimmage</button><button class="btn" id="addw">'+ic("drop")+'Add water</button><button class="btn" id="psave">'+ic("bookmark")+'Save</button><button class="btn" id="pcopy">'+ic("copy")+'Copy as text</button><button class="btn primary" id="pprint">'+ic("print")+'Print view</button></div></div>';
   } else h+='<div class="empty">Pick a length and tap <b>Build my practice</b>, or add drills from the catalog with their <b>+</b> button.</div>';
   $("#main").innerHTML=h;
   $$("#len button").forEach(function(b){ b.onclick=function(){ UI.minutes=+b.dataset.v; renderPlan(); }; });
@@ -338,6 +346,7 @@ function renderPlan(){
   $$("[data-sw]").forEach(function(b){ b.onclick=function(){ var i=+b.dataset.sw, bl=PLAN.blocks[i], used=PLAN.blocks.map(function(x){return x.did;}).filter(Boolean); var c=candidates(bl.pool||[BY[bl.did].cat],used,false); if(!c.length) c=candidates(bl.pool||[BY[bl.did].cat],used,true); if(!c.length){toast("No other drills fit this slot");return;} var n=c[Math.floor(Math.random()*c.length)]; bl.did=n.id; save("gb_cur",PLAN); renderPlan(); toast("Swapped in “"+n.n+"”"); }; });
   $$("[data-mm]").forEach(function(b){ b.onclick=function(){ var i=+b.dataset.mm, bl=PLAN.blocks[i]; bl.min=Math.max(1,bl.min+(+b.dataset.d)); save("gb_cur",PLAN); renderPlan(); }; });
   $("#addd").onclick=function(){ setTab("drills"); toast("Tap + on any drill to add it"); };
+  $("#adds").onclick=function(){ PLAN.blocks.push({scrim:true,min:15,seg:"Scrimmage"}); save("gb_cur",PLAN); renderPlan(); toast("Added a 15-minute scrimmage"); };
   $("#addw").onclick=function(){ PLAN.blocks.push({water:true,min:2,seg:"Water"}); save("gb_cur",PLAN); renderPlan(); };
   $("#psave").onclick=function(){ var all=load("gb_plans",[]); PLAN.saved=Date.now(); all=all.filter(function(p){return p.name!==PLAN.name;}); all.unshift(JSON.parse(JSON.stringify(PLAN))); save("gb_plans",all); toast("Saved “"+PLAN.name+"”"); };
   $("#pcopy").onclick=function(){ copyText(planText()); };
@@ -365,13 +374,13 @@ function initDrag(){
       function edge(){ var v=lastY<70?-12:lastY>window.innerHeight-90?12:0; if(v){ window.scrollBy(0,v); update(lastY+window.scrollY); } timer=requestAnimationFrame(edge); }
       timer=requestAnimationFrame(edge);
       g.onpointermove=function(ev){ lastY=ev.clientY; update(ev.pageY); };
-      g.onpointerup=g.onpointercancel=function(){ cancelAnimationFrame(timer); g.onpointermove=g.onpointerup=g.onpointercancel=null; document.body.classList.remove("dragmode"); els.forEach(function(b){b.style.transform="";}); el.classList.remove("dragging"); if(to!==from){ moveBlock(from,to); toast("Moved “"+(PLAN.blocks[to].water?"Water break":BY[PLAN.blocks[to].did].n)+"”"); } };
+      g.onpointerup=g.onpointercancel=function(){ cancelAnimationFrame(timer); g.onpointermove=g.onpointerup=g.onpointercancel=null; document.body.classList.remove("dragmode"); els.forEach(function(b){b.style.transform="";}); el.classList.remove("dragging"); if(to!==from){ moveBlock(from,to); toast("Moved “"+(PLAN.blocks[to].water?"Water break":PLAN.blocks[to].scrim?"Scrimmage":BY[PLAN.blocks[to].did].n)+"”"); } };
     };
   });
 }
 function planText(){
   var t=0, s=PLAN.name+"\n"+fmtDate(PLAN.date,true)+"\n"+planTotal()+" min, "+spanTxt()+" — "+gymSummary()+"\n\n";
-  PLAN.blocks.forEach(function(b){ var st=rangeTxt(t,t+b.min); t+=b.min; if(b.water){ s+=st+"  Water ("+b.min+" min)\n"; return; } var d=BY[b.did]; s+=st+"  "+d.n+" ("+b.min+" min) — "+d.say+"\n"; });
+  PLAN.blocks.forEach(function(b){ var st=rangeTxt(t,t+b.min); t+=b.min; if(b.water){ s+=st+"  Water ("+b.min+" min)\n"; return; } if(b.scrim){ s+=st+"  Scrimmage ("+b.min+" min) — "+scrimNote()+"\n"; return; } var d=BY[b.did]; s+=st+"  "+d.n+" ("+b.min+" min) — "+d.say+"\n"; });
   return s;
 }
 function copyText(s){
@@ -382,7 +391,7 @@ function copyText(s){
 // ---------- saved ----------
 function renderSaved(){
   var all=load("gb_plans",[]);
-  $("#main").innerHTML='<h1 class="ptitle">Saved</h1><p class="psub">Practices you saved on this device.</p><div class="panel">'+(all.length?all.map(function(p,i){ var tot=p.blocks.reduce(function(a,b){return a+b.min;},0); return '<div class="saved"><div><b>'+esc(p.name)+'</b><div class="cmeta">'+(p.date?'<span>'+ic("calendar")+esc(fmtDate(p.date))+'</span>':'')+'<span>'+ic("clock")+tot+' min</span><span>'+ic("court")+p.blocks.filter(function(b){return !b.water;}).length+' drills</span></div></div><div class="row gap"><button class="btn" data-load="'+i+'">Open</button><button class="btn ghost" data-del="'+i+'" aria-label="Delete">'+ic("x")+'</button></div></div>';}).join(""):'<p class="muted">Nothing saved yet. Build a plan and tap Save.</p>')+'</div>'+
+  $("#main").innerHTML='<h1 class="ptitle">Saved</h1><p class="psub">Practices you saved on this device.</p><div class="panel">'+(all.length?all.map(function(p,i){ var tot=p.blocks.reduce(function(a,b){return a+b.min;},0); return '<div class="saved"><div><b>'+esc(p.name)+'</b><div class="cmeta">'+(p.date?'<span>'+ic("calendar")+esc(fmtDate(p.date))+'</span>':'')+'<span>'+ic("clock")+tot+' min</span><span>'+ic("court")+p.blocks.filter(function(b){return b.did;}).length+' drills</span></div></div><div class="row gap"><button class="btn" data-load="'+i+'">Open</button><button class="btn ghost" data-del="'+i+'" aria-label="Delete">'+ic("x")+'</button></div></div>';}).join(""):'<p class="muted">Nothing saved yet. Build a plan and tap Save.</p>')+'</div>'+
     '<div class="panel"><h2>Help</h2><p class="psub" style="margin:4px 0 10px">Six steps from setting up your gym to a printed plan.</p>'+guideLink()+'</div>';
   $$("[data-load]").forEach(function(b){ b.onclick=function(){ PLAN=JSON.parse(JSON.stringify(all[+b.dataset.load])); save("gb_cur",PLAN); setTab("plan"); }; });
   $$("[data-del]").forEach(function(b){ b.onclick=function(){ all.splice(+b.dataset.del,1); save("gb_plans",all); renderSaved(); }; });
@@ -406,7 +415,7 @@ function printDrills(ids, title){
   showPrint('<h1>'+esc(title)+'</h1><div class="plegend">'+legend()+'</div>'+inkFriendly(function(){ return ids.map(function(id){return drillPrint(BY[id]);}).join(""); }));
 }
 function printPlan(){
-  var t=0, rows=inkFriendly(function(){ return PLAN.blocks.map(function(b){ var st=rangeTxt(t,t+b.min); t+=b.min; if(b.water) return '<div class="pwater">'+st+' · Water break ('+b.min+' min)</div>'; return drillPrint(BY[b.did],b.min,st); }).join(""); });
+  var t=0, rows=inkFriendly(function(){ return PLAN.blocks.map(function(b){ var st=rangeTxt(t,t+b.min); t+=b.min; if(b.water) return '<div class="pwater">'+st+' · Water break ('+b.min+' min)</div>'; if(b.scrim) return '<div class="pwater">'+st+' · Scrimmage ('+b.min+' min) — '+esc(scrimNote())+'</div>'; return drillPrint(BY[b.did],b.min,st); }).join(""); });
   showPrint('<h1>'+esc(PLAN.name)+'</h1><div class="psub"><b>'+esc(fmtDate(PLAN.date,true))+'</b><br>'+planTotal()+' min, '+spanTxt()+' — '+gymSummary()+'</div><div class="plegend">'+legend()+'</div>'+rows);
 }
 
