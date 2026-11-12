@@ -31,6 +31,7 @@ var ICONS={
   print:'<path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v6H7z"/>',
   copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>',
   check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  calendar:'<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
   guide:'<path d="M6 3.5h8l4 4v13H6z"/><path d="M14 3.5v4h4M9 12h6M9 15.5h6"/>'
 };
 function ic(n){ return '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[n]||"")+'</svg>'; }
@@ -267,12 +268,18 @@ function buildPlan(total, focus){
     else blocks.push({did:first.id,min:m,seg:s.k,pool:pool});
     if((waters>=1 && i===2) || (waters>=2 && i===4)) blocks.push({water:true,min:2,seg:"Water"});
   });
-  return {name:"Practice — "+new Date().toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"}), total:total, focus:focus, gym:JSON.parse(JSON.stringify(G)), blocks:blocks};
+  var day=(PLAN&&PLAN.date)||todayISO();
+  return {name:defaultName(day), date:day, total:total, focus:focus, gym:JSON.parse(JSON.stringify(G)), blocks:blocks};
 }
 function addToPlan(id){
-  if(!PLAN) PLAN={name:"Practice — "+new Date().toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"}),total:60,focus:[],gym:JSON.parse(JSON.stringify(G)),blocks:[]};
+  if(!PLAN) PLAN={name:defaultName(todayISO()),date:todayISO(),total:60,focus:[],gym:JSON.parse(JSON.stringify(G)),blocks:[]};
   var d=BY[id]; PLAN.blocks.push({did:id,min:d.t,seg:CATS[d.cat][0],pool:[d.cat]}); save("gb_cur",PLAN); toast("Added “"+d.n+"” to your plan");
 }
+// ---------- practice date (YYYY-MM-DD, local) ----------
+function todayISO(){ var d=new Date(); return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2); }
+function parseISO(s){ var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||""); return m?new Date(+m[1],+m[2]-1,+m[3]):null; }
+function fmtDate(s, long){ var d=parseISO(s); return d?d.toLocaleDateString(undefined,long?{weekday:"long",month:"long",day:"numeric",year:"numeric"}:{weekday:"short",month:"short",day:"numeric"}):""; }
+function defaultName(s){ return "Practice — "+fmtDate(s); }
 function fmt(m){ var h=Math.floor(m/60), mm=m%60; return h+":"+(mm<10?"0":"")+mm; }
 // Block times: real clock times when the plan has a start time ("15:30"), otherwise elapsed time (0:00, 0:10…).
 function startMin(){ var s=PLAN&&PLAN.start; if(!s||!/^\d{1,2}:\d{2}$/.test(s)) return null; var p=s.split(":"); return (+p[0])*60+(+p[1]); }
@@ -291,10 +298,13 @@ function renderPlan(){
     '<button class="btn primary wide" id="gen">'+(PLAN&&PLAN.blocks.length?"Build a new plan":"Build my practice")+'</button>'+
     '<label class="lbl">Or start from a template</label><div class="tpls">'+TEMPLATES.map(function(t,i){return '<button class="tpl" data-tpl="'+i+'">'+ic("star")+esc(t.name)+'<span>'+t.total+' min</span></button>';}).join("")+'</div></div>';
   if(PLAN && PLAN.blocks.length){
+    if(!PLAN.date){ PLAN.date=todayISO(); save("gb_cur",PLAN); }
     var t=0, tot=planTotal();
     h+='<div class="panel plan"><textarea class="pname" id="pname" rows="1" aria-label="Plan name">'+esc(PLAN.name)+'</textarea>'+
       '<div class="psum"><b>'+tot+' min</b> · '+spanTxt()+(PLAN.total&&tot!==PLAN.total?' <span class="'+(tot>PLAN.total?"over":"under")+'">('+(tot>PLAN.total?"+":"")+(tot-PLAN.total)+' min vs '+PLAN.total+' planned)</span>':"")+'<br>'+gymSummary()+'</div>'+
-      '<label class="pstartl">Practice starts at <input type="time" id="pstart" value="'+esc(PLAN.start||"")+'"> <span class="muted">'+(startMin()==null?"(optional — shows real clock times)":'<button class="link" id="pclear">clear</button>')+'</span></label>'+
+      '<div class="pwhen"><label>'+ic("calendar")+'<span>Date</span><input type="date" id="pdate" value="'+esc(PLAN.date)+'"></label>'+
+      '<label>'+ic("clock")+'<span>Starts</span><input type="time" id="pstart" value="'+esc(PLAN.start||"")+'"></label>'+(startMin()==null?'':'<button class="link" id="pclear">Clear time</button>')+'</div>'+
+      (startMin()==null?'<div class="dhint">Add a start time to see real clock times.</div>':'')+
       '<div class="dhint">Drag the handle on the left to reorder blocks.</div>';
     h+='<div class="blocks">'+PLAN.blocks.map(function(b,i){
       var a0=t; t+=b.min;
@@ -312,13 +322,16 @@ function renderPlan(){
   $$("[data-focus]").forEach(function(b){ b.onclick=function(){ var k=b.dataset.focus, i=UI.focus.indexOf(k); if(i>=0) UI.focus.splice(i,1); else { if(UI.focus.length>=3) UI.focus.shift(); UI.focus.push(k);} renderPlan(); }; });
   $("#editgym").onclick=openGym;
   $("#gen").onclick=function(){ PLAN=buildPlan(UI.minutes, UI.focus.slice()); save("gb_cur",PLAN); renderPlan(); toast("Practice built — tap any drill to see it move"); };
-  $$("[data-tpl]").forEach(function(b){ b.onclick=function(){ var t=TEMPLATES[+b.dataset.tpl]; PLAN={name:t.name,total:t.total,start:t.start||"",focus:[],gym:JSON.parse(JSON.stringify(G)),blocks:t.blocks.map(function(x){return {did:x.did,min:x.min,seg:x.seg,pool:[BY[x.did].cat]};})}; save("gb_cur",PLAN); renderPlan(); toast("Loaded template — edit anything"); }; });
+  $$("[data-tpl]").forEach(function(b){ b.onclick=function(){ var t=TEMPLATES[+b.dataset.tpl]; PLAN={name:t.name,date:todayISO(),total:t.total,start:t.start||"",focus:[],gym:JSON.parse(JSON.stringify(G)),blocks:t.blocks.map(function(x){return {did:x.did,min:x.min,seg:x.seg,pool:[BY[x.did].cat]};})}; save("gb_cur",PLAN); renderPlan(); toast("Loaded template — edit anything"); }; });
   if(!PLAN||!PLAN.blocks.length) return;
   var pn=$("#pname"), fitName=function(){ pn.style.height="auto"; pn.style.height=pn.scrollHeight+"px"; }; fitName();
   pn.oninput=fitName; pn.onkeydown=function(e){ if(e.key==="Enter"){ e.preventDefault(); pn.blur(); } };
   pn.onchange=function(e){ PLAN.name=e.target.value.replace(/\s+/g," ").trim()||"Practice"; save("gb_cur",PLAN); };
   $$("[data-open]").forEach(function(el){ el.onclick=function(){ openDrill(el.dataset.open,true); }; });
   $$("[data-rm]").forEach(function(b){ b.onclick=function(){ PLAN.blocks.splice(+b.dataset.rm,1); save("gb_cur",PLAN); renderPlan(); }; });
+  $("#pdate").onchange=function(e){ var v=e.target.value||todayISO(), old=PLAN.date;
+    if(!PLAN.name || PLAN.name===defaultName(old) || /^Practice — /.test(PLAN.name)) PLAN.name=defaultName(v); // keep auto names in sync with the date
+    PLAN.date=v; save("gb_cur",PLAN); renderPlan(); };
   $("#pstart").onchange=function(e){ PLAN.start=e.target.value||""; save("gb_cur",PLAN); renderPlan(); };
   if($("#pclear")) $("#pclear").onclick=function(e){ e.preventDefault(); PLAN.start=""; save("gb_cur",PLAN); renderPlan(); };
   initDrag();
@@ -357,7 +370,7 @@ function initDrag(){
   });
 }
 function planText(){
-  var t=0, s=PLAN.name+"\n"+planTotal()+" min · "+spanTxt()+" · "+gymSummary()+"\n\n";
+  var t=0, s=PLAN.name+"\n"+fmtDate(PLAN.date,true)+"\n"+planTotal()+" min, "+spanTxt()+" — "+gymSummary()+"\n\n";
   PLAN.blocks.forEach(function(b){ var st=rangeTxt(t,t+b.min); t+=b.min; if(b.water){ s+=st+"  Water ("+b.min+" min)\n"; return; } var d=BY[b.did]; s+=st+"  "+d.n+" ("+b.min+" min) — "+d.say+"\n"; });
   return s;
 }
@@ -369,7 +382,7 @@ function copyText(s){
 // ---------- saved ----------
 function renderSaved(){
   var all=load("gb_plans",[]);
-  $("#main").innerHTML='<h1 class="ptitle">Saved</h1><p class="psub">Practices you saved on this device.</p><div class="panel">'+(all.length?all.map(function(p,i){ var tot=p.blocks.reduce(function(a,b){return a+b.min;},0); return '<div class="saved"><div><b>'+esc(p.name)+'</b><div class="cmeta"><span>'+ic("clock")+tot+' min</span><span>'+ic("court")+p.blocks.filter(function(b){return !b.water;}).length+' drills</span></div></div><div class="row gap"><button class="btn" data-load="'+i+'">Open</button><button class="btn ghost" data-del="'+i+'" aria-label="Delete">'+ic("x")+'</button></div></div>';}).join(""):'<p class="muted">Nothing saved yet. Build a plan and tap Save.</p>')+'</div>'+
+  $("#main").innerHTML='<h1 class="ptitle">Saved</h1><p class="psub">Practices you saved on this device.</p><div class="panel">'+(all.length?all.map(function(p,i){ var tot=p.blocks.reduce(function(a,b){return a+b.min;},0); return '<div class="saved"><div><b>'+esc(p.name)+'</b><div class="cmeta">'+(p.date?'<span>'+ic("calendar")+esc(fmtDate(p.date))+'</span>':'')+'<span>'+ic("clock")+tot+' min</span><span>'+ic("court")+p.blocks.filter(function(b){return !b.water;}).length+' drills</span></div></div><div class="row gap"><button class="btn" data-load="'+i+'">Open</button><button class="btn ghost" data-del="'+i+'" aria-label="Delete">'+ic("x")+'</button></div></div>';}).join(""):'<p class="muted">Nothing saved yet. Build a plan and tap Save.</p>')+'</div>'+
     '<div class="panel"><h2>Help</h2><p class="psub" style="margin:4px 0 10px">Six steps from setting up your gym to a printed plan.</p>'+guideLink()+'</div>';
   $$("[data-load]").forEach(function(b){ b.onclick=function(){ PLAN=JSON.parse(JSON.stringify(all[+b.dataset.load])); save("gb_cur",PLAN); setTab("plan"); }; });
   $$("[data-del]").forEach(function(b){ b.onclick=function(){ all.splice(+b.dataset.del,1); save("gb_plans",all); renderSaved(); }; });
@@ -394,7 +407,7 @@ function printDrills(ids, title){
 }
 function printPlan(){
   var t=0, rows=inkFriendly(function(){ return PLAN.blocks.map(function(b){ var st=rangeTxt(t,t+b.min); t+=b.min; if(b.water) return '<div class="pwater">'+st+' · Water break ('+b.min+' min)</div>'; return drillPrint(BY[b.did],b.min,st); }).join(""); });
-  showPrint('<h1>'+esc(PLAN.name)+'</h1><div class="psub">'+planTotal()+' min · '+spanTxt()+' · '+gymSummary()+'</div><div class="plegend">'+legend()+'</div>'+rows);
+  showPrint('<h1>'+esc(PLAN.name)+'</h1><div class="psub"><b>'+esc(fmtDate(PLAN.date,true))+'</b><br>'+planTotal()+' min, '+spanTxt()+' — '+gymSummary()+'</div><div class="plegend">'+legend()+'</div>'+rows);
 }
 
 // ---------- tabs ----------

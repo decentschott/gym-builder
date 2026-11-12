@@ -135,3 +135,18 @@ test("quick-start guide is linked and served", async ({ page, request }) => {
   expect(res.ok()).toBeTruthy();
   expect(res.headers()["content-type"]).toContain("pdf");
 });
+
+test("practice date defaults to today and can be changed", async ({ page }) => {
+  await page.locator('nav button[data-tab="plan"]').click();
+  await page.locator("#gen").click();
+  const today = await page.evaluate(() => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); });
+  await expect(page.locator("#pdate")).toHaveValue(today);
+  await page.locator("#pdate").fill("2026-12-05");
+  await page.locator("#pdate").dispatchEvent("change");
+  await expect(page.locator(".pname")).toHaveValue(/Dec 5/);          // auto name follows the date
+  await page.reload();
+  await page.locator('nav button[data-tab="plan"]').click();
+  await expect(page.locator("#pdate")).toHaveValue("2026-12-05");     // remembered
+  await page.locator("#pprint").click();
+  await expect(page.locator("#print .psub")).toContainText("December 5, 2026");
+});

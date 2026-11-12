@@ -170,6 +170,10 @@ nav button.on{color:var(--team);background:var(--team-10)}
 .psum .over{color:#b42323;font-weight:600}.psum .under{color:#94650b;font-weight:600}
 .pstartl{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:600;font-size:14px;margin:4px 0 6px}
 .pstartl input{font:800 18px var(--display);padding:5px 9px;border:1.5px solid var(--line);border-radius:10px;color:var(--ink)}
+.pwhen{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:6px 0 6px}
+.pwhen label{display:flex;align-items:center;gap:7px;font-weight:600;font-size:14px;color:var(--mut)}
+.pwhen label .ic{font-size:18px;color:var(--team)}
+.pwhen input{font:800 18px var(--display);padding:5px 9px;border:1.5px solid var(--line);border-radius:10px;color:var(--ink);background:#fff;min-height:40px}
 .dhint{font-size:12.5px;color:var(--mut);margin:2px 0 10px}
 .blocks{display:flex;flex-direction:column;gap:8px}
 .block{display:grid;grid-template-columns:22px 56px 1fr auto;grid-template-areas:"g t b m" "g t b a";gap:2px 8px;align-items:center;border:1px solid var(--line);border-left:5px solid var(--c,#94a3b8);border-radius:12px;padding:9px 10px;background:#fff;transition:transform .18s ease,box-shadow .18s;position:relative}
